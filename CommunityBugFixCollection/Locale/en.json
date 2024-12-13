@@ -1,0 +1,8 @@
+{
+  "localeCode": "en",
+  "authors": [ "Banane9" ],
+  "messages": {
+    "CommunityBugFixCollection.Name": "Community Bug-Fix Collection",
+    "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open."
+  }
+}

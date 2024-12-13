@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyTitle>CommunityBugFixCollection</AssemblyTitle>
+    <AssemblyFileName>$(AssemblyTitle).dll</AssemblyFileName>
+    <RootNamespace>CommunityBugFixCollection</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>CommunityBugFixCollection</PackageId>
+    <Title>Component Selector Additions</Title>
+    <Authors>Banane9</Authors>
+    <Version>0.7.0-beta</Version>
+    <Description>This MonkeyLoader mod for Resonite overhauls the Component Selector / Protoflux Node Selector to have a search, as well as favorites and recents categories.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
+    <PackageTags>mod; mods; monkeyloader; resonite; component; attacher; selector; protoflux; node; picker; search; favorites</PackageTags>
+  </PropertyGroup>
+  
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Copy Condition="'$(CopyToLibraries)'=='true'" SourceFiles="$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg" DestinationFiles="$(ResonitePath)\MonkeyLoader\Mods\$(PackageId).nupkg" />
+    <Message Condition="'$(CopyToLibraries)'=='true'" Text="Copied '$(OutputPath)..\$(PackageId).$(PackageVersion).nupkg' to '$(ResonitePath)\MonkeyLoader\Mods\$(PackageId).nupkg'" Importance="high" />
+  </Target>
+  
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="" />
+    <None Include="Locale\*" Pack="true" PackagePath="content/Locale/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonkeyLoader.GamePacks.Resonite" Version="0.21.2-beta" />
+    <PackageReference Include="PolySharp" Version="1.15.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Resonite.Elements.Assets" Version="1.2.2" />
+    <PackageReference Include="Resonite.Elements.Core" Version="1.4.2" />
+    <PackageReference Include="Resonite.Elements.Quantity" Version="1.2.2" />
+    <PackageReference Include="Resonite.FrooxEngine" Version="2024.11.21.479" />
+  </ItemGroup>
+</Project>
