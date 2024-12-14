@@ -20,3 +20,4 @@ The issues fixed by this mod will be linked in the following list.
 If any of them have been closed and not removed from the mod,
 just disable them in the settings in the meantime.
 
+* World crash when a (multi)tool is scaled to zero (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/98)

@@ -3,6 +3,8 @@
   "authors": [ "Banane9" ],
   "messages": {
     "CommunityBugFixCollection.Name": "Community Bug-Fix Collection",
-    "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open."
+    "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open.",
+
+    "CommunityBugFixCollection.NoZeroScaleToolRaycast": "Fixes Resonite Issue #98: World crashes when a (multi)tool is scaled to zero."
   }
 }
