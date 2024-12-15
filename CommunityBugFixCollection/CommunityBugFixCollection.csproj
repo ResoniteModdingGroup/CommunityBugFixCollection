@@ -9,10 +9,10 @@
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>CommunityBugFixCollection</PackageId>
-    <Title>Component Selector Additions</Title>
+    <Title>Community Bug-Fix Collection</Title>
     <Authors>Banane9</Authors>
     <Version>0.7.0-beta</Version>
-    <Description>This MonkeyLoader mod for Resonite overhauls the Component Selector / Protoflux Node Selector to have a search, as well as favorites and recents categories.</Description>
+    <Description>This MonkeyLoader mod for Resonite fixes various small issues that are still open.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
@@ -39,5 +39,9 @@
     <PackageReference Include="Resonite.Elements.Core" Version="1.4.2" />
     <PackageReference Include="Resonite.Elements.Quantity" Version="1.2.2" />
     <PackageReference Include="Resonite.FrooxEngine" Version="2024.11.21.479" />
+    <PackageReference Include="Resonite.ProtoFlux.Core" Version="1.2.0" />
+    <PackageReference Include="Resonite.ProtoFlux.Nodes.Core" Version="1.2.0" />
+    <PackageReference Include="Resonite.ProtoFlux.Nodes.FrooxEngine" Version="2024.13.19.479" />
+    <PackageReference Include="Resonite.ProtoFluxBindings" Version="2024.13.19.479" />
   </ItemGroup>
 </Project>
