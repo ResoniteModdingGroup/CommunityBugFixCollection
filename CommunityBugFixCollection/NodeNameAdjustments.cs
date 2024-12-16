@@ -16,16 +16,22 @@ namespace CommunityBugFixCollection
     {
         public override bool CanBeDisabled => true;
 
-        protected override bool OnEngineReady()
-        {
-            var formFeedProps = AccessTools.GetDeclaredProperties(typeof(FormFeed));
-            var remapProps = AccessTools.GetDeclaredProperties(typeof(Remap11_01_Float));
+        //protected override bool OnEngineReady()
+        //{
+        //    var formFeedProps = AccessTools.GetDeclaredProperties(typeof(FormFeed));
+        //    var remapProps = AccessTools.GetDeclaredProperties(typeof(Remap11_01_Float));
 
-            var formFeedName = AccessTools.DeclaredProperty(typeof(FormFeed), nameof(FormFeed.NodeName));
-            var nameGetter = formFeedName.GetGetMethod(true);
+        //    var formFeedName = AccessTools.DeclaredProperty(typeof(FormFeed), nameof(FormFeed.NodeName));
+        //    var nameGetter = formFeedName.GetGetMethod(true);
 
-            return base.OnEngineReady();
-        }
+        //    var type = typeof(NodeNameAdjustments);
+        //    var formPatch = AccessTools.DeclaredMethod(type, nameof(FormFeedNamePostfix));
+
+        //    Harmony.Patch(nameGetter, postfix: formPatch);
+
+        //    //return base.OnEngineReady();
+        //    return true;
+        //}
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Backspace))]
@@ -46,16 +52,6 @@ namespace CommunityBugFixCollection
         [HarmonyPatch(typeof(FormFeed))]
         private static string FormFeedNamePostfix(string __result)
             => "Form Feed (\\f)";
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Strings.Characters.NewLine))]
-        private static string NewLineCharNamePostfix(string __result)
-            => "New Line (\\n)";
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Strings.NewLine))]
-        private static string NewLineStringNamePostfix(string __result)
-            => "Environment New Line";
 
         private static bool Prepare() => Enabled;
 
