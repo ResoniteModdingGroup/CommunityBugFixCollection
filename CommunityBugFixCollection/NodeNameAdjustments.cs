@@ -7,31 +7,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace CommunityBugFixCollection
 {
-    [HarmonyPatch(nameof(ProtoFluxNode.NodeName), MethodType.Getter)]
     [HarmonyPatchCategory(nameof(NodeNameAdjustments))]
-    [HarmonyDebug]
+    [HarmonyPatch(nameof(ProtoFluxNode.NodeName), MethodType.Getter)]
     internal sealed class NodeNameAdjustments : ResoniteMonkey<NodeNameAdjustments>
     {
         public override bool CanBeDisabled => true;
-
-        //protected override bool OnEngineReady()
-        //{
-        //    var formFeedProps = AccessTools.GetDeclaredProperties(typeof(FormFeed));
-        //    var remapProps = AccessTools.GetDeclaredProperties(typeof(Remap11_01_Float));
-
-        //    var formFeedName = AccessTools.DeclaredProperty(typeof(FormFeed), nameof(FormFeed.NodeName));
-        //    var nameGetter = formFeedName.GetGetMethod(true);
-
-        //    var type = typeof(NodeNameAdjustments);
-        //    var formPatch = AccessTools.DeclaredMethod(type, nameof(FormFeedNamePostfix));
-
-        //    Harmony.Patch(nameGetter, postfix: formPatch);
-
-        //    //return base.OnEngineReady();
-        //    return true;
-        //}
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Backspace))]
@@ -81,3 +65,5 @@ namespace CommunityBugFixCollection
             => "Vertical Tab (\\v)";
     }
 }
+
+#pragma warning restore IDE0060 // Remove unused parameter
