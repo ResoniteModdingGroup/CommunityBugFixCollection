@@ -12,6 +12,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(MaterialGizmo), nameof(MaterialGizmo.PositionInFrontOfUser))]
     internal sealed class CorrectMaterialGizmoScaling : ResoniteMonkey<CorrectMaterialGizmoScaling>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         // Apply default scale for inspector UI before it gets user-scaled again by PositionInFrontOfUser

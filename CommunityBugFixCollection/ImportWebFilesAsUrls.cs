@@ -15,6 +15,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(AssetHelper), nameof(AssetHelper.IdentifyClass))]
     internal sealed class ImportWebFilesAsUrls : ResoniteMonkey<ImportWebFilesAsUrls>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static bool Prefix(out AssetClass __result, string path)

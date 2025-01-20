@@ -12,6 +12,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(BrushTool), nameof(BrushTool.OnDequipped))]
     internal sealed class FireBrushToolDequipEvents : ResoniteMonkey<FireBrushToolDequipEvents>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static bool Prepare() => Enabled;

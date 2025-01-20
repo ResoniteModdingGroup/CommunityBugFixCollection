@@ -11,6 +11,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(colorX), nameof(colorX.Luminance), MethodType.Getter)]
     internal sealed class GammaCorrectedColorXLuminance : ResoniteMonkey<GammaCorrectedColorXLuminance>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static bool Prefix(colorX __instance, out float __result)

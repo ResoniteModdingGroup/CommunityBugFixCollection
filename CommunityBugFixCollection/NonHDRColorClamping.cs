@@ -11,34 +11,17 @@ namespace CommunityBugFixCollection
 {
     internal sealed class NonHDRColorClamping : ResoniteMonkey<NonHDRColorClamping>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
-
-        [HarmonyPatch]
-        [HarmonyPatchCategory(nameof(NonHDRColorClamping))]
-        private static class ColorXPatches
-        {
-            private static bool Prepare() => Enabled;
-
-            private static IEnumerable<MethodBase> TargetMethods()
-            {
-                var methodNames = new[]
-                {
-                    nameof(colorX.AddR), nameof(colorX.AddG), nameof(colorX.AddB), nameof(colorX.AddA)
-                };
-
-                return methodNames
-                    .Select(name => AccessTools.DeclaredMethod(typeof(colorX), name))
-                    .Where(method => method is not null);
-            }
-
-            private static colorX Postfix(colorX __result)
-                => MathX.Clamp01(in __result);
-        }
 
         [HarmonyPatch]
         [HarmonyPatchCategory(nameof(NonHDRColorClamping))]
         private static class ColorPatches
         {
+            private static color Postfix(color __result)
+                => new(MathX.Clamp01(__result.rgba));
+
             private static bool Prepare() => Enabled;
 
             private static IEnumerable<MethodBase> TargetMethods()
@@ -52,9 +35,28 @@ namespace CommunityBugFixCollection
                     .Select(name => AccessTools.DeclaredMethod(typeof(color), name))
                     .Where(method => method is not null);
             }
+        }
 
-            private static color Postfix(color __result)
-                => new(MathX.Clamp01(__result.rgba));
+        [HarmonyPatch]
+        [HarmonyPatchCategory(nameof(NonHDRColorClamping))]
+        private static class ColorXPatches
+        {
+            private static colorX Postfix(colorX __result)
+                => MathX.Clamp01(in __result);
+
+            private static bool Prepare() => Enabled;
+
+            private static IEnumerable<MethodBase> TargetMethods()
+            {
+                var methodNames = new[]
+                {
+                    nameof(colorX.AddR), nameof(colorX.AddG), nameof(colorX.AddB), nameof(colorX.AddA)
+                };
+
+                return methodNames
+                    .Select(name => AccessTools.DeclaredMethod(typeof(colorX), name))
+                    .Where(method => method is not null);
+            }
         }
     }
 }

@@ -13,14 +13,9 @@ namespace CommunityBugFixCollection
     [HarmonyPatchCategory(nameof(NoLossOfColorProfile))]
     internal sealed class NoLossOfColorProfile : ResoniteMonkey<NoLossOfColorProfile>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
-
-        private static bool Prepare() => Enabled;
-
-        [HarmonyPostfix]
-        [HarmonyPatch(nameof(colorX.NormalizeHDR))]
-        private static colorX NormalizeHDRPostfix(colorX __result, colorX __instance)
-            => new(__result.BaseColor, __instance.Profile);
 
         [HarmonyPrefix]
         [HarmonyPatch(nameof(colorX.MulA))]
@@ -30,10 +25,28 @@ namespace CommunityBugFixCollection
             return false;
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(nameof(colorX.NormalizeHDR))]
+        private static colorX NormalizeHDRPostfix(colorX __result, colorX __instance)
+            => new(__result.BaseColor, __instance.Profile);
+
+        private static bool Prepare() => Enabled;
+
         [HarmonyPatch]
         [HarmonyPatchCategory(nameof(NoLossOfColorProfile))]
         private static class ColorXBlendingPatches
         {
+            private static colorX Postfix(colorX __result, ColorProfile __state)
+                => new(__result.BaseColor, __state);
+
+            private static void Prefix(ref colorX src, ref colorX dst, out ColorProfile __state)
+            {
+                var operands = ColorProfileHelper.GetOperands(in src, in dst, ColorProfileAwareOperation.LinearIfUnequal);
+                src = new(operands.leftHand, operands.profile);
+                dst = new(operands.rightHand, operands.profile);
+                __state = operands.profile;
+            }
+
             private static bool Prepare() => Enabled;
 
             private static IEnumerable<MethodBase> TargetMethods()
@@ -47,23 +60,15 @@ namespace CommunityBugFixCollection
                     .Select(name => AccessTools.DeclaredMethod(typeof(colorX), name))
                     .Where(method => method is not null);
             }
-
-            private static void Prefix(ref colorX src, ref colorX dst, out ColorProfile __state)
-            {
-                var operands = ColorProfileHelper.GetOperands(in src, in dst, ColorProfileAwareOperation.LinearIfUnequal);
-                src = new(operands.leftHand, operands.profile);
-                dst = new(operands.rightHand, operands.profile);
-                __state = operands.profile;
-            }
-
-            private static colorX Postfix(colorX __result, ColorProfile __state)
-                => new(__result.BaseColor, __state);
         }
 
         [HarmonyPatch]
         [HarmonyPatchCategory(nameof(NoLossOfColorProfile))]
         private static class ColorXChannelAddingPatches
         {
+            private static colorX Postfix(colorX __result, colorX __instance)
+                => new(__result.BaseColor, __instance.Profile);
+
             private static bool Prepare() => Enabled;
 
             private static IEnumerable<MethodBase> TargetMethods()
@@ -80,9 +85,6 @@ namespace CommunityBugFixCollection
                     .Select(name => AccessTools.DeclaredMethod(typeof(colorX), name))
                     .Where(method => method is not null);
             }
-
-            private static colorX Postfix(colorX __result, colorX __instance)
-                => new(__result.BaseColor, __instance.Profile);
         }
     }
 }

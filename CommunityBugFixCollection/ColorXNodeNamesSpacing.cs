@@ -11,6 +11,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(StringHelper), nameof(StringHelper.BeautifyName))]
     internal sealed class ColorXNodeNamesSpacing : ResoniteMonkey<ColorXNodeNamesSpacing>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static string Postfix(string __result)

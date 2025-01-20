@@ -11,6 +11,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(Animator), nameof(Animator.OnCommonUpdate))]
     internal sealed class PauseAnimatorUpdates : ResoniteMonkey<PauseAnimatorUpdates>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static bool Prefix(Animator __instance)

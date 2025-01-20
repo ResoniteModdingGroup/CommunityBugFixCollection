@@ -12,6 +12,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(InventoryBrowser), nameof(InventoryBrowser.ProcessItem))]
     internal sealed class HighlightHomeWorldInInventory : ResoniteMonkey<HighlightHomeWorldInInventory>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static void Postfix(InventoryBrowser __instance, InventoryItemUI item)

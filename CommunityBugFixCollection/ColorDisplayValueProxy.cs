@@ -14,6 +14,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(ValueDisplay<color>), nameof(ValueDisplay<color>.BuildContentUI))]
     internal sealed class ColorDisplayValueProxy : ResoniteMonkey<ColorDisplayValueProxy>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static void Postfix(ValueDisplay<color> __instance, ProtoFluxNodeVisual visual)

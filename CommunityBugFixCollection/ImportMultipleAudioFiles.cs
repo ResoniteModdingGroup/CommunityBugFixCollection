@@ -19,6 +19,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(UniversalImporter), nameof(UniversalImporter.ImportTask))]
     internal sealed class ImportMultipleAudioFiles : ResoniteMonkey<ImportMultipleAudioFiles>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         private static async Task ImportAudioAsync(IEnumerable<string> files, World world, float3 position, floatQ rotation, float3 scale)

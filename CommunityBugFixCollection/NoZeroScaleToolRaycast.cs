@@ -12,12 +12,14 @@ namespace CommunityBugFixCollection
     [HarmonyPatchCategory(nameof(NoZeroScaleToolRaycast))]
     internal sealed class NoZeroScaleToolRaycast : ResoniteMonkey<NoZeroScaleToolRaycast>
     {
-        public override bool CanBeDisabled => true;
+        public override IEnumerable<string> Authors => Contributors.Banane9;
 
-        private static bool Prepare() => Enabled;
+        public override bool CanBeDisabled => true;
 
         [HarmonyPrefix]
         private static bool GetHitPrefix(Tool __instance)
             => __instance.TipForward.IsValid() && __instance.TipForward != float3.Zero;
+
+        private static bool Prepare() => Enabled;
     }
 }

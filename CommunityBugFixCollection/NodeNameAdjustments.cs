@@ -15,6 +15,8 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(nameof(ProtoFluxNode.NodeName), MethodType.Getter)]
     internal sealed class NodeNameAdjustments : ResoniteMonkey<NodeNameAdjustments>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
         public override bool CanBeDisabled => true;
 
         [HarmonyPostfix]
