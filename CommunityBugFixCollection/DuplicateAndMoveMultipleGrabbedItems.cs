@@ -8,6 +8,11 @@ using System.Collections.Generic;
 using System.Text;
 using static FrooxEngine.Worker;
 
+// This code is mainly decompiled Resonite source code,
+// but the fix was devised by art0007i.
+// Originally released under MIT-0 here:
+// https://github.com/art0007i/DuplicateFix
+
 namespace CommunityBugFixCollection
 {
     internal static class DuplicateExtensions
