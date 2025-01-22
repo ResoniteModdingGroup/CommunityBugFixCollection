@@ -7,6 +7,8 @@ namespace CommunityBugFixCollection
 {
     internal static class Contributors
     {
+        public static string[] Art0007i { get; } = ["art0007i"];
+
         public static string[] Banane9 { get; } = ["Banane9"];
 
         public static string[] Nytra { get; } = ["Nytra"];
