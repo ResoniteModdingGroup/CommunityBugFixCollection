@@ -10,7 +10,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>CommunityBugFixCollection</PackageId>
     <Title>Component Selector Additions</Title>
-    <Authors>Banane9; Nytra; art0007i</Authors>
+    <Authors>Banane9; Nytra; art0007i; LeCloutPanda</Authors>
     <Version>0.7.0-beta</Version>
     <Description>This MonkeyLoader mod for Resonite overhauls the Component Selector / Protoflux Node Selector to have a search, as well as favorites and recents categories.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
