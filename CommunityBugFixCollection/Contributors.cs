@@ -11,6 +11,8 @@ namespace CommunityBugFixCollection
 
         public static string[] Banane9 { get; } = ["Banane9"];
 
+        public static string[] LeCloutPanda { get; } = ["LeCloutPanda"];
+
         public static string[] Nytra { get; } = ["Nytra"];
     }
 }
