@@ -26,7 +26,6 @@ just disable them in the settings in the meantime.
 * ColorX Luminance calculations being incorrect for non-linear color profiles (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/281)
 * Non-HDR variants of Color(X) channel addition not clamping (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/316)
 * Color Profile not being preserved on all operations (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/318)
-* Sliders and Joints snapping in sessions hosted by a headless (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/399)
 * ProtoFlux Node names containing `ColorX` being spaced wrong (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/496)
 * The selected Home World in the Inventory not being highlighted as a favorite (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/503)
 * The MaterialGizmo being scaled twice when using Edit on the Material Tool (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/528)
@@ -37,3 +36,12 @@ just disable them in the settings in the meantime.
 * References in multiple duplicated or transferred-between-worlds items breaking (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/984)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
+
+
+## Workarounds
+
+The issues that have workarounds in this mod will be linked in the following list.
+If any of them have been closed and not removed from the mod,
+just disable them in the settings in the meantime.
+
+* Sliders and Joints snapping in sessions hosted by a headless (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/399)
