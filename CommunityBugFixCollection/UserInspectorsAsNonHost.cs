@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CommunityBugFixCollection
 {
-    [HarmonyPatch(typeof(UserInspector), "OnAttach")]
+    [HarmonyPatch(typeof(UserInspector), nameof(UserInspector.OnAttach))]
     [HarmonyPatchCategory(nameof(UserInspectorAsNonHost))]
     internal class UserInspectorAsNonHost : ResoniteMonkey<UserInspectorAsNonHost>
     {

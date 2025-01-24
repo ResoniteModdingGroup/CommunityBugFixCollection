@@ -16,8 +16,11 @@ namespace CommunityBugFixCollection
         public override bool CanBeDisabled => true;
 
         private static string Postfix(string __result)
-            => __result.Replace("Color X", "ColorX ");
+        {
+            if (!Enabled)
+                return __result;
 
-        private static bool Prepare() => Enabled;
+            return __result.Replace("Color X", "ColorX ");
+        }
     }
 }

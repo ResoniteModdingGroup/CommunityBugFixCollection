@@ -37,17 +37,26 @@ namespace CommunityBugFixCollection
         private static class ColorXBlendingPatches
         {
             private static colorX Postfix(colorX __result, ColorProfile __state)
-                => new(__result.BaseColor, __state);
+            {
+                if (!Enabled)
+                    return __result;
+
+                return new(__result.BaseColor, __state);
+            }
 
             private static void Prefix(ref colorX src, ref colorX dst, out ColorProfile __state)
             {
+                if (!Enabled)
+                {
+                    __state = default;
+                    return;
+                }
+
                 var operands = ColorProfileHelper.GetOperands(in src, in dst, ColorProfileAwareOperation.LinearIfUnequal);
                 src = new(operands.leftHand, operands.profile);
                 dst = new(operands.rightHand, operands.profile);
                 __state = operands.profile;
             }
-
-            private static bool Prepare() => Enabled;
 
             private static IEnumerable<MethodBase> TargetMethods()
             {
@@ -67,9 +76,12 @@ namespace CommunityBugFixCollection
         private static class ColorXChannelAddingPatches
         {
             private static colorX Postfix(colorX __result, colorX __instance)
-                => new(__result.BaseColor, __instance.Profile);
+            {
+                if (!Enabled)
+                    return __result;
 
-            private static bool Prepare() => Enabled;
+                return new(__result.BaseColor, __instance.Profile);
+            }
 
             private static IEnumerable<MethodBase> TargetMethods()
             {

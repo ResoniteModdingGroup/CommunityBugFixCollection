@@ -84,13 +84,11 @@ namespace CommunityBugFixCollection
 
         private static bool Prefix(ref Task? __result, AssetClass assetClass, IEnumerable<string> files, World world, float3 position, floatQ rotation, float3 scale)
         {
-            if (assetClass != AssetClass.Audio)
+            if (!Enabled || assetClass != AssetClass.Audio)
                 return true;
 
             __result = ImportAudioAsync(files, world, position, rotation, scale);
             return false;
         }
-
-        private static bool Prepare() => Enabled;
     }
 }

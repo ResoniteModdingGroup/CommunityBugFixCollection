@@ -15,13 +15,14 @@ namespace CommunityBugFixCollection
 
         public override bool CanBeDisabled => true;
 
-        private static bool Prefix(colorX __instance, out float __result)
+        private static bool Prefix(colorX __instance, ref float __result)
         {
+            if (!Enabled)
+                return true;
+
             __result = __instance.ConvertProfile(ColorProfile.Linear).BaseColor.Luminance;
 
             return false;
         }
-
-        private static bool Prepare() => Enabled;
     }
 }

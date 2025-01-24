@@ -20,9 +20,12 @@ namespace CommunityBugFixCollection
         private static class ColorPatches
         {
             private static color Postfix(color __result)
-                => new(MathX.Clamp01(__result.rgba));
+            {
+                if (!Enabled)
+                    return __result;
 
-            private static bool Prepare() => Enabled;
+                return new(MathX.Clamp01(__result.rgba));
+            }
 
             private static IEnumerable<MethodBase> TargetMethods()
             {
@@ -42,9 +45,12 @@ namespace CommunityBugFixCollection
         private static class ColorXPatches
         {
             private static colorX Postfix(colorX __result)
-                => MathX.Clamp01(in __result);
+            {
+                if (!Enabled)
+                    return __result;
 
-            private static bool Prepare() => Enabled;
+                return MathX.Clamp01(in __result);
+            }
 
             private static IEnumerable<MethodBase> TargetMethods()
             {
