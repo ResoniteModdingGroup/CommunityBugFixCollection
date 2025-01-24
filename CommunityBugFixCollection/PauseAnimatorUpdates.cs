@@ -1,4 +1,5 @@
-﻿using FrooxEngine;
+﻿using Elements.Core;
+using FrooxEngine;
 using HarmonyLib;
 using MonkeyLoader.Resonite;
 using System;
@@ -17,6 +18,9 @@ namespace CommunityBugFixCollection
 
         private static bool Prefix(Animator __instance)
         {
+            if (!Enabled)
+                return true;
+
             __instance._playback.ClipLength = (__instance.Clip.Asset?.Data?.GlobalDuration).GetValueOrDefault();
 
             if (!__instance._fieldMappersValid)
@@ -32,7 +36,5 @@ namespace CommunityBugFixCollection
 
             return false;
         }
-
-        private static bool Prepare() => Enabled;
     }
 }

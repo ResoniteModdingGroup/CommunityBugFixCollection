@@ -19,8 +19,11 @@ namespace CommunityBugFixCollection
 
         public override bool CanBeDisabled => true;
 
-        private static bool Prefix(out AssetClass __result, string path)
+        private static bool Prefix(ref AssetClass __result, string path)
         {
+            if (!Enabled)
+                return true;
+
             if (path is null)
             {
                 __result = AssetClass.Unknown;
@@ -75,7 +78,5 @@ namespace CommunityBugFixCollection
             __result = AssetClass.Unknown;
             return false;
         }
-
-        private static bool Prepare() => Enabled;
     }
 }

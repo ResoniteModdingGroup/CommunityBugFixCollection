@@ -18,8 +18,6 @@ namespace CommunityBugFixCollection
 
         [HarmonyPrefix]
         private static bool GetHitPrefix(Tool __instance)
-            => __instance.TipForward.IsValid() && __instance.TipForward != float3.Zero;
-
-        private static bool Prepare() => Enabled;
+            => !Enabled || (__instance.TipForward.IsValid() && __instance.TipForward != float3.Zero);
     }
 }

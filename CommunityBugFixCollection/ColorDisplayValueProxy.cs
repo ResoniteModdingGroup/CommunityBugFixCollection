@@ -20,6 +20,9 @@ namespace CommunityBugFixCollection
 
         private static void Postfix(ValueDisplay<color> __instance, ProtoFluxNodeVisual visual)
         {
+            if (!Enabled)
+                return;
+
             var colorToColorX = visual.Slot.GetComponentInChildren<ColorToColorX>();
             var textFormatDriver = visual.Slot.GetComponentInChildren<MultiValueTextFormatDriver>();
 
@@ -29,7 +32,5 @@ namespace CommunityBugFixCollection
             var valueProxySource = textFormatDriver.Slot.AttachComponent<ValueProxySource<color>>();
             valueProxySource.Value.DriveFrom(__instance._value.Target);
         }
-
-        private static bool Prepare() => Enabled;
     }
 }

@@ -18,14 +18,13 @@ namespace CommunityBugFixCollection
 
         private static void Postfix(InventoryBrowser __instance, InventoryItemUI item)
         {
-            if (InventoryBrowser.ClassifyItem(item) != InventoryBrowser.SpecialItemType.World
+            if (!Enabled
+             || InventoryBrowser.ClassifyItem(item) != InventoryBrowser.SpecialItemType.World
              || __instance.GetItemWorldUri(item) != __instance.Engine.Cloud.Profile.GetCurrentFavorite(FavoriteEntity.Home))
                 return;
 
             item.NormalColor.Value = InventoryBrowser.FAVORITE_COLOR;
             item.SelectedColor.Value = InventoryBrowser.FAVORITE_COLOR.MulRGB(2f);
         }
-
-        private static bool Prepare() => Enabled;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
+using MonkeyLoader.Patching;
 using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
@@ -9,23 +10,39 @@ using System.Text;
 namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(FireBrushToolDequipEvents))]
-    [HarmonyPatch(typeof(BrushTool), nameof(BrushTool.OnDequipped))]
+    [HarmonyPatch(nameof(BrushTool.OnDequipped))]
     internal sealed class FireBrushToolDequipEvents : ResoniteMonkey<FireBrushToolDequipEvents>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
 
         public override bool CanBeDisabled => true;
 
-        private static bool Prepare() => Enabled;
-
-        private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        [HarmonyTranspiler]
+        [HarmonyPatch(typeof(BrushTool))]
+        private static IEnumerable<CodeInstruction> BrushToolOnDequippedTranspiler(IEnumerable<CodeInstruction> instructions)
         {
             return new[]
             {
                 CodeInstruction.LoadArgument(0),
-                CodeInstruction.Call((Tool tool) => tool.OnDequipped())
+                CodeInstruction.Call((Tool tool) => ToolOnDequippedProxy(tool))
             }
             .Concat(instructions);
+        }
+
+        [HarmonyReversePatch]
+        [HarmonyPatch(typeof(Tool))]
+        private static void ToolOnDequipped(Tool tool)
+            => throw new NotImplementedException("Harmony Reverse Patch!");
+
+        /// <summary>
+        /// Proxy to be able to control the fix through <see cref="MonkeyBase{T}.Enabled"/>.
+        /// </summary>
+        private static void ToolOnDequippedProxy(Tool tool)
+        {
+            if (!Enabled)
+                return;
+
+            ToolOnDequipped(tool);
         }
     }
 }
