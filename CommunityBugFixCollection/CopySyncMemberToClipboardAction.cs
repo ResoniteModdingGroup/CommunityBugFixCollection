@@ -1,5 +1,6 @@
 ﻿using FrooxEngine;
 using MonkeyLoader.Resonite;
+using MonkeyLoader.Resonite.UI.Inspectors;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace CommunityBugFixCollection
         public override int Priority => HarmonyLib.Priority.Normal;
 
         protected override bool AppliesTo(InspectorMemberActionsMenuItemsGenerationEvent eventData)
-            => base.AppliesTo(eventData) && eventData.Target is IField;
+            => base.AppliesTo(eventData) && eventData.Target is IField && eventData.Target is not ISyncRef;
 
         protected override Task Handle(InspectorMemberActionsMenuItemsGenerationEvent eventData)
         {
@@ -21,6 +22,7 @@ namespace CommunityBugFixCollection
             var menuItem = eventData.ContextMenu.AddItem("Copy to Clipboard",
                 OfficialAssets.Graphics.Icons.General.Duplicate, RadiantUI_Constants.Sub.GREEN);
 
+            // Context Menu is local user only anyways, no need to use local action button
             menuItem.Button.LocalPressed += (button, _) =>
             {
                 button.World.InputInterface.Clipboard.SetText(field.BoxedValue.ToString());
