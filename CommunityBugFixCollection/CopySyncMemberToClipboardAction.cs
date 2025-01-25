@@ -19,7 +19,7 @@ namespace CommunityBugFixCollection
         protected override Task Handle(InspectorMemberActionsMenuItemsGenerationEvent eventData)
         {
             var field = (IField)eventData.Target;
-            var menuItem = eventData.ContextMenu.AddItem("Copy to Clipboard",
+            var menuItem = eventData.ContextMenu.AddItem(Mod.GetLocaleString("CopyToClipboard"),
                 OfficialAssets.Graphics.Icons.General.Duplicate, RadiantUI_Constants.Sub.GREEN);
 
             // Context Menu is local user only anyways, no need to use local action button
