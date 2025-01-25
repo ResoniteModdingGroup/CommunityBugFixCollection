@@ -45,3 +45,12 @@ If any of them have been closed and not removed from the mod,
 just disable them in the settings in the meantime.
 
 * Sliders and Joints snapping in sessions hosted by a headless (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/399)
+
+
+## Features
+
+The feature request issues that have been implemented in this mod will be linked in the following list.
+If any of them have been implemented and not removed from the mod,
+just disable them in the settings in the meantime.
+
+* _Copy to Clipboard_ action on any non-reference member fields in Inspectors (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/810)
