@@ -14,7 +14,7 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(Draggable), nameof(Draggable.OnAwake))]
     internal sealed class SmoothDraggables : ResoniteMonkey<SmoothDraggables>
     {
-        public override IEnumerable<string> Authors => base.Authors;
+        public override IEnumerable<string> Authors => Contributors.LeCloutPanda;
 
         public override bool CanBeDisabled => true;
 
