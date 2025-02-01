@@ -5,6 +5,8 @@
     "CommunityBugFixCollection.Name": "Community Bug-Fix Collection",
     "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open.",
 
+    "CommunityBugFixCollection.CopyToClipboard": "Copy to Clipboard",
+
     "CommunityBugFixCollection.NoZeroScaleToolRaycast": "Fixes Resonite Issue #98: World crashes when a (multi)tool is scaled to zero."
   }
 }

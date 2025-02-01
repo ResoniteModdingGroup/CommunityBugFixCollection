@@ -3,6 +3,8 @@
   "authors": [ "Banane9" ],
   "messages": {
     "CommunityBugFixCollection.Name": "Community Bug-Fix Sammlung",
-    "CommunityBugFixCollection.Description": "Diese Mod enthällt Fixes für verschiedene kleine Resonite Issues die noch offen sind."
+    "CommunityBugFixCollection.Description": "Diese Mod enthällt Fixes für verschiedene kleine Resonite Issues die noch offen sind.",
+
+    "CommunityBugFixCollection.CopyToClipboard": "In Zwischenablage kopieren"
   }
 }
