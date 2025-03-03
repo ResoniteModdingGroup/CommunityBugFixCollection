@@ -91,7 +91,7 @@ namespace CommunityBugFixCollection
         public static bool DuplicateGrabbedPrefix(InteractionHandler __instance)
         {
             if (!Enabled)
-                return false;
+                return true;
 
             Slot? tempHolder = null;
             Slot? dupeHolder = null;
