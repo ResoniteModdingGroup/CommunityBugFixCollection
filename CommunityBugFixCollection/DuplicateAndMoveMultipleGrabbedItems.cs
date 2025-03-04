@@ -1,10 +1,12 @@
 ﻿using Elements.Core;
 using FrooxEngine;
+using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.FrooxEngine.Slots;
 using FrooxEngine.Undo;
 using HarmonyLib;
 using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static FrooxEngine.Worker;
 
@@ -17,65 +19,57 @@ namespace CommunityBugFixCollection
 {
     internal static class DuplicateExtensions
     {
-        // Literally just a copy paste of Slot.Duplicate but with a tiny snippet added to the middle
-        // would probably do this using a transpiler but it would require some kind of additional function argument to whether it should create undo steps
-        // or I could check stack traces to see if it's called from within my code but that's a little jank
-
-        public static Slot UndoableChildrenDuplicate(this Slot toDuplicate, Slot? duplicateRoot = null, bool keepGlobalTransform = true, DuplicationSettings? settings = null)
+        // Literally just a copy paste of Slot.Duplicate but it duplicates several slots at same time
+        public static void MultiDuplicate(this IEnumerable<Slot> toDuplicate, List<Slot> newSlots, Slot? duplicateRoot = null, bool keepGlobalTransform = true, DuplicationSettings? settings = null)
         {
-            if (toDuplicate.IsRootSlot)
+            if (toDuplicate.Any(slot => slot.IsRootSlot))
                 throw new Exception("Cannot duplicate root slot");
 
-            duplicateRoot ??= toDuplicate.Parent ?? toDuplicate.World.RootSlot;
-
-            if (duplicateRoot.IsChildOf(toDuplicate))
+            if (duplicateRoot != null && toDuplicate.Any(slot => duplicateRoot.IsChildOf(slot)))
                 throw new Exception("Target for the duplicate hierarchy cannot be within the hierarchy of the source");
 
             using var internalReferences = new InternalReferences();
-            var syncRefs = Pool.BorrowHashSet<ISyncRef>();
-            var slots = Pool.BorrowHashSet<Slot>();
-            var postDuplication = Pool.BorrowList<Action>();
+            var breakRefs = Pool.BorrowHashSet<ISyncRef>();
+            var hierarchy = Pool.BorrowHashSet<Slot>();
+            var postDuplications = Pool.BorrowList<Action>();
 
-            void DuplicationHandler(IDuplicationHandler handler)
+            toDuplicate.Do(slot => slot.ForeachComponentInChildren<IDuplicationHandler>(handler =>
             {
-                handler.OnBeforeDuplicate(toDuplicate, out var onDuplicated);
+                handler.OnBeforeDuplicate(slot, out var onDuplicated);
 
-                if (onDuplicated is not null)
-                    postDuplication.Add(onDuplicated);
-            }
+                if (onDuplicated != null)
+                    postDuplications.Add(onDuplicated);
+            }, includeLocal: false, cacheItems: true));
 
-            toDuplicate.ForeachComponentInChildren<IDuplicationHandler>(DuplicationHandler,
-                includeLocal: false, cacheItems: true);
+            toDuplicate.Do(slot => slot.GenerateHierarchy(hierarchy));
+            toDuplicate.Do(slot => slot.CollectInternalReferences(slot, internalReferences, breakRefs, hierarchy));
 
-            toDuplicate.GenerateHierarchy(slots);
-            toDuplicate.CollectInternalReferences(toDuplicate, internalReferences, syncRefs, slots);
-            var duplicated = toDuplicate.InternalDuplicate(duplicateRoot, internalReferences, syncRefs, settings!);
+            foreach (var slot in toDuplicate)
+                newSlots.Add(slot.InternalDuplicate(duplicateRoot ?? slot.Parent ?? slot.World.RootSlot, internalReferences, breakRefs, settings!));
 
             if (keepGlobalTransform)
-                duplicated.CopyTransform(toDuplicate);
+            {
+                var i = 0;
+
+                foreach (var slot in newSlots)
+                    newSlots[i++].CopyTransform(slot);
+            }
 
             internalReferences.TransferReferences(false);
 
-            // arti stuff begin
-            foreach (var child in duplicated.Children)
-                child.CreateSpawnUndoPoint();
-            // arti stuff end
+            var newComponents = Pool.BorrowList<Component>();
+            newSlots.Do(slot => slot.GetComponentsInChildren(newComponents));
 
-            var duplicatedComponents = Pool.BorrowList<Component>();
-            duplicated.GetComponentsInChildren(duplicatedComponents);
+            foreach (var item in newComponents)
+                item.RunDuplicate();
 
-            foreach (var component in duplicatedComponents)
-                component.RunDuplicate();
+            Pool.Return(ref newComponents);
+            Pool.Return(ref breakRefs);
 
-            Pool.Return(ref duplicatedComponents);
-            Pool.Return(ref syncRefs);
+            foreach (var postDuplication in postDuplications)
+                postDuplication();
 
-            foreach (var postDuplicationAction in postDuplication)
-                postDuplicationAction();
-
-            Pool.Return(ref postDuplication);
-
-            return duplicated;
+            Pool.Return(ref postDuplications);
         }
     }
 
@@ -87,57 +81,45 @@ namespace CommunityBugFixCollection
         public override bool CanBeDisabled => true;
 
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(InteractionHandler), "DuplicateGrabbed", [])]
+        [HarmonyPatch(typeof(InteractionHandler), nameof(InteractionHandler.DuplicateGrabbed), [])]
         public static bool DuplicateGrabbedPrefix(InteractionHandler __instance)
         {
             if (!Enabled)
                 return true;
 
-            Slot? tempHolder = null;
-            Slot? dupeHolder = null;
+            var toDuplicate = Pool.BorrowList<Slot>();
+            var newSlots = Pool.BorrowList<Slot>();
 
             __instance.World.BeginUndoBatch("Undo.DuplicateGrabbed".AsLocaleKey());
 
             try
             {
-                tempHolder = __instance.Grabber.Slot.AddSlot("Holder");
-
                 foreach (var grabbedObject in __instance.Grabber.GrabbedObjects)
                 {
                     if (__instance.Grabber.GrabbableGetComponentInParents<IDuplicateBlock>(grabbedObject.Slot, excludeDisabled: true) == null)
                         continue;
 
-                    grabbedObject.Slot.SetParent(tempHolder, false);
+                    toDuplicate.Add(grabbedObject.Slot.GetObjectRoot(__instance.Grabber.Slot));
                 }
 
-                // by the time the duplication is done the children will have already escaped using their Grabbable.OnDuplicate function
-                // so I just copied the entire duplication sequence and made it create undo steps at the correct time.. kinda jank but works
-                /*dupeHolder = __instance.Grabber.HolderSlot.Duplicate();
+                toDuplicate.MultiDuplicate(newSlots);
 
-                foreach (var child in dupeHolder.Children)
-                {
-                    child.CreateSpawnUndoPoint();
-                }*/
+                newSlots.Do(static slot => slot.CreateSpawnUndoPoint());
 
-                dupeHolder = __instance.Grabber.HolderSlot.UndoableChildrenDuplicate();
-
-                dupeHolder.GetComponentsInChildren<IGrabbable>().ForEach(static grabbable =>
-                {
-                    if (grabbable.IsGrabbed)
+                newSlots.SelectMany(x => x.GetComponentsInChildren<IGrabbable>())
+                    .Do(static x =>
                     {
-                        grabbable.Release(grabbable.Grabber);
-                    }
-                });
-
-                tempHolder.Destroy(__instance.Grabber.HolderSlot, false);
+                        if (x.IsGrabbed)
+                            x.Release(x.Grabber);
+                    });
             }
             catch (Exception ex)
             {
                 __instance.Debug.Error("Exception duplicating items!\n" + ex);
             }
 
-            dupeHolder!.FilterWorldElement()?.Destroy(false);
-            tempHolder!.FilterWorldElement()?.Destroy(false);
+            Pool.Return(ref newSlots);
+            Pool.Return(ref toDuplicate);
 
             __instance.World.EndUndoBatch();
 
