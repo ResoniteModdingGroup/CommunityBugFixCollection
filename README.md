@@ -37,6 +37,7 @@ just disable them in the settings in the meantime.
 * References in multiple duplicated or transferred-between-worlds items breaking (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/984)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
+* Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)
 
 
 ## Workarounds
