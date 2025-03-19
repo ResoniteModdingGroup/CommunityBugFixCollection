@@ -9,10 +9,10 @@
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>CommunityBugFixCollection</PackageId>
-    <Title>Component Selector Additions</Title>
+    <Title>Community Bug-Fix Collection</Title>
     <Authors>Banane9; Nytra; art0007i; LeCloutPanda</Authors>
-    <Version>0.7.0-beta</Version>
-    <Description>This MonkeyLoader mod for Resonite overhauls the Component Selector / Protoflux Node Selector to have a search, as well as favorites and recents categories.</Description>
+    <Version>0.1.0-beta</Version>
+    <Description>This MonkeyLoader mod for Resonite that fixes various small Resonite-issues that are still open.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
@@ -30,21 +30,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicroUtils.HarmonyAnalyzers" Version="1.3.1">
+    <PackageReference Include="MicroUtils.HarmonyAnalyzers" Version="1.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MonkeyLoader.GamePacks.Resonite" Version="0.22.0-beta" />
+    <PackageReference Include="MonkeyLoader.GamePacks.Resonite" Version="0.22.1-beta" />
     <PackageReference Include="PolySharp" Version="1.15.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Resonite.Elements.Assets" Version="1.2.3" />
+    <PackageReference Include="Resonite.Elements.Assets" Version="1.3.3" />
     <PackageReference Include="Resonite.Elements.Core" Version="1.4.3" />
     <PackageReference Include="Resonite.Elements.Quantity" Version="1.2.3" />
-    <PackageReference Include="Resonite.FrooxEngine" Version="2025.1.17.6" />
+    <PackageReference Include="Resonite.FrooxEngine" Version="2025.3.21.23" />
     <PackageReference Include="Resonite.FrooxEngine.Store" Version="1.0.3" />
-    <PackageReference Include="Resonite.ProtoFluxBindings" Version="2025.3.14.7" />
+    <PackageReference Include="Resonite.ProtoFluxBindings" Version="2025.5.18.24" />
     <PackageReference Include="Resonite.SkyFrost.Base" Version="2.1.0" />
     <PackageReference Include="Resonite.SkyFrost.Base.Models" Version="2.1.0" />
   </ItemGroup>
