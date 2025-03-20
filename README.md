@@ -38,6 +38,7 @@ just disable them in the settings in the meantime.
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
 * Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)
+* DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
 
 
 ## Workarounds
