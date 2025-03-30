@@ -21,6 +21,9 @@ If any of them have been closed and not removed from the mod,
 just disable them in the settings in the meantime.
 
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
+	* Pressing Duplicate on the Component in an Inspector
+	* Using the Component Clone Tool to duplicate them onto a slot
+	* Selecting Copy Component when drag and dropping a Component onto an Inspector
 * Worlds crashing when a (multi)tool is scaled to zero (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/98)
 * Most ProtoFlux nodes in Strings > Constants having invisible names (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/177)
 * The `Remap -1 1 to 0 1` ProtoFlux node having a hard to understand name (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/245)
