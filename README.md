@@ -34,6 +34,10 @@ just disable them in the settings in the meantime.
 * The selected Home World in the Inventory not being highlighted as a favorite (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/503)
 * The MaterialGizmo being scaled twice when using Edit on the Material Tool (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/528)
 * The `ValueDisplay<color>` ProtoFluxNode not having a `ValueProxySource<color>` (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/557)
+* Picking custom generic types in Component Selectors not being case-insensitive
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/620
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/636
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4022
 * Tools derived from `BrushTool` not firing *OnDequipped* events (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/723)
 * It not being possible to import multiple audio clips at once (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/737)
 * URLs to text files or Resonite Packages failing to import instead of appearing as a hyperlink (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/785)

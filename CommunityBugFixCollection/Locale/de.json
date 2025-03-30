@@ -5,6 +5,8 @@
     "CommunityBugFixCollection.Name": "Community Bug-Fix Sammlung",
     "CommunityBugFixCollection.Description": "Diese Mod enthällt Fixes für verschiedene kleine Resonite Issues die noch offen sind.",
 
-    "CommunityBugFixCollection.CopyToClipboard": "In Zwischenablage kopieren"
+    "CommunityBugFixCollection.CopyToClipboard": "In Zwischenablage kopieren",
+
+    "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Macht das Auswählen von eigenen generischen Typparametern unabhängig von Groß- und Kleinschreibung."
   }
 }
