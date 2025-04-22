@@ -7,6 +7,7 @@
 
     "CommunityBugFixCollection.CopyToClipboard": "In Zwischenablage kopieren",
 
+    "CommunityBugFixCollection.BetterGridWorldPreset.Description": "Verbessert das Grid Welt Preset indem das zittern des Bodens verhindert und das Grid zentriert wird.",
     "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Sorgt dafür, dass Drives beim Kopieren von Komponenten mittels Drag-und-Drop nicht kaputt gehen.",
     "CommunityBugFixCollection.BreakDuplicatedComponentDrives.Description": "Sorgt dafür, dass Drives beim Duplizieren von Komponenten nicht kaputt gehen.",
     "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Macht das Auswählen von eigenen generischen Typparametern unabhängig von Groß- und Kleinschreibung.",
