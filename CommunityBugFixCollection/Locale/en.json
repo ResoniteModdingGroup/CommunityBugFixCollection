@@ -7,7 +7,27 @@
 
     "CommunityBugFixCollection.CopyToClipboard": "Copy to Clipboard",
 
-    "CommunityBugFixCollection.NoZeroScaleToolRaycast": "Fixes Resonite Issue #98: World crashes when a (multi)tool is scaled to zero.",
-    "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Makes picking custom generic type parameters case-insensitive."
+    "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Makes picking custom generic type parameters case-insensitive.",
+    "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Fixes duplicating components breaking drives.",
+    "CommunityBugFixCollection.BreakDuplicatedComponentDrives.Description": "Fixes duplicating components breaking drives.",
+    "CommunityBugFixCollection.CheckSelfForDuplicateSlot.Description": "Fixes a crash when OverrideParent is identical to Template.",
+    "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Fixes ValueDisplay<color> not having a ValueProxySource component.",
+    "CommunityBugFixCollection.ColorXNodeNamesSpacing.Description": "Fixes ProtoFlux node names containing ColorX being spaced wrong.",
+    "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Description": "Adds Copy to Clipboard action on any non-reference member fields in Inspectors.",
+    "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Fixes the MaterialGizmo being scaled twice when using Edit on the Material Tool.",
+    "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Fixes references in multiple duplicated or transferred-between-worlds items breaking.",
+    "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Fixes tools derived from BrushTool not firing OnDequipped events.",
+    "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Description": "Fixes ColorX Luminance calculations being incorrect for non-linear color profiles.",
+    "CommunityBugFixCollection.HighlightHomeWorldInInventory.Description": "Fixes the selected Home World in the Inventory not being highlighted as a favorite.",
+    "CommunityBugFixCollection.ImportMultipleAudioFiles.Description": "Fixes it not being possible to import multiple audio clips at once.",
+    "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Fixes URLs to text files or Resonite Packages failing to import instead of appearing as a hyperlink.",
+    "CommunityBugFixCollection.IndependentlyScaleDirectCursor.Description": "Fixes direct cursor size becoming very large when snapped to an object much closer than the true cursor.",
+    "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Fixes Color Profile not being preserved on all operations.",
+    "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Fixes Resonite Issue #98: World crashes when a (multi)tool is scaled to zero.",
+    "CommunityBugFixCollection.NodeNameAdjustments.Description": "Fixes most ProtoFlux nodes in Strings > Constants having invisible names.",
+    "CommunityBugFixCollection.NonHDRColorClamping.Description": "Fixes non-HDR variants of Color(X) channel addition not clamping.",
+    "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Fixes animators updating all associated fields every frame while enabled but not playing.",
+    "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
+    "CommunityBugFixCollection.UserInspectorAsNonHost.Description": "Fixes UserInspectors not listing existing users in the session for non-host users."
   }
 }
