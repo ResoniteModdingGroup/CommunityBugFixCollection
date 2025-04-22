@@ -7,9 +7,10 @@
 
     "CommunityBugFixCollection.CopyToClipboard": "In Zwischenablage kopieren",
 
-    "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Macht das Auswählen von eigenen generischen Typparametern unabhängig von Groß- und Kleinschreibung.",
     "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Sorgt dafür, dass Drives beim Kopieren von Komponenten mittels Drag-und-Drop nicht kaputt gehen.",
     "CommunityBugFixCollection.BreakDuplicatedComponentDrives.Description": "Sorgt dafür, dass Drives beim Duplizieren von Komponenten nicht kaputt gehen.",
+    "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Macht das Auswählen von eigenen generischen Typparametern unabhängig von Groß- und Kleinschreibung.",
+    "CommunityBugFixCollection.CenteredNotifications.Description": "Zentriert den Inhalt von Benachrichtigungen.",
     "CommunityBugFixCollection.CheckSelfForDuplicateSlot.Description": "Verhindert einen Crash wenn der OverrideParent bei der Duplicate Slot ProtoFlux Node gleich dem Template ist.",
     "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Sorgt dafür, dass ValueDisplay<color> Nodes eine ValueProxySource Komponente haben.",
     "CommunityBugFixCollection.ColorXNodeNamesSpacing.Description": "Korrigiert die Schreibweise der Namen von ProtoFlux Nodes die ColorX enthalten.",

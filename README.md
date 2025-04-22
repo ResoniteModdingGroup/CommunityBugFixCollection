@@ -49,6 +49,9 @@ just disable them in the settings in the meantime.
 * Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)
 * DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
 
+Fixes with no issue (that could be found).
+* Content of notification being off-center.
+
 
 ## Workarounds
 
