@@ -96,7 +96,7 @@ namespace CommunityBugFixCollection
             {
                 foreach (var grabbedObject in __instance.Grabber.GrabbedObjects)
                 {
-                    if (__instance.Grabber.GrabbableGetComponentInParents<IDuplicateBlock>(grabbedObject.Slot, excludeDisabled: true) == null)
+                    if (__instance.Grabber.GrabbableGetComponentInParents<IDuplicateBlock>(grabbedObject.Slot, excludeDisabled: true) is not null)
                         continue;
 
                     toDuplicate.Add(grabbedObject.Slot.GetObjectRoot(__instance.Grabber.Slot));
