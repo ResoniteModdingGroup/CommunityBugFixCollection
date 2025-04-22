@@ -1,6 +1,5 @@
 ﻿using Elements.Core;
 using FrooxEngine;
-using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.FrooxEngine.Slots;
 using FrooxEngine.Undo;
 using HarmonyLib;
 using MonkeyLoader.Resonite;
@@ -8,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using static FrooxEngine.Worker;
 
 // This code is mainly decompiled Resonite source code,
