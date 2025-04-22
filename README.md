@@ -20,6 +20,7 @@ The issues fixed by this mod will be linked in the following list.
 If any of them have been closed and not removed from the mod,
 just disable them in the settings in the meantime.
 
+* Grab World Locomotion moving the user forward a little every time it's activated (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/86)
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
 	* Pressing Duplicate on the Component in an Inspector
 	* Using the Component Clone Tool to duplicate them onto a slot
