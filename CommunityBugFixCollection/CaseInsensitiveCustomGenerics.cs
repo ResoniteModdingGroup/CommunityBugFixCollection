@@ -29,7 +29,7 @@ namespace CommunityBugFixCollection
             if (Mod.Loader.Get<Mod>().ById("ComponentSelectorAdditions") is not null)
             {
                 Logger.Info(() => "Skipping in favor of the ComponentSelectorAdditions fix.");
-                return true;
+                return false;
             }
 
             GlobalTypeRegistry._nameToSystemType = new(GlobalTypeRegistry._nameToSystemType, StringComparer.OrdinalIgnoreCase);

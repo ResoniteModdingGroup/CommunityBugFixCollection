@@ -2,7 +2,10 @@
 using FrooxEngine;
 using FrooxEngine.UIX;
 using HarmonyLib;
+using MonkeyLoader;
+using MonkeyLoader.Meta;
 using MonkeyLoader.Resonite;
+using NuGet.Versioning;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +20,21 @@ namespace CommunityBugFixCollection
 
         public override bool CanBeDisabled => true;
 
-        private static bool Prefix(SlotComponentReceiver __instance, IEnumerable<IGrabbable> items, Canvas.InteractionData eventData, in float3 globalPoint, out bool __result)
+        protected override bool OnEngineReady()
+        {
+            var integrationMod = Mod.Loader.Get<Mod>().ById("MonkeyLoader.GamePacks.Resonite");
+
+            // Newer version than last one that did not include the fix
+            if (integrationMod is not null && integrationMod.Version > new NuGetVersion(0, 22, 1))
+            {
+                Logger.Info(() => "Skipping in favor of the Resonite Integration fix.");
+                return false;
+            }
+
+            return base.OnEngineReady();
+        }
+
+        private static bool Prefix(SlotComponentReceiver __instance, IEnumerable<IGrabbable> items, Canvas.InteractionData eventData, out bool __result)
         {
             __result = false;
 
