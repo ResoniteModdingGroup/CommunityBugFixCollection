@@ -21,6 +21,7 @@
     "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Sorgt dafür, dass von BrushTool abgeleitete Werkzeuge OnDequipped Events abschicken.",
     "CommunityBugFixCollection.FixMigratedItemMessages.Description": "Sorgt dafür, dass migrierte Objekte aus Nachrichten gespawnt werden können, obwohl sie noch auf die alte Platform verweisen.",
     "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Description": "Korrigiert die Berechnung der Luminanz bei nicht-linearen ColorX Farbprofilen.",
+    "CommunityBugFixCollection.GroupCloudHomeTemplate.Description": "Verwendet das Benutzertemplate des Cloud Homes statt des fehlenden Gruppentemplates.",
     "CommunityBugFixCollection.HighlightHomeWorldInInventory.Description": "Sorgt dafür, dass die ausgewählte Heimatwelt im Inventar korrekt hervorgehoben wird.",
     "CommunityBugFixCollection.ImportMultipleAudioFiles.Description": "Macht es möglich mehrere Audiodateien auf einmal zu importieren.",
     "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Sorgt dafür, dass URLs zu Textdateien oder Resonite Packages nicht importiert werden, statt als Hyperlink aufzutauchen.",

@@ -62,6 +62,7 @@ If any of them have been closed and not removed from the mod,
 just disable them in the settings in the meantime.
 
 * Sliders and Joints snapping in sessions hosted by a headless (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/399)
+* Missing Cloud Home template for Groups (fallback to User Cloud Home) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1144)
 
 
 ## Features
