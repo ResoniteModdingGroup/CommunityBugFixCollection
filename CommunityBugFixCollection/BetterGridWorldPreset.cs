@@ -54,7 +54,9 @@ namespace CommunityBugFixCollection
             attachedModel.material.Smoothness.Value = 0f;
 
             var boxCollider = ground.AttachComponent<BoxCollider>();
-            boxCollider.Size.DriveFrom(attachedModel.mesh.Size);
+            var swizzle = ground.AttachComponent<Float2ToFloat3SwizzleDriver>();
+            swizzle.Source.Target = attachedModel.mesh.Size;
+            swizzle.Target.Target = boxCollider.Size;
             boxCollider.SetCharacterCollider();
 
             return false;
