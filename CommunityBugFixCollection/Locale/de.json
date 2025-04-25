@@ -16,6 +16,7 @@
     "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Sorgt dafür, dass ValueDisplay<color> Nodes eine ValueProxySource Komponente haben.",
     "CommunityBugFixCollection.ColorXNodeNamesSpacing.Description": "Korrigiert die Schreibweise der Namen von ProtoFlux Nodes die ColorX enthalten.",
     "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Description": "Fügt eine Kopieren Aktion zu Feldern in Inspektoren hinzu, die keine Referenzen sind.",
+    "CommunityBugFixCollection.CorrectByteCasting.Description": "Korrigiert die Konvertierung von bytes in andere Werte mittels ProtoFlux Value Casts.",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Verhindert, dass das MaterialGizmo zweimal skaliert wird, wenn man Editieren auf dem Materialwerzeug nutzt.",
     "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Verhindert, dass Referenzen zwischen mehreren duplizierten oder zwischen Welten transferierten Objekten gebrochen werden.",
     "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Sorgt dafür, dass von BrushTool abgeleitete Werkzeuge OnDequipped Events abschicken.",

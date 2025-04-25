@@ -44,6 +44,8 @@
     <PackageReference Include="Resonite.Elements.Quantity" Version="1.2.3" />
     <PackageReference Include="Resonite.FrooxEngine" Version="2025.3.21.23" />
     <PackageReference Include="Resonite.FrooxEngine.Store" Version="1.0.3" />
+    <PackageReference Include="Resonite.ProtoFlux.Core" Version="1.2.0" />
+    <PackageReference Include="Resonite.ProtoFlux.Nodes.Core" Version="1.2.0" />
     <PackageReference Include="Resonite.ProtoFluxBindings" Version="2025.5.18.24" />
     <PackageReference Include="Resonite.SkyFrost.Base" Version="2.1.0" />
     <PackageReference Include="Resonite.SkyFrost.Base.Models" Version="2.1.0" />
