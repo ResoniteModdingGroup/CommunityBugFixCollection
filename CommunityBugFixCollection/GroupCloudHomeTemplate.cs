@@ -22,7 +22,7 @@ namespace CommunityBugFixCollection
         {
             // The template URL for group homes currently does not resolve.
             // We change the owner type to User, so that we can create a group home with the standard cloud home template.
-            if (Enabled && ownerType == OwnerType.Group)
+            if (Enabled && ownerType is OwnerType.Group)
                 ownerType = OwnerType.User;
         }
     }
