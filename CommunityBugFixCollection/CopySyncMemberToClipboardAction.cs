@@ -11,6 +11,10 @@ namespace CommunityBugFixCollection
     internal sealed class CopySyncMemberToClipboardAction
         : ResoniteAsyncEventHandlerMonkey<CopySyncMemberToClipboardAction, InspectorMemberActionsMenuItemsGenerationEvent>
     {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
+        public override bool CanBeDisabled => true;
+
         public override int Priority => HarmonyLib.Priority.Normal;
 
         protected override bool AppliesTo(InspectorMemberActionsMenuItemsGenerationEvent eventData)
