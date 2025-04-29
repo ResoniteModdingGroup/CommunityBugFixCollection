@@ -9,7 +9,6 @@
 
     "CommunityBugFixCollection.BetterGridWorldPreset.Description": "Improves the Grid World Preset by preventing the shaking ground and centering the grid.",
     "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Fixes copying components using drag-and-drop breaking drives.",
-    "CommunityBugFixCollection.BreakDuplicatedComponentDrives.Description": "Fixes duplicating components breaking drives.",
     "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Makes picking custom generic type parameters case-insensitive.",
     "CommunityBugFixCollection.CenteredNotifications.Description": "Centers the content of notifications.",
     "CommunityBugFixCollection.CheckSelfForDuplicateSlot.Description": "Fixes a crash when the OverrideParent of the Duplicate Slot ProtoFlux node is identical to the Template.",
