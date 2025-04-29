@@ -23,8 +23,6 @@ just disable them in the settings in the meantime.
 * Migrated items sent as messages do not spawn because they still point to `neosdb` (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/83)
 * Grab World Locomotion moving the user forward a little every time it's activated (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/86)
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
-	* Pressing Duplicate on the Component in an Inspector
-	* Using the Component Clone Tool to duplicate them onto a slot
 	* Selecting Copy Component when drag and dropping a Component onto an Inspector
 * Worlds crashing when a (multi)tool is scaled to zero (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/98)
 * Most ProtoFlux nodes in Strings > Constants having invisible names (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/177)
@@ -74,3 +72,13 @@ If any of them have been implemented and not removed from the mod,
 just disable them in the settings in the meantime.
 
 * _Copy to Clipboard_ action on any non-reference member fields in Inspectors (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/810)
+
+
+## Closed Issues
+
+The issues that were first closed in this mod but have officially been closed now will be linked in the following list.
+If they appear here, their implementation has been removed from the mod.
+
+* Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
+	* Pressing Duplicate on the Component in an Inspector
+	* Using the Component Clone Tool to duplicate them onto a slot
