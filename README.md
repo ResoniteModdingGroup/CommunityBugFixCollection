@@ -51,6 +51,7 @@ just disable them in the settings in the meantime.
 * Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)
 * Grid World floor shaking on AMD and Intel GPUs (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3829)
 * DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
+* ValueMod<Decimal> node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 
 Fixes with no issue (that could be found).
 * Content of notification being off-center.
