@@ -1,6 +1,6 @@
 {
   "localeCode": "en",
-  "authors": [ "Banane9" ],
+  "authors": [ "Banane9", "__Choco__" ],
   "messages": {
     "CommunityBugFixCollection.Name": "Community Bug-Fix Collection",
     "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open.",
@@ -34,6 +34,7 @@
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Fixes animators updating all associated fields every frame while enabled but not playing.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Stops the Grab World Locomotion from moving the player with each activiation.",
-    "CommunityBugFixCollection.UserInspectorAsNonHost.Description": "Fixes UserInspectors not listing existing users in the session for non-host users."
+    "CommunityBugFixCollection.UserInspectorAsNonHost.Description": "Fixes UserInspectors not listing existing users in the session for non-host users.",
+    "CommunityBugFixCollection.ValueModDecimal.Description": "Adds a zero check to the Decimal ValueMod ProtoFlux node to prevent DIV/0 crashes"
   }
 }
