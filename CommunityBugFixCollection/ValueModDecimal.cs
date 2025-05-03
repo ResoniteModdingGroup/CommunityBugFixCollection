@@ -16,13 +16,6 @@ namespace CommunityBugFixCollection
 
         public override bool CanBeDisabled => true;
 
-        private static bool Prefix(Decimal a, Decimal b)
-        {
-            if (b == 0)
-            {
-                return false;
-            }
-            return true;
-        }
+        private static bool Prefix(Decimal a, Decimal b) => !Enabled || b != 0;
     }
 }
