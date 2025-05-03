@@ -46,12 +46,12 @@ just disable them in the settings in the meantime.
 * References in multiple duplicated or transferred-between-worlds items breaking (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/984)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
+* ValueMod<Decimal> node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
 * Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
 * Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)
 * Grid World floor shaking on AMD and Intel GPUs (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3829)
 * DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
-* ValueMod<Decimal> node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 
 Fixes with no issue (that could be found).
 * Content of notification being off-center.
