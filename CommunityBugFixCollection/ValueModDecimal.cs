@@ -16,7 +16,7 @@ namespace CommunityBugFixCollection
 
         public override bool CanBeDisabled => true;
 
-        private static bool VarDecMod(Decimal a, Decimal b)
+        private static bool Prefix(Decimal a, Decimal b)
         {
             if (b == 0)
             {
