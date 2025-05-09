@@ -20,7 +20,7 @@ namespace CommunityBugFixCollection
     internal static class DuplicateExtensions
     {
         // Literally just a copy paste of Slot.Duplicate but it duplicates several slots at same time
-        public static void MultiDuplicate(this IEnumerable<Slot> toDuplicate, List<Slot> newSlots, Slot? duplicateRoot = null, bool keepGlobalTransform = true, DuplicationSettings? settings = null)
+        public static void MultiDuplicate(this IEnumerable<Slot> toDuplicate, List<Slot> newSlots, Slot? duplicateRoot = null, bool keepGlobalTransform = true, DuplicationSettings? settings = null, bool duplicateAsLocal = false)
         {
             if (toDuplicate.Any(slot => slot.IsRootSlot))
                 throw new Exception("Cannot duplicate root slot");
@@ -45,7 +45,7 @@ namespace CommunityBugFixCollection
             toDuplicate.Do(slot => slot.CollectInternalReferences(slot, internalReferences, breakRefs, hierarchy));
 
             foreach (var slot in toDuplicate)
-                newSlots.Add(slot.InternalDuplicate(duplicateRoot ?? slot.Parent ?? slot.World.RootSlot, internalReferences, breakRefs, settings!));
+                newSlots.Add(slot.InternalDuplicate(duplicateRoot ?? slot.Parent ?? slot.World.RootSlot, internalReferences, breakRefs, settings!, duplicateAsLocal));
 
             if (keepGlobalTransform)
             {
