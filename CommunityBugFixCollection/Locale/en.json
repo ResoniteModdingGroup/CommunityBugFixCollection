@@ -30,6 +30,7 @@
     "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Fixes a crash when a (multi)tool is scaled to zero.",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Fixes most ProtoFlux nodes in Strings > Constants having invisible names.",
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Fixes non-HDR variants of Color(X) channel addition not clamping.",
+    "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Forces colorX From HexCode to use the sRGB rather than Linear profile.",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Fixes animators updating all associated fields every frame while enabled but not playing.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Stops the Grab World Locomotion from moving the player with each activiation.",
