@@ -25,7 +25,7 @@ namespace CommunityBugFixCollection
             var spacePosition = space.GlobalPosition;
             var rootDistance = MathX.Max(1, MathX.MaxComponent(MathX.Abs(spacePosition)));
 
-            var rotationAxis = space.Right;
+            var rotationAxis = float3.Right;
             var angle = MathX.Clamp(0.1f, 5, 0.01f * MathX.Sqrt(rootDistance));
 
             // Add angle to camera to prevent flickering
@@ -33,8 +33,8 @@ namespace CommunityBugFixCollection
             __instance.ViewRotation *= rotation;
 
             //  Adjust position based on angle to frame UI properly still
-            var antiRotation = floatQ.AxisAngle(rotationAxis, -angle - 2f);
-            __instance.ViewPosition = __instance._currentCenter + (space.GlobalRotationToLocal(antiRotation) * __instance._currentPlane * __instance._currentDistance);
+            var antiRotation = floatQ.AxisAngle(rotationAxis, angle + 2);
+            __instance.ViewPosition = __instance._currentCenter + (antiRotation * __instance._currentPlane * __instance._currentDistance);
         }
     }
 }
