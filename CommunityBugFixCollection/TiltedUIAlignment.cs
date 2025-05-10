@@ -1,9 +1,14 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
+using MonkeyLoader;
+using MonkeyLoader.Components;
+using MonkeyLoader.Configuration;
 using MonkeyLoader.Resonite;
+using MonoMod.Utils;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace CommunityBugFixCollection
@@ -15,6 +20,54 @@ namespace CommunityBugFixCollection
         public override IEnumerable<string> Authors => Contributors.Banane9;
 
         public override bool CanBeDisabled => true;
+
+        protected override bool OnEngineReady()
+        {
+            var wasSetFromDefault = false;
+
+            void SetFromDefaultHandler(object sender, ConfigKeyChangedEventArgs<bool> eventArgs)
+                => wasSetFromDefault = eventArgs.Label == ConfigKey.SetFromDefaultEventLabel;
+
+            EnabledToggle!.Changed += SetFromDefaultHandler;
+            EnabledToggle.GetValue();
+            EnabledToggle.Changed -= SetFromDefaultHandler;
+
+            if (wasSetFromDefault)
+            {
+                Logger.Info(() => "Enabled was set from default, applying GPU detection!");
+
+                var unitySystemInfoType = AccessTools.TypeByName("UnityEngine.SystemInfo, UnityEngine.CoreModule");
+                Logger.Info(() => $"Unity SystemInfo type is: {(unitySystemInfoType is null ? "null" : unitySystemInfoType.CompactDescription())}");
+
+                var getGraphicsDeviceName = unitySystemInfoType is null ? null : AccessTools.DeclaredPropertyGetter(unitySystemInfoType, "graphicsDeviceName");
+
+                if (getGraphicsDeviceName is null)
+                {
+                    Logger.Warn(() => "Did not find UnityEngine.SystemInfo to check GPU name - disabling tilt!");
+
+                    EnabledToggle!.SetValue(false, "GPU-Detection.Fail");
+                }
+                else
+                {
+                    Logger.Debug(() => "Using UnityEngine.SystemInfo to check GPU name!");
+
+                    var gpu = (string?)getGraphicsDeviceName?.Invoke(null, null);
+                    var isAmd = gpu?.Contains("AMD", StringComparison.OrdinalIgnoreCase) ?? false;
+                    var isIntel = gpu?.Contains("Intel", StringComparison.OrdinalIgnoreCase) ?? false;
+                    var enableTilt = isAmd || isIntel;
+
+                    Logger.Info(() => $"Detected GPU [{gpu}] - {(enableTilt ? "enabled" : "disabled")} tilt!");
+
+                    EnabledToggle!.SetValue(enableTilt, "GPU-Detection.Success");
+                }
+            }
+            else
+            {
+                Logger.Info(() => "Enabled wasn't set from default, not applying GPU detection!");
+            }
+
+            return base.OnEngineReady();
+        }
 
         private static void Postfix(UI_TargettingController __instance)
         {
