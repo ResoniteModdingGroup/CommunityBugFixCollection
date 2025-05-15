@@ -14,6 +14,7 @@
     "CommunityBugFixCollection.CheckSelfForDuplicateSlot.Description": "Fixes a crash when the OverrideParent of the Duplicate Slot ProtoFlux node is identical to the Template.",
     "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Fixes ValueDisplay<color> not having a ValueProxySource component.",
     "CommunityBugFixCollection.ColorXNodeNamesSpacing.Description": "Fixes ProtoFlux node names containing ColorX being spaced wrong.",
+    "CommunityBugFixCollection.ConsistentContextMenuAngularSize.Description": "Makes the context menu stay a fixed on-screen size in desktop mode, regardless of FOV.",
     "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Description": "Adds Copy to Clipboard action on any non-reference member fields in Inspectors.",
     "CommunityBugFixCollection.CorrectByteCasting.Description": "Fixes ProtoFlux value casts from byte to some other value converting incorrectly.",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Fixes the MaterialGizmo being scaled twice when using Edit on the Material Tool.",
