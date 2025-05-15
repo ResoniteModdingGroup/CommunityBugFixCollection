@@ -18,7 +18,7 @@ namespace CommunityBugFixCollection
 
         private static void Postfix(ContextMenu __instance)
         {
-            if (!Enabled || !__instance.IsUnderLocalUser)
+            if (!Enabled || !__instance.IsVisible || !__instance.IsUnderLocalUser)
                 return;
 
             // Vanilla value for the magic constant
