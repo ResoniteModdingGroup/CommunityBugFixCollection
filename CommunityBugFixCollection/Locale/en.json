@@ -28,6 +28,7 @@
     "CommunityBugFixCollection.ImportMultipleAudioFiles.Description": "Fixes it not being possible to import multiple audio clips at once.",
     "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Fixes URLs to text files or Resonite Packages failing to import instead of appearing as a hyperlink.",
     "CommunityBugFixCollection.IndependentlyScaleDirectCursor.Description": "Fixes direct cursor size becoming very large when snapped to an object much closer than the true cursor.",
+    "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Description": "Only lets the World Load Progress Indicator disappear after 20s or more if the process failed.",
     "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Fixes Color Profile not being preserved on all operations.",
     "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Fixes a crash when a (multi)tool is scaled to zero.",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Fixes most ProtoFlux nodes in Strings > Constants having invisible names.",
