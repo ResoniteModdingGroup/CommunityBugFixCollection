@@ -19,6 +19,7 @@
     "CommunityBugFixCollection.CorrectByteCasting.Description": "Fixes ProtoFlux value casts from byte to some other value converting incorrectly.",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Fixes the MaterialGizmo being scaled twice when using Edit on the Material Tool.",
     "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Fixes references between multiple duplicated or transferred-between-worlds items breaking.",
+    "CommunityBugFixCollection.FadeContextMenuLabelOutlines.Description": "Makes the outlines of the labels of the context menu fade out like the rest of it.",
     "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Fixes tools derived from BrushTool not firing OnDequipped events.",
     "CommunityBugFixCollection.FixMigratedItemMessages.Description": "Fixes migrated items sent as messages not spawning because they still point to the old platform.",
     "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Description": "Fixes ColorX Luminance calculations being incorrect for non-linear color profiles.",

@@ -19,6 +19,7 @@
     "CommunityBugFixCollection.CorrectByteCasting.Description": "Korrigiert die Konvertierung von bytes in andere Werte mittels ProtoFlux Value Casts.",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Verhindert, dass das MaterialGizmo zweimal skaliert wird, wenn man Editieren auf dem Materialwerzeug nutzt.",
     "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Verhindert, dass Referenzen zwischen mehreren duplizierten oder zwischen Welten transferierten Objekten gebrochen werden.",
+    "CommunityBugFixCollection.FadeContextMenuLabelOutlines.Description": "Sorgt dafür, dass die Umrandungen der Beschriftungen im Kontextmenü genauso verblassen wie der Rest davon.",
     "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Sorgt dafür, dass von BrushTool abgeleitete Werkzeuge OnDequipped Events abschicken.",
     "CommunityBugFixCollection.FixMigratedItemMessages.Description": "Sorgt dafür, dass migrierte Objekte aus Nachrichten gespawnt werden können, obwohl sie noch auf die alte Platform verweisen.",
     "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Description": "Korrigiert die Berechnung der Luminanz bei nicht-linearen ColorX Farbprofilen.",
