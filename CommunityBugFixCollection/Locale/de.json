@@ -30,6 +30,7 @@
     "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Sorgt dafür, dass URLs zu Textdateien oder Resonite Packages nicht importiert werden, statt als Hyperlink aufzutauchen.",
     "CommunityBugFixCollection.IndependentlyScaleDirectCursor.Description": "Verhindert, dass der direkte Cursor sehr groß wird, wenn er an einem deutlich nährem Objekt hängt als der echte Cursor.",
     "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Description": "Lässt den Welt-Ladefortschritts-Indikator frühestens nach 20s verschwinden, falls der Vorgang fehlgeschlagen ist.",
+    "CommunityBugFixCollection.NaNtEqual.Description": "Sorgt dafür, dass NaN float / double Werte sich bei den == und != ProtoFlux Nodes sowie bei der ValueEqualityDriver Komponente niemals gleichen.",
     "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Verhindert, dass Farbprofile nicht bei allen Berechnungen erhalten bleiben.",
     "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Verhinder einen Crash wenn (Multi-)Werkzeuge auf null skaliert werden.",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Korrigiert, dass die Namen der meisten ProtoFlux Nodes in Strings > Constants unsichtbar sind.",
