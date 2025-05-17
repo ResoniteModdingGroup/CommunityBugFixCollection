@@ -24,11 +24,14 @@ namespace CommunityBugFixCollection
             if (!Enabled)
                 return true;
 
-            if (__instance.World != Userspace.UserspaceWorld || __instance.URL.Value is null)
+            if (__instance.World != Userspace.UserspaceWorld)
                 return false;
 
-            Logger.Debug(() => $"Opening Hyperlink: {__instance.URL.Value}");
-            __instance.RunInBackground(() => Process.Start(__instance.URL.Value.ToString()));
+            if (__instance.URL.Value is not null)
+            {
+                Logger.Debug(() => $"Opening Hyperlink: {__instance.URL.Value}");
+                __instance.RunInBackground(() => Process.Start(__instance.URL.Value.ToString()));
+            }
 
             __instance.Slot.Destroy();
 
