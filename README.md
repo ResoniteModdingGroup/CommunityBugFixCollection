@@ -41,6 +41,7 @@ just disable them in the settings in the meantime.
 * Tools derived from `BrushTool` not firing *OnDequipped* events (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/723)
 * It not being possible to import multiple audio clips at once (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/737)
 * URLs to text files or Resonite Packages failing to import instead of appearing as a hyperlink (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/785)
+* The NoDestroyUndo component not preventing undoing the destruction of something (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/979)
 * References in multiple duplicated or transferred-between-worlds items breaking (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/984)
 * Context Menu changing size and becoming unusable with extreme FOVs (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/991)
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
