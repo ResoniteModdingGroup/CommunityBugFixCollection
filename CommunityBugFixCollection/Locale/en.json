@@ -33,6 +33,7 @@
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Fixes non-HDR variants of Color(X) channel addition not clamping.",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Forces colorX From HexCode to use the sRGB rather than Linear profile.",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Fixes animators updating all associated fields every frame while enabled but not playing.",
+    "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Makes the NoDestroyUndo component actually prevent undoing destroying something.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Stops the Grab World Locomotion from moving the player with each activiation.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Tilts the UI-Focus camera to work around UIX rendering issues.",

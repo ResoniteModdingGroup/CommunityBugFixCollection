@@ -33,6 +33,7 @@
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Korrigiert, dass die nicht-HDR Varianten der Color(X) Kanal-Additionen die Werte nicht limitieren.",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Zwingt colorX From HexCode das sRGB statt dem Linearen Farbprofil zu nutzen.",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Verhindert, dass Animatoren jeden Frame in alle assoziierten Felder schreiben, obwohl sie nicht am animieren sind.",
+    "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Sorgt dafür, dass die NoDestroyUndo Komponente tatsächlich verhindert, dass das Zerstören eines Objekts rückgängig gemacht werden kann.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Umgeht, dass Slider und Joints in Headless-Sessions verrutschen.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Kippt die UI-fokussierte Kamera, um UIX-Renderprobleme zum umgehen.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Verhindert, dass die Welt-Greifen Fortbewegung den Spieler bei jeder Aktivierung bewegt.",
