@@ -42,6 +42,7 @@
     "CommunityBugFixCollection.SmoothDraggables.Description": "Umgeht, dass Slider und Joints in Headless-Sessions verrutschen.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Kippt die UI-fokussierte Kamera, um UIX-Renderprobleme zum umgehen.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Verhindert, dass die Welt-Greifen Fortbewegung den Spieler bei jeder Aktivierung bewegt.",
+    "CommunityBugFixCollection.ValidQuaternionInputs.Description": "Lässt das ProtoFlux-Tool valide float und double Quaternions spawnen.",
     "CommunityBugFixCollection.UserInspectorAsNonHost.Description": "Sorgt dafür, dass Benutzer-Inspektoren bereits präsente Benutzer auch in Sessions anzeigen, in denen man nicht der Host ist."
   }
 }
