@@ -71,6 +71,9 @@ just disable them in the settings in the meantime.
 
 * Sliders and Joints snapping in sessions hosted by a headless (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/399)
 * Missing Cloud Home template for Groups (fallback to User Cloud Home) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1144)
+* ProtoFlux inputs for float and double quaternions being spawned with invalid values
+  * https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1158 
+  * https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2979
 * UIX Rendering issues in UI-Focus mode (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1292)
 
 

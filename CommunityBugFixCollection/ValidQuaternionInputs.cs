@@ -1,0 +1,41 @@
+﻿using Elements.Core;
+using FrooxEngine.ProtoFlux;
+using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes;
+using HarmonyLib;
+using MonkeyLoader;
+using MonkeyLoader.Resonite;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CommunityBugFixCollection
+{
+    [HarmonyPatchCategory(nameof(ValidQuaternionInputs))]
+    [HarmonyPatch(typeof(ProtoFluxTool), nameof(ProtoFluxTool.SpawnNode), [typeof(Type), typeof(Action<ProtoFluxNode>)])]
+    internal sealed class ValidQuaternionInputs : ResoniteMonkey<ValidQuaternionInputs>
+    {
+        public override IEnumerable<string> Authors => Contributors.Banane9;
+
+        public override bool CanBeDisabled => true;
+
+        private static void Postfix(ProtoFluxNode __result)
+        {
+            if (!Enabled)
+                return;
+
+            Logger.Info(() => $"__result is: {__result.GetType().CompactDescription()}");
+
+            __result.RunInUpdates(0, () =>
+            {
+                if (__result is ValueInput<floatQ> floatQInput)
+                {
+                    floatQInput.Value.Value = floatQ.Identity;
+                    return;
+                }
+
+                if (__result is ValueInput<doubleQ> doubleQInput)
+                    doubleQInput.Value.Value = doubleQ.Identity;
+            });
+        }
+    }
+}
