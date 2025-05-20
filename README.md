@@ -49,6 +49,9 @@ just disable them in the settings in the meantime.
 * Context Menu label outline not fading out like everything else (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1027)
 * NaN floats / doubles compare as equal in ProtoFlux and ValueEqualityDriver (but only when not approximate) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1046)
 * Ears and View Overrid(d)en ProtoFlux node names are spelled wrong (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1157)
+* Storage units can't be localized (and they use GB instead of GiB and so on)
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1157
+	* https://github.com/Yellow-Dog-Man/Locale/issues/186
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
@@ -72,8 +75,8 @@ just disable them in the settings in the meantime.
 * Sliders and Joints snapping in sessions hosted by a headless (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/399)
 * Missing Cloud Home template for Groups (fallback to User Cloud Home) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1144)
 * ProtoFlux inputs for float and double quaternions being spawned with invalid values
-  * https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1158 
-  * https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2979
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1158 
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2979
 * UIX Rendering issues in UI-Focus mode (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1292)
 
 

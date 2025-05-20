@@ -1,0 +1,12 @@
+{
+  "localeCode": "fr",
+  "authors": [ "Banane9" ],
+  "messages": {
+    "CommunityBugFixCollection.StorageUnits.B": "o",
+    "CommunityBugFixCollection.StorageUnits.kB": "Kio",
+    "CommunityBugFixCollection.StorageUnits.MB": "Mio",
+    "CommunityBugFixCollection.StorageUnits.GB": "Gio",
+    "CommunityBugFixCollection.StorageUnits.TB": "Tio",
+    "CommunityBugFixCollection.StorageUnits.PB": "Pio"
+  }
+}

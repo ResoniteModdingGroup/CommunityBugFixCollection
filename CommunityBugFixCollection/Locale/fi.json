@@ -1,0 +1,12 @@
+{
+  "localeCode": "fi",
+  "authors": [ "Banane9" ],
+  "messages": {
+    "CommunityBugFixCollection.StorageUnits.B": "t",
+    "CommunityBugFixCollection.StorageUnits.kB": "Kit",
+    "CommunityBugFixCollection.StorageUnits.MB": "Mit",
+    "CommunityBugFixCollection.StorageUnits.GB": "Git",
+    "CommunityBugFixCollection.StorageUnits.TB": "Tit",
+    "CommunityBugFixCollection.StorageUnits.PB": "Pit"
+  }
+}
