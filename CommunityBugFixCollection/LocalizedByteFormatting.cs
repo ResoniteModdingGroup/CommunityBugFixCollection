@@ -32,21 +32,14 @@ namespace CommunityBugFixCollection
                 return true;
 
             var format = $"F{decimalPlaces}";
-            var absoluteBytes = MathX.Abs(bytes);
             var culture = Settings.GetActiveSetting<LocaleSettings>()?.ActiveCulture ?? CultureInfo.CurrentCulture;
 
-            foreach (var suffix in UnitFormatting.suffixes)
-            {
-                if (absoluteBytes < 1024.0 || suffix == UnitFormatting.suffixes[^1])
-                {
-                    __result = $"{bytes.ToString(format, culture)} {Mod.GetMessageInCurrent($"StorageUnits.{suffix}")}";
-                    return false;
-                }
-
-                bytes /= 1024;
-                absoluteBytes /= 1024;
-            }
-
+            // Basically just `2^(10*n)`, but also limited to max unit index.
+            uint index = MathX.Min(MathX.FloorToUInt(MathX.Log(MathX.Abs(bytes), 2) / 10), (uint)(UnitFormatting.suffixes.Length -1));
+            string suffix = UnitFormatting.suffixes[index];
+            // AKA scaled bytes in IEC format 
+            var numToFormat = bytes / MathX.Pow(1024, index);
+            __result = $"{numToFormat.ToString(format, culture)} {Mod.GetMessageInCurrent($"StorageUnits.{suffix}")}";
             return false;
         }
 
