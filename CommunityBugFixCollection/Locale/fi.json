@@ -1,12 +1,12 @@
 {
   "localeCode": "fi",
-  "authors": [ "Banane9" ],
+  "authors": [ "LJ" ],
   "messages": {
     "CommunityBugFixCollection.StorageUnits.B": "t",
-    "CommunityBugFixCollection.StorageUnits.kB": "Kit",
-    "CommunityBugFixCollection.StorageUnits.MB": "Mit",
-    "CommunityBugFixCollection.StorageUnits.GB": "Git",
-    "CommunityBugFixCollection.StorageUnits.TB": "Tit",
-    "CommunityBugFixCollection.StorageUnits.PB": "Pit"
+    "CommunityBugFixCollection.StorageUnits.kB": "Kt",
+    "CommunityBugFixCollection.StorageUnits.MB": "Mt",
+    "CommunityBugFixCollection.StorageUnits.GB": "Gt",
+    "CommunityBugFixCollection.StorageUnits.TB": "Tt",
+    "CommunityBugFixCollection.StorageUnits.PB": "Pt"
   }
 }
