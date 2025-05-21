@@ -18,5 +18,7 @@ namespace CommunityBugFixCollection
         public static string[] Nytra { get; } = ["Nytra"];
 
         public static string[] __Choco__ { get; } = ["__Choco__"];
+
+        public static string[] LJ { get; } = ["LJ"];
     }
 }

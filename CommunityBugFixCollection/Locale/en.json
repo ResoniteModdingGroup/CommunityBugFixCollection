@@ -1,6 +1,11 @@
 {
   "localeCode": "en",
-  "authors": [ "Banane9", "__Choco__", "Nytra" ],
+  "authors": [
+    "Banane9",
+    "__Choco__",
+    "Nytra",
+    "LJ"
+  ],
   "messages": {
     "CommunityBugFixCollection.Name": "Community Bug-Fix Collection",
     "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open.",
@@ -48,10 +53,16 @@
     "CommunityBugFixCollection.ValueModDecimal.Description": "Adds a zero check to the Decimal ValueMod ProtoFlux node to prevent DIV/0 crashes",
 
     "CommunityBugFixCollection.StorageUnits.B": "B",
-    "CommunityBugFixCollection.StorageUnits.kB": "KiB",
-    "CommunityBugFixCollection.StorageUnits.MB": "MiB",
-    "CommunityBugFixCollection.StorageUnits.GB": "GiB",
-    "CommunityBugFixCollection.StorageUnits.TB": "TiB",
-    "CommunityBugFixCollection.StorageUnits.PB": "PiB"
+    "CommunityBugFixCollection.StorageUnits.kiB": "KiB",
+    "CommunityBugFixCollection.StorageUnits.MiB": "MiB",
+    "CommunityBugFixCollection.StorageUnits.GiB": "GiB",
+    "CommunityBugFixCollection.StorageUnits.TiB": "TiB",
+    "CommunityBugFixCollection.StorageUnits.PiB": "PiB",
+    "CommunityBugFixCollection.StorageUnits.Bi": "B",
+    "CommunityBugFixCollection.StorageUnits.kB": "kB",
+    "CommunityBugFixCollection.StorageUnits.MB": "MB",
+    "CommunityBugFixCollection.StorageUnits.GB": "GB",
+    "CommunityBugFixCollection.StorageUnits.TB": "TB",
+    "CommunityBugFixCollection.StorageUnits.PB": "PB"
   }
 }

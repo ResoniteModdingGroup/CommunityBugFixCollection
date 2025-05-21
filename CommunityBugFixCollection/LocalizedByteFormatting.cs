@@ -16,13 +16,14 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatch]
     [HarmonyPatchCategory(nameof(LocalizedByteFormatting))]
-    internal sealed class LocalizedByteFormatting : ResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, LocaleLoadingEvent>
+    internal sealed class LocalizedByteFormatting : ConfiguredResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, BugFixCollectionTweaksConfig, LocaleLoadingEvent>
     {
-        public override IEnumerable<string> Authors => Contributors.Banane9;
+        public override IEnumerable<string> Authors => [..Contributors.Banane9, ..Contributors.LJ];
 
         public override bool CanBeDisabled => true;
 
         public override int Priority => HarmonyLib.Priority.Last;
+
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(UnitFormatting), nameof(UnitFormatting.FormatBytes))]
@@ -34,12 +35,18 @@ namespace CommunityBugFixCollection
             var format = $"F{decimalPlaces}";
             var culture = Settings.GetActiveSetting<LocaleSettings>()?.ActiveCulture ?? CultureInfo.CurrentCulture;
 
-            // Basically just `2^(10*n)`, but also limited to max unit index.
-            uint index = MathX.Min(MathX.FloorToUInt(MathX.Log(MathX.Abs(bytes), 2) / 10), (uint)(UnitFormatting.suffixes.Length -1));
-            string suffix = UnitFormatting.suffixes[index];
-            // AKA scaled bytes in IEC format 
-            var numToFormat = bytes / MathX.Pow(1024, index);
+            var baseNum = ConfigSection.IecFormatBytes ? 2 : 10;
+            var divNum = ConfigSection.IecFormatBytes ? 10 : 3;
+            // Either `2^(10*n)` or `10^(3*n)`, but also limited to max unit index.
+            var index = MathX.Min(MathX.FloorToUInt(MathX.Log(MathX.Abs(bytes), baseNum) / divNum), (uint)(UnitFormatting.suffixes.Length -1));
+            var suffix =  UnitFormatting.suffixes[index];
+            if (ConfigSection.IecFormatBytes) 
+                suffix = suffix.Insert(suffix.Length - 1, "i");
+    
+            // AKA scaled bytes in IEC/decimal format 
+            var numToFormat = bytes / MathX.Pow(baseNum, divNum*index);
             __result = $"{numToFormat.ToString(format, culture)} {Mod.GetMessageInCurrent($"StorageUnits.{suffix}")}";
+
             return false;
         }
 
