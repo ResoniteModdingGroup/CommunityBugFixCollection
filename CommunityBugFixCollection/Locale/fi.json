@@ -3,10 +3,10 @@
   "authors": [ "LJ" ],
   "messages": {
     "CommunityBugFixCollection.StorageUnits.B": "t",
-    "CommunityBugFixCollection.StorageUnits.kB": "Kt",
-    "CommunityBugFixCollection.StorageUnits.MB": "Mt",
-    "CommunityBugFixCollection.StorageUnits.GB": "Gt",
-    "CommunityBugFixCollection.StorageUnits.TB": "Tt",
-    "CommunityBugFixCollection.StorageUnits.PB": "Pt"
+    "CommunityBugFixCollection.StorageUnits.kB": "KiB",
+    "CommunityBugFixCollection.StorageUnits.MB": "MiB",
+    "CommunityBugFixCollection.StorageUnits.GB": "GiB",
+    "CommunityBugFixCollection.StorageUnits.TB": "TiB",
+    "CommunityBugFixCollection.StorageUnits.PB": "PiB"
   }
 }
