@@ -3,10 +3,10 @@
   "authors": [ "Banane9" ],
   "messages": {
     "CommunityBugFixCollection.StorageUnits.B": "o",
-    "CommunityBugFixCollection.StorageUnits.kB": "Kio",
-    "CommunityBugFixCollection.StorageUnits.MB": "Mio",
-    "CommunityBugFixCollection.StorageUnits.GB": "Gio",
-    "CommunityBugFixCollection.StorageUnits.TB": "Tio",
-    "CommunityBugFixCollection.StorageUnits.PB": "Pio"
+    "CommunityBugFixCollection.StorageUnits.kB": "Ko",
+    "CommunityBugFixCollection.StorageUnits.MB": "Mo",
+    "CommunityBugFixCollection.StorageUnits.GB": "Go",
+    "CommunityBugFixCollection.StorageUnits.TB": "To",
+    "CommunityBugFixCollection.StorageUnits.PB": "Po"
   }
 }

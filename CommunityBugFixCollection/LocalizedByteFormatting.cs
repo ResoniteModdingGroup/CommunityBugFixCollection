@@ -1,6 +1,7 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
+using MonkeyLoader.Configuration;
 using MonkeyLoader.Resonite;
 using MonkeyLoader.Resonite.Locale;
 using System;
@@ -10,47 +11,41 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-#pragma warning disable MHA008 // Assignment to non-ref patch method argument
-
 namespace CommunityBugFixCollection
 {
     [HarmonyPatch]
     [HarmonyPatchCategory(nameof(LocalizedByteFormatting))]
-    internal sealed class LocalizedByteFormatting : ResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, LocaleLoadingEvent>
+    internal sealed class LocalizedByteFormatting : ConfiguredResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, BugFixOptions, LocaleLoadingEvent>
     {
-        public override IEnumerable<string> Authors => Contributors.Banane9;
+        private static readonly ConditionalWeakTable<StorageUsageStatus, CultureInfo> _lastCultureByStorageStatus = new();
+
+        public override IEnumerable<string> Authors { get; } = [.. Contributors.Banane9, .. Contributors.LJ];
 
         public override bool CanBeDisabled => true;
 
         public override int Priority => HarmonyLib.Priority.Last;
 
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(UnitFormatting), nameof(UnitFormatting.FormatBytes))]
-        private static bool UnitFormatBytesPrefix(double bytes, int decimalPlaces, ref string __result)
+        protected override Task Handle(LocaleLoadingEvent eventData)
         {
-            if (!Enabled)
-                return true;
+            Engine.Current.GlobalCoroutineManager.RunInSeconds(2, _lastCultureByStorageStatus.Clear);
 
-            var format = $"F{decimalPlaces}";
-            var absoluteBytes = MathX.Abs(bytes);
-            var culture = Settings.GetActiveSetting<LocaleSettings>()?.ActiveCulture ?? CultureInfo.CurrentCulture;
-
-            foreach (var suffix in UnitFormatting.suffixes)
-            {
-                if (absoluteBytes < 1024.0 || suffix == UnitFormatting.suffixes[^1])
-                {
-                    __result = $"{bytes.ToString(format, culture)} {Mod.GetMessageInCurrent($"StorageUnits.{suffix}")}";
-                    return false;
-                }
-
-                bytes /= 1024;
-                absoluteBytes /= 1024;
-            }
-
-            return false;
+            return Task.CompletedTask;
         }
 
-        private static readonly ConditionalWeakTable<StorageUsageStatus, CultureInfo> _lastCultureByStorageStatus = new();
+        protected override bool OnEngineReady()
+        {
+            ConfigSection.ItemChanged += ConfigSectionItemChanged;
+
+            return base.OnEngineReady();
+        }
+
+        protected override bool OnShutdown(bool applicationExiting)
+        {
+            if (!applicationExiting)
+                ConfigSection.ItemChanged -= ConfigSectionItemChanged;
+
+            return base.OnShutdown(applicationExiting);
+        }
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(StorageUsageStatus), nameof(StorageUsageStatus.OnCommonUpdate))]
@@ -128,13 +123,35 @@ namespace CommunityBugFixCollection
             return false;
         }
 
-        protected override Task Handle(LocaleLoadingEvent eventData)
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(UnitFormatting), nameof(UnitFormatting.FormatBytes))]
+        private static bool UnitFormatBytesPrefix(double bytes, int decimalPlaces, ref string __result)
         {
-            Engine.Current.GlobalCoroutineManager.RunInSeconds(2, _lastCultureByStorageStatus.Clear);
+            if (!Enabled)
+                return true;
 
-            return Task.CompletedTask;
+            var format = $"F{decimalPlaces}";
+            var culture = Settings.GetActiveSetting<LocaleSettings>()?.ActiveCulture ?? CultureInfo.CurrentCulture;
+
+            // Select base and divisor for suffix determination
+            var baseNum = ConfigSection.UseIecByteFormat ? 2 : 10;
+            var divNum = ConfigSection.UseIecByteFormat ? 10 : 3;
+
+            // Either `2^(10*n)` or `10^(3*n)`, but also limited to max unit index.
+            var index = MathX.Min(MathX.FloorToUInt(MathX.Log(MathX.Abs(bytes), baseNum) / divNum), (uint)(UnitFormatting.suffixes.Length - 1));
+            var suffix = UnitFormatting.suffixes[index];
+
+            if (ConfigSection.UseIecByteFormat)
+                suffix = suffix.Insert(suffix.Length - 1, "i");
+
+            // AKA scaled bytes in IEC/decimal format
+            var numToFormat = bytes / MathX.Pow(baseNum, divNum * index);
+            __result = $"{numToFormat.ToString(format, culture)} {Mod.GetMessageInCurrent($"StorageUnits.{suffix}")}";
+
+            return false;
         }
+
+        private void ConfigSectionItemChanged(object sender, IConfigKeyChangedEventArgs configKeyChangedEventArgs)
+            => Engine.Current.GlobalCoroutineManager.RunInSeconds(0, _lastCultureByStorageStatus.Clear);
     }
 }
-
-#pragma warning restore MHA008 // Assignment to non-ref patch method argument
