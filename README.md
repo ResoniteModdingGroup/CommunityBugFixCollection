@@ -53,7 +53,6 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1157
 	* https://github.com/Yellow-Dog-Man/Locale/issues/186
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
-* UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
@@ -97,3 +96,4 @@ If they appear here, their implementation has been removed from the mod.
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
 	* Pressing Duplicate on the Component in an Inspector
 	* Using the Component Clone Tool to duplicate them onto a slot
+* UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
