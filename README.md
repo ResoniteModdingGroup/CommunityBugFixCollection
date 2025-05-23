@@ -52,6 +52,7 @@ just disable them in the settings in the meantime.
 * Storage units can't be localized (and they use GB instead of GiB and so on)
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1157
 	* https://github.com/Yellow-Dog-Man/Locale/issues/186
+* FlipAtUser component does not respect view position (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1335)
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
 * ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
