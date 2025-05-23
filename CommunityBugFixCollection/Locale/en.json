@@ -29,6 +29,7 @@
     "CommunityBugFixCollection.FadeContextMenuLabelOutlines.Description": "Makes the outlines of the labels of the context menu fade out like the rest of it.",
     "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Fixes tools derived from BrushTool not firing OnDequipped events.",
     "CommunityBugFixCollection.FixMigratedItemMessages.Description": "Fixes migrated items sent as messages not spawning because they still point to the old platform.",
+    "CommunityBugFixCollection.FlipAtUserView.Description": "Fixes FlipAtUser component by using the view position as reference instead of the head slot position.",
     "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Description": "Fixes ColorX Luminance calculations being incorrect for non-linear color profiles.",
     "CommunityBugFixCollection.GroupCloudHomeTemplate.Description": "Uses the User Cloud Home template instead of the missing Group template.",
     "CommunityBugFixCollection.HighlightHomeWorldInInventory.Description": "Fixes the selected Home World in the Inventory not being highlighted as a favorite.",
