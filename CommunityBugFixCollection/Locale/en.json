@@ -48,9 +48,8 @@
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Stops the Grab World Locomotion from moving the player with each activiation.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Tilts the UI-Focus camera to work around UIX rendering issues.",
-    "CommunityBugFixCollection.UserInspectorAsNonHost.Description": "Fixes UserInspectors not listing existing users in the session for non-host users.",
     "CommunityBugFixCollection.ValidQuaternionInputs.Description": "Makes the ProtoFlux Tool spawn valid float and double quaternion inputs.",
-    "CommunityBugFixCollection.ValueModDecimal.Description": "Adds a zero check to the Decimal ValueMod ProtoFlux node to prevent DIV/0 crashes",
+    "CommunityBugFixCollection.ValueModDecimal.Description": "Adds a zero check to the Decimal ValueMod ProtoFlux node to prevent DIV/0 crashes.",
 
     "CommunityBugFixCollection.Config.Options.Name": "Options",
     "CommunityBugFixCollection.Config.Options.Description": "Contains the settings for the few fixes that offer them.",
