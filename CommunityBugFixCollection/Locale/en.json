@@ -57,7 +57,7 @@
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "Use IEC Byte Format",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Whether to format bytes using IEC (factor 1024) as opposed to decimal format (factor 1000) when <i>LocalizedByteFormatting</i> is enabled.",
 
-    "CommunityBugFixCollection.StorageUnits.Bi": "B",
+    "CommunityBugFixCollection.StorageUnits.iB": "B",
     "CommunityBugFixCollection.StorageUnits.kiB": "KiB",
     "CommunityBugFixCollection.StorageUnits.MiB": "MiB",
     "CommunityBugFixCollection.StorageUnits.GiB": "GiB",
