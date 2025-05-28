@@ -20,5 +20,7 @@ namespace CommunityBugFixCollection
         public static string[] LJ { get; } = ["LJ"];
 
         public static string[] Nytra { get; } = ["Nytra"];
+
+        public static string[] yosh { get; } = ["yosh"];
     }
 }
