@@ -81,6 +81,7 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1158 
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2979
 * UIX Rendering issues in UI-Focus mode (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1292)
+* Driven values in inspectors usually appear delayed by a frame (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4431)
 
 
 ## Features

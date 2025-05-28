@@ -22,5 +22,7 @@ namespace CommunityBugFixCollection
         public static string[] Nytra { get; } = ["Nytra"];
 
         public static string[] Onan { get; } = ["989onan"];
+
+        public static string[] yosh { get; } = ["yosh"];
     }
 }
