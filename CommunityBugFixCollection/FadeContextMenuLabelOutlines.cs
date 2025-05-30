@@ -3,7 +3,6 @@ using FrooxEngine;
 using FrooxEngine.FrooxEngine.ProtoFlux.CoreNodes;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Color;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(FadeContextMenuLabelOutlines))]
     [HarmonyPatch(typeof(ContextMenu), nameof(ContextMenu.OnAttach))]
-    internal sealed class FadeContextMenuLabelOutlines : ResoniteMonkey<FadeContextMenuLabelOutlines>
+    internal sealed class FadeContextMenuLabelOutlines : ResoniteBugFixMonkey<FadeContextMenuLabelOutlines>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Postfix(ContextMenu __instance)
         {

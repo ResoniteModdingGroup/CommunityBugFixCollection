@@ -1,7 +1,5 @@
-﻿using Elements.Core;
-using FrooxEngine;
+﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +8,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(PauseAnimatorUpdates))]
     [HarmonyPatch(typeof(Animator), nameof(Animator.OnCommonUpdate))]
-    internal sealed class PauseAnimatorUpdates : ResoniteMonkey<PauseAnimatorUpdates>
+    internal sealed class PauseAnimatorUpdates : ResoniteBugFixMonkey<PauseAnimatorUpdates>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static bool Prefix(Animator __instance)
         {

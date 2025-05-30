@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using SkyFrost.Base;
 using System;
 using System.Collections.Generic;
@@ -13,13 +12,11 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(FixMigratedItemMessages))]
     [HarmonyPatch(typeof(ContactsDialog), nameof(ContactsDialog.SpawnMessageItem))]
-    internal sealed class FixMigratedItemMessages : ResoniteMonkey<FixMigratedItemMessages>
+    internal sealed class FixMigratedItemMessages : ResoniteBugFixMonkey<FixMigratedItemMessages>
     {
         private const string OldPrefix = "neosdb";
 
         public override IEnumerable<string> Authors => Contributors.Art0007i;
-
-        public override bool CanBeDisabled => true;
 
         public static void Prefix(ref Record record)
         {

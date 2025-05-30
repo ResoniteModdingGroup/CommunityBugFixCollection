@@ -1,7 +1,6 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
 using MonkeyLoader.Patching;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +10,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(FireBrushToolDequipEvents))]
     [HarmonyPatch(nameof(BrushTool.OnDequipped))]
-    internal sealed class FireBrushToolDequipEvents : ResoniteMonkey<FireBrushToolDequipEvents>
+    internal sealed class FireBrushToolDequipEvents : ResoniteBugFixMonkey<FireBrushToolDequipEvents>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(BrushTool))]

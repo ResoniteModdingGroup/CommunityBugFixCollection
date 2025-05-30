@@ -2,7 +2,6 @@
 using FrooxEngine;
 using FrooxEngine.Undo;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,10 +74,9 @@ namespace CommunityBugFixCollection
 
     [HarmonyPatch]
     [HarmonyPatchCategory(nameof(DuplicateAndMoveMultipleGrabbedItems))]
-    internal sealed class DuplicateAndMoveMultipleGrabbedItems : ResoniteMonkey<DuplicateAndMoveMultipleGrabbedItems>
+    internal sealed class DuplicateAndMoveMultipleGrabbedItems : ResoniteBugFixMonkey<DuplicateAndMoveMultipleGrabbedItems>
     {
         public override IEnumerable<string> Authors => Contributors.Art0007i;
-        public override bool CanBeDisabled => true;
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(InteractionHandler), nameof(InteractionHandler.DuplicateGrabbed), [])]

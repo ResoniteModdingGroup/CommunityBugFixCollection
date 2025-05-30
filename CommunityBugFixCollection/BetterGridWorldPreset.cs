@@ -1,7 +1,6 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(BetterGridWorldPreset))]
     [HarmonyPatch(typeof(WorldPresets), nameof(WorldPresets.Grid))]
-    internal sealed class BetterGridWorldPreset : ResoniteMonkey<BetterGridWorldPreset>
+    internal sealed class BetterGridWorldPreset : ResoniteBugFixMonkey<BetterGridWorldPreset>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static bool Prefix(World w)
         {

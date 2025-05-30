@@ -1,7 +1,6 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,11 +10,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatch]
     [HarmonyPatchCategory(nameof(AnyProtocolHyperlinks))]
-    internal sealed class AnyProtocolHyperlinks : ResoniteMonkey<AnyProtocolHyperlinks>
+    internal sealed class AnyProtocolHyperlinks : ResoniteBugFixMonkey<AnyProtocolHyperlinks>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(HyperlinkOpenDialog), nameof(HyperlinkOpenDialog.Open))]
@@ -54,7 +51,7 @@ namespace CommunityBugFixCollection
 
             __instance._lastOpened = url;
 
-            Userspace.UserspaceWorld.RunSynchronously(delegate
+            Userspace.UserspaceWorld.RunSynchronously(() =>
             {
                 Slot slot = Userspace.UserspaceWorld.AddSlot("Hyperlink");
                 slot.PositionInFrontOfUser(float3.Backward);

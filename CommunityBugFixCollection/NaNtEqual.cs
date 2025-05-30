@@ -1,8 +1,6 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
-using ProtoFlux.Core;
 using ProtoFlux.Runtimes.Execution;
 using ProtoFlux.Runtimes.Execution.Nodes;
 using System;
@@ -13,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatch]
     [HarmonyPatchCategory(nameof(NaNtEqual))]
-    internal sealed class NaNtEqual : ResoniteMonkey<NaNtEqual>
+    internal sealed class NaNtEqual : ResoniteBugFixMonkey<NaNtEqual>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(ValueEqualityDriver<double>), nameof(ValueEqualityDriver<double>.OnChanges))]

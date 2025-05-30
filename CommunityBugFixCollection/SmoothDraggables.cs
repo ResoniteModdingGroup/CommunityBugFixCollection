@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(SmoothDraggables))]
     [HarmonyPatch(typeof(Draggable), nameof(Draggable.OnAwake))]
-    internal sealed class SmoothDraggables : ResoniteMonkey<SmoothDraggables>
+    internal sealed class SmoothDraggables : ResoniteBugFixMonkey<SmoothDraggables>
     {
         public override IEnumerable<string> Authors => Contributors.LeCloutPanda;
-
-        public override bool CanBeDisabled => true;
 
         public static void Postfix(Draggable __instance)
         {

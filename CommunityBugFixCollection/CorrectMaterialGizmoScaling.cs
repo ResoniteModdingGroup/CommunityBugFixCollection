@@ -1,7 +1,6 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(CorrectMaterialGizmoScaling))]
     [HarmonyPatch(typeof(MaterialGizmo), nameof(MaterialGizmo.PositionInFrontOfUser))]
-    internal sealed class CorrectMaterialGizmoScaling : ResoniteMonkey<CorrectMaterialGizmoScaling>
+    internal sealed class CorrectMaterialGizmoScaling : ResoniteBugFixMonkey<CorrectMaterialGizmoScaling>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         // Apply default scale for inspector UI before it gets user-scaled again by PositionInFrontOfUser
         private static void Prefix(MaterialGizmo __instance)

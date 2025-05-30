@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using SkyFrost.Base;
 using System;
 using System.Collections.Generic;
@@ -12,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(GroupCloudHomeTemplate))]
     [HarmonyPatch(typeof(Userspace), nameof(Userspace.GetHomeTemplateUri))]
-    internal sealed class GroupCloudHomeTemplate : ResoniteMonkey<GroupCloudHomeTemplate>
+    internal sealed class GroupCloudHomeTemplate : ResoniteBugFixMonkey<GroupCloudHomeTemplate>
     {
         public override IEnumerable<string> Authors => Contributors.Goat;
-
-        public override bool CanBeDisabled => true;
 
         private static void Prefix(ref OwnerType ownerType)
         {

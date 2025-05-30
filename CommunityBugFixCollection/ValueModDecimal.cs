@@ -1,7 +1,5 @@
 ﻿using Elements.Core;
-using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,13 +7,11 @@ using System.Text;
 namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ValueModDecimal))]
-    [HarmonyPatch(typeof(Elements.Core.Coder<Decimal>), nameof(Elements.Core.Coder<Decimal>.Mod))]
-    internal sealed class ValueModDecimal : ResoniteMonkey<ValueModDecimal>
+    [HarmonyPatch(typeof(Coder<decimal>), nameof(Coder<Decimal>.Mod))]
+    internal sealed class ValueModDecimal : ResoniteBugFixMonkey<ValueModDecimal>
     {
         public override IEnumerable<string> Authors => Contributors.__Choco__;
 
-        public override bool CanBeDisabled => true;
-
-        private static bool Prefix(Decimal a, Decimal b) => !Enabled || b != 0;
+        private static bool Prefix(decimal b) => !Enabled || b != 0;
     }
 }

@@ -1,11 +1,8 @@
 ﻿using Elements.Assets;
 using Elements.Core;
-using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.IO;
 using System.Text;
 
@@ -13,11 +10,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ImportWebFilesAsUrls))]
     [HarmonyPatch(typeof(AssetHelper), nameof(AssetHelper.IdentifyClass))]
-    internal sealed class ImportWebFilesAsUrls : ResoniteMonkey<ImportWebFilesAsUrls>
+    internal sealed class ImportWebFilesAsUrls : ResoniteBugFixMonkey<ImportWebFilesAsUrls>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static bool Prefix(ref AssetClass __result, string path)
         {

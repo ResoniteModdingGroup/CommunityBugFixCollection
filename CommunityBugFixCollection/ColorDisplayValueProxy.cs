@@ -3,7 +3,6 @@ using FrooxEngine;
 using FrooxEngine.ProtoFlux;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ColorDisplayValueProxy))]
     [HarmonyPatch(typeof(ValueDisplay<color>), nameof(ValueDisplay<color>.BuildContentUI))]
-    internal sealed class ColorDisplayValueProxy : ResoniteMonkey<ColorDisplayValueProxy>
+    internal sealed class ColorDisplayValueProxy : ResoniteBugFixMonkey<ColorDisplayValueProxy>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Postfix(ValueDisplay<color> __instance, ProtoFluxNodeVisual visual)
         {

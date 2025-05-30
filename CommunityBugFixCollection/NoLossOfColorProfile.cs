@@ -1,6 +1,5 @@
 ﻿using Elements.Core;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +10,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatch(typeof(colorX))]
     [HarmonyPatchCategory(nameof(NoLossOfColorProfile))]
-    internal sealed class NoLossOfColorProfile : ResoniteMonkey<NoLossOfColorProfile>
+    internal sealed class NoLossOfColorProfile : ResoniteBugFixMonkey<NoLossOfColorProfile>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         [HarmonyPrefix]
         [HarmonyPatch(nameof(colorX.MulA))]

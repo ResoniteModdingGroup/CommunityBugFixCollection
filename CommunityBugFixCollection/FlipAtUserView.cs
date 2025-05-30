@@ -1,7 +1,6 @@
 using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
@@ -9,12 +8,10 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(FlipAtUserView))]
     [HarmonyPatch(typeof(FlipAtUser), nameof(FlipAtUser.OnCommonUpdate))]
-    internal sealed class FlipAtUserView : ResoniteMonkey<FlipAtUserView>
+    internal sealed class FlipAtUserView : ResoniteBugFixMonkey<FlipAtUserView>
     {
         public override IEnumerable<string> Authors => Contributors.E1int;
 
-        public override bool CanBeDisabled => true;
-        
         private static float3 GetUserPosition(UserRoot userRoot)
             => Enabled ? userRoot.ViewPosition : userRoot.HeadPosition;
 

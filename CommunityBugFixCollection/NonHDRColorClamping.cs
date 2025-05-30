@@ -1,6 +1,5 @@
 ﻿using Elements.Core;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +8,9 @@ using System.Text;
 
 namespace CommunityBugFixCollection
 {
-    internal sealed class NonHDRColorClamping : ResoniteMonkey<NonHDRColorClamping>
+    internal sealed class NonHDRColorClamping : ResoniteBugFixMonkey<NonHDRColorClamping>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         [HarmonyPatch]
         [HarmonyPatchCategory(nameof(NonHDRColorClamping))]

@@ -4,7 +4,6 @@ using FrooxEngine.UIX;
 using HarmonyLib;
 using MonkeyLoader;
 using MonkeyLoader.Meta;
-using MonkeyLoader.Resonite;
 using NuGet.Versioning;
 using System;
 using System.Collections.Generic;
@@ -14,11 +13,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(BreakDragAndDropCopiedComponentDrives))]
     [HarmonyPatch(typeof(SlotComponentReceiver), nameof(SlotComponentReceiver.TryReceive))]
-    internal sealed class BreakDragAndDropCopiedComponentDrives : ResoniteMonkey<BreakDragAndDropCopiedComponentDrives>
+    internal sealed class BreakDragAndDropCopiedComponentDrives : ResoniteBugFixMonkey<BreakDragAndDropCopiedComponentDrives>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         protected override bool OnEngineReady()
         {
