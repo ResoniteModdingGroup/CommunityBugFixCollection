@@ -1,11 +1,12 @@
 ﻿using MonkeyLoader.Configuration;
+using MonkeyLoader.Patching;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CommunityBugFixCollection
 {
-    internal sealed class BugFixOptions : ConfigSection
+    internal sealed class BugFixOptions : SingletonConfigSection<BugFixOptions>
     {
         private static readonly DefiningConfigKey<bool> _useIecByteFormat = new("UseIecByteFormat", "Whether to format bytes using IEC as opposed to decimal format when <i>LocalizedByteFormatting</i> is enabled.", () => true);
 
