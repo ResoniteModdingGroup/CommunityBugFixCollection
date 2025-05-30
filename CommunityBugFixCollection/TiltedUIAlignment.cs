@@ -2,10 +2,7 @@
 using FrooxEngine;
 using HarmonyLib;
 using MonkeyLoader;
-using MonkeyLoader.Components;
 using MonkeyLoader.Configuration;
-using MonkeyLoader.Resonite;
-using MonoMod.Utils;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -15,11 +12,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(TiltedUIAlignment))]
     [HarmonyPatch(typeof(UI_TargettingController), nameof(UI_TargettingController.OnBeforeHeadUpdate))]
-    internal sealed class TiltedUIAlignment : ResoniteMonkey<TiltedUIAlignment>
+    internal sealed class TiltedUIAlignment : ResoniteBugFixMonkey<TiltedUIAlignment>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         protected override bool OnEngineReady()
         {

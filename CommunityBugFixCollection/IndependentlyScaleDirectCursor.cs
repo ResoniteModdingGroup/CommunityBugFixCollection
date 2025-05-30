@@ -1,7 +1,6 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(IndependentlyScaleDirectCursor))]
     [HarmonyPatch(typeof(InteractionLaser), nameof(InteractionLaser.UpdateLaserVisual))]
-    internal sealed class IndependentlyScaleDirectCursor : ResoniteMonkey<IndependentlyScaleDirectCursor>
+    internal sealed class IndependentlyScaleDirectCursor : ResoniteBugFixMonkey<IndependentlyScaleDirectCursor>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Postfix(InteractionLaser __instance)
         {

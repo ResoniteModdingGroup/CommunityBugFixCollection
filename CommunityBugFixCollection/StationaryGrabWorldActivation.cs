@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -13,11 +12,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(StationaryGrabWorldActivation))]
     [HarmonyPatch(typeof(GrabWorldLocomotion), nameof(GrabWorldLocomotion.TryActivate))]
-    internal sealed class StationaryGrabWorldActivation : ResoniteMonkey<StationaryGrabWorldActivation>
+    internal sealed class StationaryGrabWorldActivation : ResoniteBugFixMonkey<StationaryGrabWorldActivation>
     {
         public override IEnumerable<string> Authors => Contributors.Art0007i;
-
-        public override bool CanBeDisabled => true;
 
         private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codes)
         {

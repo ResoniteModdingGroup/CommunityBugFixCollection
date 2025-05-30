@@ -9,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(NonLinearColorXFromHexCode))]
     [HarmonyPatch(typeof(colorX), nameof(colorX.FromHexCode), [typeof(string), typeof(colorX), typeof(ColorProfile)], [ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal])]
-    internal sealed class NonLinearColorXFromHexCode : ResoniteMonkey<NonLinearColorXFromHexCode>
+    internal sealed class NonLinearColorXFromHexCode : ResoniteBugFixMonkey<NonLinearColorXFromHexCode>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Prefix(ref ColorProfile profile)
         {

@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -10,12 +9,10 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(LongerWorldLoadingFailIndication))]
     [HarmonyPatch(typeof(WorldLoadProgress), nameof(WorldLoadProgress.OnCommonUpdate))]
-    internal sealed class LongerWorldLoadingFailIndication : ResoniteMonkey<LongerWorldLoadingFailIndication>
+    internal sealed class LongerWorldLoadingFailIndication : ResoniteBugFixMonkey<LongerWorldLoadingFailIndication>
     {
         private static float _vanillaDelay = 5f;
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static float GetDestroyDelay()
             => Enabled ? Math.Max(20f, _vanillaDelay) : _vanillaDelay;

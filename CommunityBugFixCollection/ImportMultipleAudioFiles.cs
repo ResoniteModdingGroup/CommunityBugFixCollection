@@ -4,7 +4,6 @@ using FrooxEngine;
 using FrooxEngine.Store;
 using FrooxEngine.Undo;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using SkyFrost.Base;
 using System;
 using System.Collections.Generic;
@@ -17,11 +16,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ImportMultipleAudioFiles))]
     [HarmonyPatch(typeof(UniversalImporter), nameof(UniversalImporter.ImportTask))]
-    internal sealed class ImportMultipleAudioFiles : ResoniteMonkey<ImportMultipleAudioFiles>
+    internal sealed class ImportMultipleAudioFiles : ResoniteBugFixMonkey<ImportMultipleAudioFiles>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static async Task ImportAudioAsync(IEnumerable<string> files, World world, float3 position, floatQ rotation, float3 scale)
         {

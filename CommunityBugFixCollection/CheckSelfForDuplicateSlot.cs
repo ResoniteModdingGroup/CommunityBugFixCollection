@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatch(typeof(Slot), nameof(Slot.Duplicate))]
     [HarmonyPatchCategory(nameof(CheckSelfForDuplicateSlot))]
-    internal sealed class CheckSelfForDuplicateSlot : ResoniteMonkey<CheckSelfForDuplicateSlot>
+    internal sealed class CheckSelfForDuplicateSlot : ResoniteBugFixMonkey<CheckSelfForDuplicateSlot>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {

@@ -3,7 +3,6 @@ using FrooxEngine.ProtoFlux;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes;
 using HarmonyLib;
 using MonkeyLoader;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ValidQuaternionInputs))]
     [HarmonyPatch(typeof(ProtoFluxTool), nameof(ProtoFluxTool.SpawnNode), [typeof(Type), typeof(Action<ProtoFluxNode>)])]
-    internal sealed class ValidQuaternionInputs : ResoniteMonkey<ValidQuaternionInputs>
+    internal sealed class ValidQuaternionInputs : ResoniteBugFixMonkey<ValidQuaternionInputs>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Postfix(ProtoFluxNode __result)
         {

@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,11 +11,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(CenteredNotifications))]
     [HarmonyPatch(typeof(NotificationPanel), nameof(NotificationPanel.OnCommonUpdate))]
-    internal class CenteredNotifications : ResoniteMonkey<CenteredNotifications>
+    internal class CenteredNotifications : ResoniteBugFixMonkey<CenteredNotifications>
     {
         public override IEnumerable<string> Authors => Contributors.Art0007i;
-
-        public override bool CanBeDisabled => true;
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codes)
         {

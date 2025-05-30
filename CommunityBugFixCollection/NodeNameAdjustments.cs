@@ -2,7 +2,6 @@
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Math;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Strings.Characters;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,11 +10,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(NodeNameAdjustments))]
     [HarmonyPatch(nameof(ProtoFluxNode.NodeName), MethodType.Getter)]
-    internal sealed class NodeNameAdjustments : ResoniteMonkey<NodeNameAdjustments>
+    internal sealed class NodeNameAdjustments : ResoniteBugFixMonkey<NodeNameAdjustments>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Backspace))]

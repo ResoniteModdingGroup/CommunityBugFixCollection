@@ -1,7 +1,6 @@
 ﻿using Elements.Core;
 using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ConsistentContextMenuAngularSize))]
     [HarmonyPatch(typeof(ContextMenu), nameof(ContextMenu.OnCommonUpdate))]
-    internal sealed class ConsistentContextMenuAngularSize : ResoniteMonkey<ConsistentContextMenuAngularSize>
+    internal sealed class ConsistentContextMenuAngularSize : ResoniteBugFixMonkey<ConsistentContextMenuAngularSize>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Postfix(ContextMenu __instance)
         {

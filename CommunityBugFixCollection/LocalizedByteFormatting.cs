@@ -2,9 +2,10 @@
 using FrooxEngine;
 using HarmonyLib;
 using MonkeyLoader.Configuration;
+using MonkeyLoader.Meta;
+using MonkeyLoader.Patching;
 using MonkeyLoader.Resonite;
 using MonkeyLoader.Resonite.Locale;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -15,7 +16,7 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatch]
     [HarmonyPatchCategory(nameof(LocalizedByteFormatting))]
-    internal sealed class LocalizedByteFormatting : ConfiguredResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, BugFixOptions, LocaleLoadingEvent>
+    internal sealed class LocalizedByteFormatting : ResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, LocaleLoadingEvent>, IConfiguredMonkey<BugFixOptions>
     {
         private static readonly ConditionalWeakTable<StorageUsageStatus, CultureInfo> _lastCultureByStorageStatus = new();
 
@@ -23,7 +24,13 @@ namespace CommunityBugFixCollection
 
         public override bool CanBeDisabled => true;
 
+        BugFixOptions IConfiguredMonkey<BugFixOptions>.ConfigSection => ConfigSection;
+        ConfigSection IConfiguredMonkey.ConfigSection => ConfigSection;
+
         public override int Priority => HarmonyLib.Priority.Last;
+
+        /// <inheritdoc cref="ResoniteBugFixMonkey{TMonkey}.ConfigSection"/>
+        private static BugFixOptions ConfigSection => BugFixOptions.Instance;
 
         protected override Task Handle(LocaleLoadingEvent eventData)
         {
@@ -37,6 +44,15 @@ namespace CommunityBugFixCollection
             ConfigSection.ItemChanged += ConfigSectionItemChanged;
 
             return base.OnEngineReady();
+        }
+
+        /// <inheritdoc cref="ConfiguredMonkey{TMonkey, TConfigSection}.OnLoaded"/>
+        protected override bool OnLoaded()
+        {
+            if (BugFixOptions.Instance is null)
+                Config.LoadSection<BugFixOptions>();
+
+            return base.OnLoaded();
         }
 
         protected override bool OnShutdown(bool applicationExiting)

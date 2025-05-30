@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using MonkeyLoader.Resonite;
 using ProtoFlux.Core;
 using ProtoFlux.Runtimes.Execution;
 using ProtoFlux.Runtimes.Execution.Nodes.Casts;
@@ -11,11 +10,9 @@ using System.Text;
 
 namespace CommunityBugFixCollection
 {
-    internal sealed class CorrectByteCasting : ResoniteMonkey<CorrectByteCasting>
+    internal sealed class CorrectByteCasting : ResoniteBugFixMonkey<CorrectByteCasting>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         protected override bool OnEngineReady()
         {

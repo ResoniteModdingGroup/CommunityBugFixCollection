@@ -1,6 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using SkyFrost.Base;
 using System;
 using System.Collections.Generic;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(HighlightHomeWorldInInventory))]
     [HarmonyPatch(typeof(InventoryBrowser), nameof(InventoryBrowser.ProcessItem))]
-    internal sealed class HighlightHomeWorldInInventory : ResoniteMonkey<HighlightHomeWorldInInventory>
+    internal sealed class HighlightHomeWorldInInventory : ResoniteBugFixMonkey<HighlightHomeWorldInInventory>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         private static void Postfix(InventoryBrowser __instance, InventoryItemUI item)
         {
