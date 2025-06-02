@@ -1,7 +1,6 @@
 ﻿using FrooxEngine.ProtoFlux;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Strings.Characters;
 using HarmonyLib;
-using MonkeyLoader.Resonite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,11 +9,9 @@ namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(ConstantNodeNameAdjustments))]
     [HarmonyPatch(nameof(ProtoFluxNode.NodeName), MethodType.Getter)]
-    internal sealed class ConstantNodeNameAdjustments : ResoniteMonkey<ConstantNodeNameAdjustments>
+    internal sealed class ConstantNodeNameAdjustments : ResoniteBugFixMonkey<ConstantNodeNameAdjustments>
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
-
-        public override bool CanBeDisabled => true;
 
         // Legacy Fix, so off by default
         protected override bool OnComputeDefaultEnabledState() => false;
