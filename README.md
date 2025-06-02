@@ -25,7 +25,6 @@ just disable them in the settings in the meantime.
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
 	* Selecting Copy Component when drag and dropping a Component onto an Inspector
 * Worlds crashing when a (multi)tool is scaled to zero (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/98)
-* Most ProtoFlux nodes in Strings > Constants having invisible names (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/177)
 * The `Remap -1 1 to 0 1` ProtoFlux node having a hard to understand name (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/245)
 * ColorX Luminance calculations being incorrect for non-linear color profiles (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/281)
 * Non-HDR variants of Color(X) channel addition not clamping (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/316)
@@ -92,9 +91,14 @@ just disable them in the settings in the meantime.
 ## Closed Issues
 
 The issues that were first closed in this mod but have officially been closed now will be linked in the following list.
-If they appear here, their implementation has been removed from the mod.
+If they appear here, their implementation has been removed from the mod,
+unless it is marked with `(Legacy)`.
+In that case, the original fix is left in but disabled by default.
+This is done for changes where the vanilla implementation is noticably different from the fix,
+but the exact implementation is inconsequential.
 
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
 	* Pressing Duplicate on the Component in an Inspector
 	* Using the Component Clone Tool to duplicate them onto a slot
+* (Legacy) Most ProtoFlux nodes in Strings > Constants having invisible names (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/177)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
