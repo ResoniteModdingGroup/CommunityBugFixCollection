@@ -20,8 +20,6 @@ namespace CommunityBugFixCollection
             if (!Enabled)
                 return;
 
-            Logger.Info(() => $"__result is: {__result.GetType().CompactDescription()}");
-
             __result.RunInUpdates(0, () =>
             {
                 if (__result is ValueInput<floatQ> floatQInput)

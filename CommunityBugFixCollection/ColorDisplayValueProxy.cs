@@ -9,6 +9,7 @@ using System.Text;
 
 namespace CommunityBugFixCollection
 {
+    // Todo: do this for strings and objects too?
     [HarmonyPatchCategory(nameof(ColorDisplayValueProxy))]
     [HarmonyPatch(typeof(ValueDisplay<color>), nameof(ValueDisplay<color>.BuildContentUI))]
     internal sealed class ColorDisplayValueProxy : ResoniteBugFixMonkey<ColorDisplayValueProxy>
