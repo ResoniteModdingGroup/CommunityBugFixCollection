@@ -31,7 +31,6 @@
     "CommunityBugFixCollection.HighlightHomeWorldInInventory.Description": "Sorgt dafür, dass die ausgewählte Heimatwelt im Inventar korrekt hervorgehoben wird.",
     "CommunityBugFixCollection.ImportMultipleAudioFiles.Description": "Macht es möglich mehrere Audiodateien auf einmal zu importieren.",
     "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Sorgt dafür, dass URLs zu Textdateien oder Resonite Packages nicht importiert werden, statt als Hyperlink aufzutauchen.",
-    "CommunityBugFixCollection.IndependentlyScaleDirectCursor.Description": "Verhindert, dass der direkte Cursor sehr groß wird, wenn er an einem deutlich nährem Objekt hängt als der echte Cursor.",
     "CommunityBugFixCollection.LocalizedByteFormatting.Description": "Lokalisiert die Speichereinheiten (MiB, GiB, etc.), inbsesondere bei der StorageUsageStatus Komponente. Es gibt eine Einstellung dafür, die Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) zu formatieren.",
     "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Description": "Lässt den Welt-Ladefortschritts-Indikator frühestens nach 20s verschwinden, falls der Vorgang fehlgeschlagen ist.",
     "CommunityBugFixCollection.NaNtEqual.Description": "Sorgt dafür, dass NaN float / double Werte sich bei den == und != ProtoFlux Nodes sowie bei der ValueEqualityDriver Komponente niemals gleichen.",
