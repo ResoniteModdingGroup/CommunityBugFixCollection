@@ -15,7 +15,10 @@ namespace CommunityBugFixCollection
 
         private static void Postfix(InteractionLaser __instance)
         {
-            if (!Enabled || !__instance._directCursorActive.Target.Value)
+            if (!Enabled || 
+                __instance._directCursorActive.Target is null ||
+                !__instance._directCursorActive.Target.Value || 
+                __instance.Slot.ActiveUser != __instance.LocalUser)
                 return;
 
             // This is the same calculation as is done for the actual point, but for the direct one
