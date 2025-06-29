@@ -17,21 +17,6 @@ namespace CommunityBugFixCollection
     {
         public override IEnumerable<string> Authors => Contributors.Banane9;
 
-        protected override bool OnEngineReady()
-        {
-            var integrationMod = Mod.Loader.Get<Mod>().ById("MonkeyLoader.GamePacks.Resonite");
-
-            // Newer version than last one that did not include the fix
-            // accidentally not included in 0.23.0 ...
-            if (integrationMod is not null && integrationMod.Version > new NuGetVersion(0, 22, 1))
-            {
-                Logger.Info(() => "Skipping in favor of the Resonite Integration fix.");
-                return false;
-            }
-
-            return base.OnEngineReady();
-        }
-
         private static bool Prefix(SlotComponentReceiver __instance, IEnumerable<IGrabbable> items, Canvas.InteractionData eventData, out bool __result)
         {
             __result = false;
