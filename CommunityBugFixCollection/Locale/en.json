@@ -49,6 +49,7 @@
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Makes the NoDestroyUndo component actually prevent undoing destroying something.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Stops the Grab World Locomotion from moving the player with each activiation.",
+    "CommunityBugFixCollection.SteamVRFocusResolutionScale.Description": "Prevents the SteamVR Unity plugin from permanently lowering the render resolution when a focus event is missed.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Tilts the UI-Focus camera to work around UIX rendering issues.",
     "CommunityBugFixCollection.ValidQuaternionInputs.Description": "Makes the ProtoFlux Tool spawn valid float and double quaternion inputs.",
     "CommunityBugFixCollection.ValueModDecimal.Description": "Adds a zero check to the Decimal ValueMod ProtoFlux node to prevent DIV/0 crashes.",
