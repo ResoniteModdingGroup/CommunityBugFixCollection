@@ -54,6 +54,7 @@ just disable them in the settings in the meantime.
 * FlipAtUser component does not respect view position (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1335)
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
 * ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
+* Resolution scale may get stuck at 0.5 when opening and closing the SteamVR dashboard while the game is hitching (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2337)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
 * Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
