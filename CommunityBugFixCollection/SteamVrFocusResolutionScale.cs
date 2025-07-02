@@ -18,7 +18,7 @@ namespace CommunityBugFixCollection
             // Work around some broken logic in SteamVR focus handling
             // https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2337#issuecomment-3025681468
             // https://github.com/ValveSoftware/steamvr_unity_plugin/blob/056c82369d78f253af8cefcae9b289efd69bd960/Assets/SteamVR/Scripts/SteamVR_Render.cs#L237-L262
-            if (_lastInputFocus == hasFocus && !_lastInputFocus)
+            if (Enabled && !hasFocus && !_lastInputFocus)
             {
                 Logger.Trace(() => "Dropping redundant OnInputFocus call");
                 return false;
