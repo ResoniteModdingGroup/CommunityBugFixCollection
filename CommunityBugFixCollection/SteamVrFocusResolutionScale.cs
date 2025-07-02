@@ -10,6 +10,7 @@ namespace CommunityBugFixCollection
     {
         public override IEnumerable<string> Authors => Contributors.Goat;
         
+        // SteamVR_Render is treated as a singleton in SteamVR and initialized once from SteamVRDriver through SteamVR.Initialize() 
         private static bool _lastInputFocus = false;
         
         public static bool Prefix(bool hasFocus)
