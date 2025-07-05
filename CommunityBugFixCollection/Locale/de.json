@@ -43,6 +43,7 @@
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Sorgt dafür, dass die NoDestroyUndo Komponente tatsächlich verhindert, dass das Zerstören eines Objekts rückgängig gemacht werden kann.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Umgeht, dass Slider und Joints in Headless-Sessions verrutschen.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Kippt die UI-fokussierte Kamera, um UIX-Renderprobleme zum umgehen.",
+    "CommunityBugFixCollection.SteamVRFocusResolutionScale.Description": "Verhindert, dass das SteamVR Unity Plugin die Renderauflösung dauerhaft verringert, wenn ein Fokusevent verpasst wird.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Verhindert, dass die Welt-Greifen Fortbewegung den Spieler bei jeder Aktivierung bewegt.",
     "CommunityBugFixCollection.ValidQuaternionInputs.Description": "Lässt das ProtoFlux-Tool valide float und double Quaternions spawnen.",
     "CommunityBugFixCollection.ValueModDecimal.Description": "Fügt eine Nullprüfung bei der Decimal ValueMod ProtoFlux Node hinzu, um einen Crash bei der Teilung durch Null zu verhindern.",

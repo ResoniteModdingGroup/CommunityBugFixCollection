@@ -11,7 +11,9 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(Animator), nameof(Animator.OnCommonUpdate))]
     internal sealed class PauseAnimatorUpdates : ResoniteBugFixMonkey<PauseAnimatorUpdates>
     {
-        public override IEnumerable<string> Authors => Contributors.Banane9;
+        private static readonly ConditionalWeakTable<Animator, Box<float>> _lastPositionByAnimator = new();
+
+        public override IEnumerable<string> Authors { get; } = [.. Contributors.Banane9, .. Contributors.Onan];
 
         private class Float
         {
@@ -41,11 +43,17 @@ namespace CommunityBugFixCollection
             if (!__instance._fieldMappersValid)
                 __instance.GenerateFieldMappers();
 
-
-            if (_hasChangedPlayhead.GetOrCreateValue(__instance).Value != __instance._playback.Position)
+            if (!_lastPositionByAnimator.TryGetValue(__instance, out var lastPosition))
             {
-                var position = __instance.Position;
-                _hasChangedPlayhead.GetOrCreateValue(__instance).Value = __instance.Position;
+                // Make sure that initial state is always applied,
+                // since playback position can't be < 0
+                lastPosition = -1;
+                _lastPositionByAnimator.Add(__instance, lastPosition);
+            }
+
+            if (lastPosition != __instance.Position)
+            {
+                var position = lastPosition.Value = __instance.Position;
 
                 foreach (var fieldMapper in __instance._fieldMappers)
                     fieldMapper.Set(position);
