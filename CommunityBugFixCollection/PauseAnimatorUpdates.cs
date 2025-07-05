@@ -15,24 +15,6 @@ namespace CommunityBugFixCollection
 
         public override IEnumerable<string> Authors { get; } = [.. Contributors.Banane9, .. Contributors.Onan];
 
-        private class Float
-        {
-            public float Value;
-
-            public Float(float value)
-            {
-                Value = value;
-            }
-
-            public Float()
-            {
-                Value = 0f;
-            }
-        }
-
-
-        private static readonly ConditionalWeakTable<Animator, Float> _hasChangedPlayhead = new();
-
         private static bool Prefix(Animator __instance)
         {
             if (!Enabled)
@@ -62,6 +44,4 @@ namespace CommunityBugFixCollection
             return false;
         }
     }
-
-    
 }
