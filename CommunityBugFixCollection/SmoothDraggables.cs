@@ -1,5 +1,6 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
+using Renderite.Shared;
 using System;
 using System.Collections.Generic;
 using System.Text;

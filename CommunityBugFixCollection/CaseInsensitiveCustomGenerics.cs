@@ -26,7 +26,7 @@ namespace CommunityBugFixCollection
             if (!Enabled)
                 return true;
 
-            if (Mod.Loader.Get<Mod>().ById("ComponentSelectorAdditions") is not null)
+            if (Mod.Loader.TryGet<Mod>().ById("ComponentSelectorAdditions", out _))
             {
                 Logger.Info(() => "Skipping in favor of the ComponentSelectorAdditions fix.");
                 return false;
