@@ -19,7 +19,6 @@
     "CommunityBugFixCollection.ConstantNodeNameAdjustments.Name": "(Alt) Constant Nodenamen Anpassungen",
     "CommunityBugFixCollection.ConstantNodeNameAdjustments.Description": "(Alt) Ändert die Namen der ProtoFlux Nodes in Strings > Constants darauf, wie sie im ursprünglichen Fix waren.",
     "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Description": "Fügt eine Kopieren Aktion zu Feldern in Inspektoren hinzu, die keine Referenzen sind.",
-    "CommunityBugFixCollection.CorrectByteCasting.Description": "Korrigiert die Konvertierung von bytes in andere Werte mittels ProtoFlux Value Casts.",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Verhindert, dass das MaterialGizmo zweimal skaliert wird, wenn man Editieren auf dem Materialwerzeug nutzt.",
     "CommunityBugFixCollection.CorrectOverriddenSpelling.Description": "Korrigiert die Schreibweise von Overridden auf ProtoFlux Nodes.",
     "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Verhindert, dass Referenzen zwischen mehreren duplizierten oder zwischen Welten transferierten Objekten gebrochen werden.",
