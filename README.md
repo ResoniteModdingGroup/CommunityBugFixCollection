@@ -53,7 +53,6 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Locale/issues/186
 * FlipAtUser component does not respect view position (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1335)
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
-* ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
 * Resolution scale may get stuck at 0.5 when opening and closing the SteamVR dashboard while the game is hitching (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2337)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
@@ -102,4 +101,6 @@ but the exact implementation is inconsequential.
 	* Using the Component Clone Tool to duplicate them onto a slot
 * (Legacy) Most ProtoFlux nodes in Strings > Constants having invisible names (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/177)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
+* ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
+	* Fixed by the Splittening™
 * Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)

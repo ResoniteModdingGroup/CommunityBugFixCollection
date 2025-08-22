@@ -21,7 +21,6 @@
     "CommunityBugFixCollection.ConstantNodeNameAdjustments.Name": "(削除予定) ConstantNodeNameAdjustments",
     "CommunityBugFixCollection.ConstantNodeNameAdjustments.Description": "Issue #0177 (削除予定)<br>Strings > Constantsの​ProtoFlux​ノード名を​元の​修正版の​名前に​変更します。",
     "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Description": "Issue #0810<br>Inspectorの​参照以外の​メンバー​フィールドに​クリップボードに​コピー​アクションを​追加します。",
-    "CommunityBugFixCollection.CorrectByteCasting.Description": "Issue #2257<br>ProtoFluxで​byte型から​他の​値への​型変換が​正しく​動作しない​問題を​修正します。",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Issue #0528<br>Material Toolで​Editを​使用する​際に​MaterialGizmoが​二重に​縮尺変更される​問題を​修正します。",
     "CommunityBugFixCollection.CorrectOverriddenSpelling.Description": "Issue #1157<br>ProtoFluxノードの「Overridden」のスペルを修正します。",
     "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Issue #0984<br>複数の​アイテムを​複製または​ワールド間で​転送する​際に、​アイテム間の​参照が​壊れる​問題を​修正します。",
