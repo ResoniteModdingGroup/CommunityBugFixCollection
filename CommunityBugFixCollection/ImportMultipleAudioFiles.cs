@@ -54,7 +54,7 @@ namespace CommunityBugFixCollection
 
                 await default(ToBackground);
 
-                Uri uri;
+                Uri? uri;
                 if (File.Exists(file))
                     uri = await world.Engine.LocalDB.ImportLocalAssetAsync(file, LocalDB.ImportLocation.Original);
                 else if (!Uri.TryCreate(file, UriKind.Absolute, out uri))

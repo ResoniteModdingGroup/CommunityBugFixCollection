@@ -11,7 +11,7 @@ namespace CommunityBugFixCollection
     [HarmonyPatch(typeof(Animator), nameof(Animator.OnCommonUpdate))]
     internal sealed class PauseAnimatorUpdates : ResoniteBugFixMonkey<PauseAnimatorUpdates>
     {
-        private static readonly ConditionalWeakTable<Animator, Box<float>> _lastPositionByAnimator = new();
+        private static readonly ConditionalWeakTable<Animator, Box<float>> _lastPositionByAnimator = [];
 
         public override IEnumerable<string> Authors { get; } = [.. Contributors.Banane9, .. Contributors.Onan];
 

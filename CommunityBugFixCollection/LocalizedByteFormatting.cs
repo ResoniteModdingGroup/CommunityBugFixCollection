@@ -18,7 +18,7 @@ namespace CommunityBugFixCollection
     [HarmonyPatchCategory(nameof(LocalizedByteFormatting))]
     internal sealed class LocalizedByteFormatting : ResoniteAsyncEventHandlerMonkey<LocalizedByteFormatting, LocaleLoadingEvent>, IConfiguredMonkey<BugFixOptions>
     {
-        private static readonly ConditionalWeakTable<StorageUsageStatus, CultureInfo> _lastCultureByStorageStatus = new();
+        private static readonly ConditionalWeakTable<StorageUsageStatus, CultureInfo> _lastCultureByStorageStatus = [];
 
         public override IEnumerable<string> Authors { get; } = [.. Contributors.Banane9, .. Contributors.LJ];
 

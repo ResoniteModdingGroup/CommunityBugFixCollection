@@ -23,8 +23,6 @@ namespace CommunityBugFixCollection
 
         protected override bool OnLoaded()
         {
-            return false;
-
             if (!Enabled)
                 return true;
 

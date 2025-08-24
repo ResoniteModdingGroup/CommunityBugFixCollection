@@ -26,5 +26,8 @@ namespace CommunityBugFixCollection
             _lastInputFocus = hasFocus;
             return true;
         }
+
+        private static bool Prepare()
+            => AccessTools.TypeByName("Valve.VR.SteamVR_Render") is not null;
     }
 }
