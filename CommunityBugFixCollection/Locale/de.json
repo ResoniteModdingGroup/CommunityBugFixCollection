@@ -41,6 +41,7 @@
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Verhindert, dass Animatoren jeden Frame in alle assoziierten Felder schreiben, obwohl sie nicht am animieren sind.",
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Sorgt dafür, dass die NoDestroyUndo Komponente tatsächlich verhindert, dass das Zerstören eines Objekts rückgängig gemacht werden kann.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Umgeht, dass Slider und Joints in Headless-Sessions verrutschen.",
+    "CommunityBugFixCollection.StopTrackedDeviceSpam.Description": "Fügt null-Checks in der UpdateBodyNode-Methode der TrackedDevicePositioner-Komponente hinzu, um Logspam zu verhindern.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Kippt die UI-fokussierte Kamera, um UIX-Renderprobleme zum umgehen.",
     "CommunityBugFixCollection.SteamVRFocusResolutionScale.Description": "Verhindert, dass das SteamVR Unity Plugin die Renderauflösung dauerhaft verringert, wenn ein Fokusevent verpasst wird.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Verhindert, dass die Welt-Greifen Fortbewegung den Spieler bei jeder Aktivierung bewegt.",
