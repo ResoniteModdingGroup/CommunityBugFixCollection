@@ -27,7 +27,7 @@ namespace CommunityBugFixCollection
             if (__instance.URL.Value is not null)
             {
                 Logger.Debug(() => $"Opening Hyperlink: {__instance.URL.Value}");
-                __instance.RunInBackground(() => Process.Start(__instance.URL.Value.ToString()));
+                __instance.RunInBackground(() => Process.Start(new ProcessStartInfo(__instance.URL.Value.ToString()) { UseShellExecute = true }));
             }
 
             __instance.Slot.Destroy();

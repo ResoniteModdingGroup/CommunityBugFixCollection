@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <AssemblyFileName>$(AssemblyTitle).dll</AssemblyFileName>
     <LangVersion>12.0</LangVersion>
     <Nullable>enable</Nullable>
@@ -36,10 +36,14 @@
 
   <PropertyGroup Condition="'$(ResonitePath)'==''">
     <ResonitePath>$(MSBuildThisFileDirectory)Resonite</ResonitePath>
-    <ResonitePath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Resonite\')">C:\Program Files (x86)\Steam\steamapps\common\Resonite</ResonitePath>
+    <ResonitePath Condition="Exists('C:/Program Files (x86)/Steam/steamapps/common/Resonite/')">C:/Program Files (x86)/Steam/steamapps/common/Resonite</ResonitePath>
     <ResonitePath Condition="Exists('$(HOME)/.steam/steam/steamapps/common/Resonite/')">$(HOME)/.steam/steam/steamapps/common/Resonite</ResonitePath>
     <ResonitePath Condition="Exists('D:/Files/Games/Resonite/app/')">D:/Files/Games/Resonite/app</ResonitePath>
-	<ResonitePath Condition="Exists('D:\SteamLibrary\\steamapps\common\Resonite\')">D:\SteamLibrary\\steamapps\common\Resonite\</ResonitePath>
-    <ResonitePath Condition="Exists('G:\SteamLibrary\steamapps\common\Resonite')">G:\SteamLibrary\steamapps\common\Resonite</ResonitePath>
+    <ResonitePath Condition="Exists('D:/SteamLibrary//steamapps/common/Resonite/')">D:/SteamLibrary//steamapps/common/Resonite</ResonitePath>
+    <ResonitePath Condition="Exists('G:/SteamLibrary/steamapps/common/Resonite')">G:/SteamLibrary\steamapps\common\Resonite</ResonitePath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(ResoniteCachePath)' == ''">
+    <ResoniteCachePath Condition="Exists('S:/Resonite/')">S:/Resonite/</ResoniteCachePath>
   </PropertyGroup>
 </Project>

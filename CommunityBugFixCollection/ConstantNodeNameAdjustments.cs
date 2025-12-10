@@ -16,6 +16,8 @@ namespace CommunityBugFixCollection
         // Legacy Fix, so off by default
         protected override bool OnComputeDefaultEnabledState() => false;
 
+        protected override bool OnEngineReady() => base.OnEngineReady();
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Backspace))]
         private static string BackspaceNamePostfix(string __result)
