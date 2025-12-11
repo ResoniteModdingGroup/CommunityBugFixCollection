@@ -13,7 +13,6 @@
     <CopyToLibraries Condition="'$(CopyToLibraries)'==''">true</CopyToLibraries>
 
     <RestoreAdditionalProjectSources>
-      https://pkg.munally.com/MonkeyModdingTroop/index.json;
       https://nuget.pkg.github.com/ResoniteModdingGroup/index.json
     </RestoreAdditionalProjectSources>
   </PropertyGroup>
