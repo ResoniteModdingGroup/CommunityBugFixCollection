@@ -44,6 +44,7 @@
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Fixes the confusing names of the Remap [-1; 1] to [0; 1] ProtoFlux nodes.",
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Fixes non-HDR variants of Color(X) channel addition not clamping.",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Forces colorX From HexCode to use the sRGB rather than Linear profile.",
+    "CommunityBugFixCollection.NoParentUnderSelfAudioClipPlayer.Description": "Prevents the ChildParentAudioClipPlayer components from crashing the game if their <i>ParentUnder</i> field is set to the slot that it's on. Also adds a header text explaining the problem.",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Fixes animators updating all associated fields every frame while enabled but not playing.",
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Makes the NoDestroyUndo component actually prevent undoing destroying something.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
@@ -70,6 +71,8 @@
     "CommunityBugFixCollection.StorageUnits.MB": "MB",
     "CommunityBugFixCollection.StorageUnits.GB": "GB",
     "CommunityBugFixCollection.StorageUnits.TB": "TB",
-    "CommunityBugFixCollection.StorageUnits.PB": "PB"
+    "CommunityBugFixCollection.StorageUnits.PB": "PB",
+
+    "CommunityBugFixCollection.ChildParentAudioClipPlayer.Header": "This AudioClipPlayer component's <i>ParentUnder</i> field must never be set to the slot it's on. Otherwise, the game will crash when a clip is triggered."
   }
 }

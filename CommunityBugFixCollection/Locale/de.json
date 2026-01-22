@@ -38,6 +38,7 @@
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Verbessert die verwirrenden Namen der Remap [-1; 1] zu [0; 1] ProtoFlux Nodes.",
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Korrigiert, dass die nicht-HDR Varianten der Color(X) Kanal-Additionen die Werte nicht limitieren.",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Zwingt colorX From HexCode das sRGB statt dem Linearen Farbprofil zu nutzen.",
+    "CommunityBugFixCollection.NoParentUnderSelfAudioClipPlayer.Description": "Verhindert, dass die ChildParentAudioClipPlayer-Komponente das Spiel crasht, wenn ihr <i>ParentUnder</i>-Feld auf den Slot, auf dem sie ist, gesetzt ist. Fügt außerdem eine Erklärung des Problems im Header hinzu.",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Verhindert, dass Animatoren jeden Frame in alle assoziierten Felder schreiben, obwohl sie nicht am animieren sind.",
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Sorgt dafür, dass die NoDestroyUndo Komponente tatsächlich verhindert, dass das Zerstören eines Objekts rückgängig gemacht werden kann.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Umgeht, dass Slider und Joints in Headless-Sessions verrutschen.",
@@ -50,6 +51,8 @@
     "CommunityBugFixCollection.Config.Options.Name": "Optionen",
     "CommunityBugFixCollection.Config.Options.Description": "Enthällt die Einstellungen für die wenigen Fixes die diese anbieten.",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "IEC Byte-Format Benutzen",
-    "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Ob Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) formatiert werden sollen, wenn <i>LocalizedByteFormatting</i> aktiviert ist."
+    "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Ob Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) formatiert werden sollen, wenn <i>LocalizedByteFormatting</i> aktiviert ist.",
+
+    "CommunityBugFixCollection.ChildParentAudioClipPlayer.Header": "Das <i>ParentUnder</i>-Feld dieser AudioClipPlayer-Komponente darf niemals auf den Slot, auf dem sie ist, gesetzt werden. Andernfalls crasht das Spiel wenn ein Clip ausgelöst wird."
   }
 }

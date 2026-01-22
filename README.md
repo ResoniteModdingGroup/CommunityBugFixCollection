@@ -53,6 +53,7 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Locale/issues/186
 * FlipAtUser component does not respect view position (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1335)
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
+* ChildParentAudioClipPlayer component crashes the game when it's triggered while its *ParentUnder* field is set to the slot it's on (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1457)
 * Resolution scale may get stuck at 0.5 when opening and closing the SteamVR dashboard while the game is hitching (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2337)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
