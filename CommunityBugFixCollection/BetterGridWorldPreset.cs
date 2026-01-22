@@ -1,5 +1,9 @@
 ﻿using Elements.Core;
 using FrooxEngine;
+using FrooxEngine.FrooxEngine.ProtoFlux.CoreNodes;
+using FrooxEngine.ProtoFlux;
+using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes;
+using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Operators;
 using HarmonyLib;
 using Renderite.Shared;
 using System;
@@ -52,10 +56,28 @@ namespace CommunityBugFixCollection
             attachedModel.material.Smoothness.Value = 0f;
 
             var boxCollider = ground.AttachComponent<BoxCollider>();
-            var swizzle = ground.AttachComponent<Float2ToFloat3SwizzleDriver>();
-            swizzle.Source.Target = attachedModel.mesh.Size;
-            swizzle.Target.Target = boxCollider.Size;
+            boxCollider.Offset.Value = new(0, 0, 0.5f);
             boxCollider.SetCharacterCollider();
+
+            var swizzleSlot = ground.AddSlot("Collider Swizzle");
+
+            var meshSizeSource = swizzleSlot.AttachComponent<ValueSource<float2>>();
+            meshSizeSource.TrySetRootSource(attachedModel.mesh.Size);
+
+            var unpackSize = swizzleSlot.AttachComponent<Unpack_Float2>();
+            unpackSize.V.Target = meshSizeSource;
+
+            var oneConstant = swizzleSlot.AttachComponent<ValueInput<float>>();
+            oneConstant.Value.Value = 1;
+
+            var packSize = swizzleSlot.AttachComponent<Pack_Float3>();
+            packSize.X.Target = unpackSize.X;
+            packSize.Y.Target = unpackSize.Y;
+            packSize.Z.Target = oneConstant;
+
+            var colliderSizeDrive = swizzleSlot.AttachComponent<ValueFieldDrive<float3>>();
+            colliderSizeDrive.TrySetRootTarget(boxCollider.Size);
+            colliderSizeDrive.Value.Target = packSize;
 
             return false;
         }
