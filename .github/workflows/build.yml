@@ -43,7 +43,7 @@ jobs:
     - name: Setup Dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.x
+        dotnet-version: 10.x
         source-url: https://nuget.pkg.github.com/ResoniteModdingGroup/index.json
     
     - name: Add MonkeyLoader NuGet Source
@@ -69,10 +69,6 @@ jobs:
     
     - name: Move NuGet Packages
       run: mv (Get-ChildItem -Recurse ./ -Include *.nupkg) ./
-    
-    # Removes the version number from the package name
-    - name: Rename NuGet Packages
-      run: Get-ChildItem -Include *.nupkg -Path ./* | Rename-Item -NewName { $_.Name -Replace '\.\d+\.\d+\.\d+.*$','.nupkg' }
       
     # Publish the NuGet package(s) as an artifact, so they can be used in the following jobs
     - name: Upload NuGet Packages Artifact
@@ -81,7 +77,7 @@ jobs:
         name: NuGet Packages
         if-no-files-found: error
         retention-days: 7
-        path: ./*.nupkg
+        path: ./CommunityBugFixCollection.nupkg
     
     # Only when it's not from a PR to avoid any funny packages in the cache
     - name: Save NuGet Package Cache
@@ -98,11 +94,8 @@ jobs:
     - name: Setup Dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.x
+        dotnet-version: 10.x
         source-url: https://nuget.pkg.github.com/ResoniteModdingGroup/index.json
-
-    - name: Add MonkeyLoader NuGet Source
-      run: dotnet nuget add source https://pkg.munally.com/MonkeyModdingTroop/index.json
 
     - name: Restore NuGet Package Cache
       uses: actions/cache/restore@v4
