@@ -15,6 +15,9 @@ namespace CommunityBugFixCollection
 
         public override int Priority => HarmonyLib.Priority.Low;
 
+        protected override bool AppliesTo(ResolveInspectorHeaderTextEvent eventData)
+            => base.AppliesTo(eventData) && eventData.Worker is ChildParentAudioClipPlayer;
+
         protected override void Handle(ResolveInspectorHeaderTextEvent eventData)
             => eventData.AddItem(new(Mod.GetLocaleString("ChildParentAudioClipPlayer.Header")));
 
