@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.Serialization.Formatters;
 using System.Text;
 
 namespace CommunityBugFixCollection
@@ -16,6 +17,10 @@ namespace CommunityBugFixCollection
     {
 
         public override IEnumerable<string> Authors { get; } = [.. Contributors.Onan];
+        public static FieldInfo IgnoreHierarchy = AccessTools.Field(typeof(RaycastDriver), "IgnoreHierarchy");//get ignore hierarchy field.
+        public static FieldInfo Filter = AccessTools.Field(typeof(RaycastDriver), "Filter");//get Filter func field.
+        public static MethodInfo Func2_Call = AccessTools.Method(typeof(Func<>), "Invoke", new Type[] { typeof(FrooxEngine.ICollider)}, new Type[] { typeof(FrooxEngine.ICollider), typeof(bool) }); //tries to get a call to a function (like Filter) of name "Invoke" with the generic type ("ICollider", "bool") and given a value of "ICollider" in the call from the stack.
+
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
@@ -26,28 +31,22 @@ namespace CommunityBugFixCollection
             int index = 0;
             int start = 0;
             int stop = 0;
-            CodeInstruction Filter = new CodeInstruction(OpCodes.Nop);
             foreach (CodeInstruction inst in instructionList)
             {
-                
-                if (inst.operand?.ToString()?.Contains("IgnoreHierarchy") == true)
+                if (inst.opcode == OpCodes.Ldfld && inst.operand?.Equals(IgnoreHierarchy) == true)
                 {
-                    if(start == 0)
+                    if (start == 0)
                     {
                         start = index;
                     }
-                    
                 }
-                if (inst.operand?.ToString()?.ToLower()?.Contains("icollider") == true && inst.operand?.ToString()?.ToLower()?.Contains("bool") == true && inst.operand?.ToString()?.ToLower()?.Contains("invoke") == true)
+                if (inst.operand?.Equals(Func2_Call) == true)
                 {
                     if (stop == 0)
                     {
                         stop = index;
+                        break;
                     }
-                }
-                if (inst.opcode == OpCodes.Ldfld && inst.operand?.ToString()?.Contains("Filter") == true)
-                {
-                    Filter = inst;
                 }
                 index++;
             }
@@ -60,7 +59,7 @@ namespace CommunityBugFixCollection
                 instructionList[start],
                 new CodeInstruction(OpCodes.Ldloc_S,8),
                 new CodeInstruction(OpCodes.Ldarg_0),
-                Filter,
+                new CodeInstruction(OpCodes.Ldfld, Filter),
                 new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(DontRaycastDeveloper), "DontRaycastDeveloperFilter")),
             ];
             instructionList.RemoveRange(start-1, (stop+2) - start);
