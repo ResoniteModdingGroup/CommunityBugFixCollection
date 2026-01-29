@@ -3,10 +3,11 @@
     <PackageId>CommunityBugFixCollection</PackageId>
     <Title>Community Bug-Fix Collection</Title>
     <Authors>Banane9; Nytra; art0007i; LeCloutPanda; goat; __Choco__; LJ; 989onan</Authors>
-    <Version>0.9.0-beta</Version>
+	<Version>0.9.0-beta</Version>
     <Description>This MonkeyLoader mod for Resonite that fixes various small Resonite-issues that are still open.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+	  <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageTags>mod; mods; monkeyloader; resonite; component; attacher; selector; protoflux; node; picker; search; favorites</PackageTags>
