@@ -9,6 +9,7 @@
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 	  <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageTags>mod; mods; monkeyloader; resonite; component; attacher; selector; protoflux; node; picker; search; favorites</PackageTags>
   </PropertyGroup>
   
@@ -18,16 +19,16 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <ResoniteReference Include="Renderite.Shared" />
-	  <ResoniteReference Include="Elements.Assets" />
-	  <ResoniteReference Include="Elements.Core" />
-	  <ResoniteReference Include="Elements.Quantity" />
-	  <ResoniteReference Include="FrooxEngine" />
-	  <ResoniteReference Include="FrooxEngine.Store" />
-	  <ResoniteReference Include="ProtoFlux.Core" />
-	  <ResoniteReference Include="ProtoFlux.Nodes.Core" />
-	  <ResoniteReference Include="ProtoFluxBindings" />
-	  <ResoniteReference Include="SkyFrost.Base" />
-	  <ResoniteReference Include="SkyFrost.Base.Models" />
+    <ResoniteReference Include="Renderite.Shared" />
+    <ResoniteReference Include="Elements.Assets" />
+    <ResoniteReference Include="Elements.Core" />
+    <ResoniteReference Include="Elements.Quantity" />
+    <ResoniteReference Include="FrooxEngine" />
+    <ResoniteReference Include="FrooxEngine.Store" />
+    <ResoniteReference Include="ProtoFlux.Core" />
+    <ResoniteReference Include="ProtoFlux.Nodes.Core" />
+    <ResoniteReference Include="ProtoFluxBindings" />
+    <ResoniteReference Include="SkyFrost.Base" />
+    <ResoniteReference Include="SkyFrost.Base.Models" />
   </ItemGroup>
 </Project>

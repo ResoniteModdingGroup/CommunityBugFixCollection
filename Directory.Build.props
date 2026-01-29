@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-	  <ResoniteInstallOnBuild Condition="'$(ResoniteInstallOnBuild)'==''">true</ResoniteInstallOnBuild>
+    <ResoniteInstallOnBuild Condition="'$(ResoniteInstallOnBuild)'==''">true</ResoniteInstallOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-	  <ResoniteInstallOnBuild>false</ResoniteInstallOnBuild>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <ResoniteInstallOnBuild>false</ResoniteInstallOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(ResonitePath)'==''">
