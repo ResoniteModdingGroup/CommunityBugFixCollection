@@ -39,6 +39,7 @@
     "CommunityBugFixCollection.LocalizedByteFormatting.Description": "Localizes the storage units (MiB, GiB, etc.), in particular for the StorageUsageStatus component. There's an option to use IEC format (factor 1024) over decimal (factor 1000).",
     "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Description": "Only lets the World Load Progress Indicator disappear after 20s or more if the process failed.",
     "CommunityBugFixCollection.NaNtEqual.Description": "Makes NaN floats / doubles never equal to each other for the ProtoFlux == and != nodes, as well as the ValueEqualityDriver component.",
+    "CommunityBugFixCollection.NoAudioOutputCrash.Description": "Prevents the AudioOutput component from updating listeners when it's been removed and crashing the sessions.",
     "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Fixes Color Profile not being preserved on all operations.",
     "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Fixes a crash when a (multi)tool is scaled to zero.",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Fixes the confusing names of the Remap [-1; 1] to [0; 1] ProtoFlux nodes.",
