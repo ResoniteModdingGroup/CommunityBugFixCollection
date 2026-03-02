@@ -2,9 +2,6 @@
 using MonkeyLoader.Meta;
 using MonkeyLoader.Patching;
 using MonkeyLoader.Resonite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommunityBugFixCollection
 {

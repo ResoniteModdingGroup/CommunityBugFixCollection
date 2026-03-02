@@ -1,9 +1,6 @@
 ﻿using FrooxEngine.ProtoFlux;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Math;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommunityBugFixCollection
 {

@@ -3,9 +3,6 @@ using FrooxEngine;
 using FrooxEngine.FrooxEngine.ProtoFlux.CoreNodes;
 using FrooxEngine.ProtoFlux.Runtimes.Execution.Nodes.Color;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommunityBugFixCollection
 {

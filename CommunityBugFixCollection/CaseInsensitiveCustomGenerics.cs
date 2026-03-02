@@ -3,10 +3,7 @@ using HarmonyLib;
 using MonkeyLoader;
 using MonkeyLoader.Meta;
 using MonkeyLoader.Patching;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 // Taken from ComponentSelectorAdditions
 // https://github.com/ResoniteModdingGroup/ComponentSelectorAdditions

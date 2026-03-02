@@ -2,12 +2,6 @@
 using FrooxEngine;
 using FrooxEngine.UIX;
 using HarmonyLib;
-using MonkeyLoader;
-using MonkeyLoader.Meta;
-using NuGet.Versioning;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommunityBugFixCollection
 {
