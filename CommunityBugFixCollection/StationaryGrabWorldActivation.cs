@@ -1,9 +1,5 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
 
 // Originally released under MIT-0 here:
 // https://github.com/art0007i/FixGrabWorld

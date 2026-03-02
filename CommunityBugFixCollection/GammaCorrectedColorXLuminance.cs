@@ -1,9 +1,6 @@
 ﻿using Elements.Core;
 using HarmonyLib;
 using Renderite.Shared;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CommunityBugFixCollection
 {

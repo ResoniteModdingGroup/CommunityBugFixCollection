@@ -1,10 +1,6 @@
 ﻿using Elements.Assets;
 using Elements.Core;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace CommunityBugFixCollection
 {
