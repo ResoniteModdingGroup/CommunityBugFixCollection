@@ -37,6 +37,7 @@
     "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Verhindert, dass Farbprofile nicht bei allen Berechnungen erhalten bleiben.",
     "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Verhinder einen Crash wenn (Multi-)Werkzeuge auf null skaliert werden.",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Verbessert die verwirrenden Namen der Remap [-1; 1] zu [0; 1] ProtoFlux Nodes.",
+    "CommunityBugFixCollection.NoFunForCorporate.Description": "Verhindert, dass Aprilscherz-Inhalte ausgelöst werden, wenn der Nutzer in einem Universe ist.<br/>Dies wird durch die <i>Erzwinge Aprilscherze</i> Einstellung überschrieben, welche erzwingt, dass diese Inhalte aktiv sind.",
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Korrigiert, dass die nicht-HDR Varianten der Color(X) Kanal-Additionen die Werte nicht limitieren.",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Zwingt colorX From HexCode das sRGB statt dem Linearen Farbprofil zu nutzen.",
     "CommunityBugFixCollection.NoParentUnderSelfAudioClipPlayer.Description": "Verhindert, dass die ChildParentAudioClipPlayer-Komponente das Spiel crasht, wenn ihr <i>ParentUnder</i>-Feld auf den Slot, auf dem sie ist, gesetzt ist. Fügt außerdem eine Erklärung des Problems im Header hinzu.",
@@ -51,6 +52,8 @@
 
     "CommunityBugFixCollection.Config.Options.Name": "Optionen",
     "CommunityBugFixCollection.Config.Options.Description": "Enthällt die Einstellungen für die wenigen Fixes die diese anbieten.",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Name": "Erzwinge Aprilscherze",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Ob Aprilscherz-Inhalte erzwungenermaßen aktiv sein sollen.",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "IEC Byte-Format Benutzen",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Ob Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) formatiert werden sollen, wenn <i>LocalizedByteFormatting</i> aktiviert ist.",
 
