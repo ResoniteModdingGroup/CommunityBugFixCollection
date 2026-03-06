@@ -59,7 +59,7 @@
     "CommunityBugFixCollection.Config.Options.Name": "Options",
     "CommunityBugFixCollection.Config.Options.Description": "Contains the settings for the few fixes that offer them.",
     "CommunityBugFixCollection.Config.Options.ForceAprilFools.Name": "Force April Fools",
-    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Whether to force April Fools content to be active.",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Whether to force April Fools content to be active. Requires NoFunForCorporate monkey to be enabled.",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "Use IEC Byte Format",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Whether to format bytes using IEC (factor 1024) as opposed to decimal format (factor 1000) when <i>LocalizedByteFormatting</i> is enabled.",
 

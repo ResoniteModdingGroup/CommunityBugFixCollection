@@ -53,7 +53,7 @@
     "CommunityBugFixCollection.Config.Options.Name": "Optionen",
     "CommunityBugFixCollection.Config.Options.Description": "Enthällt die Einstellungen für die wenigen Fixes die diese anbieten.",
     "CommunityBugFixCollection.Config.Options.ForceAprilFools.Name": "Erzwinge Aprilscherze",
-    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Ob Aprilscherz-Inhalte erzwungenermaßen aktiv sein sollen.",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Ob Aprilscherz-Inhalte erzwungenermaßen aktiv sein sollen. Setzt voraus, dass der NoFunForCorporate Monkey aktiviert ist.",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "IEC Byte-Format Benutzen",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Ob Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) formatiert werden sollen, wenn <i>LocalizedByteFormatting</i> aktiviert ist.",
 
