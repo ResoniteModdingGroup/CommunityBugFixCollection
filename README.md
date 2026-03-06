@@ -88,6 +88,7 @@ If any of them have been implemented and not removed from the mod,
 just disable them in the settings in the meantime.
 
 * _Copy to Clipboard_ action on any non-reference member fields in Inspectors (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/810)
+* Force April Fools content to be active
 
 
 ## Closed Issues
