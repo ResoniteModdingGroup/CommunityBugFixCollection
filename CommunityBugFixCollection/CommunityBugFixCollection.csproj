@@ -1,4 +1,4 @@
-﻿<Project Sdk="Remora.Resonite.Sdk/2.0.10">
+﻿<Project Sdk="Remora.Resonite.Sdk/2.1.0">
   <PropertyGroup>
     <PackageId>CommunityBugFixCollection</PackageId>
     <Title>Community Bug-Fix Collection</Title>
