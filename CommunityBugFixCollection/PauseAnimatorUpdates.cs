@@ -19,15 +19,19 @@ namespace CommunityBugFixCollection
 
             __instance._playback.ClipLength = (__instance.Clip.Asset?.Data?.GlobalDuration).GetValueOrDefault();
 
-            if (!__instance._fieldMappersValid)
-                __instance.GenerateFieldMappers();
-
             if (!_lastPositionByAnimator.TryGetValue(__instance, out var lastPosition))
             {
-                // Make sure that initial state is always applied,
+                // Make sure that initial state is always applied for new animators,
                 // since playback position can't be < 0
                 lastPosition = -1;
                 _lastPositionByAnimator.Add(__instance, lastPosition);
+            }
+
+            if (!__instance._fieldMappersValid)
+            {
+                // Also make sure that initial state is always applied after the field mappers change
+                lastPosition.Value = -1;
+                __instance.GenerateFieldMappers();
             }
 
             if (lastPosition != __instance.Position)
