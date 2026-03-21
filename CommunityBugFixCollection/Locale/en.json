@@ -14,6 +14,7 @@
 
     "CommunityBugFixCollection.AnyProtocolHyperlinks.Description": "Allows Hyperlink components to open URLs with any scheme, not just http(s).",
     "CommunityBugFixCollection.BetterGridWorldPreset.Description": "Improves the Grid World Preset by preventing the shaking ground and centering the grid.",
+    "CommunityBugFixCollection.BetterListEditor.Description": "Improves the list editors in inspectors, preventing an exception while adding elements and renaming them when they're moved around.",
     "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Fixes copying components using drag-and-drop breaking drives.",
     "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Makes picking custom generic type parameters case-insensitive.",
     "CommunityBugFixCollection.CenteredNotifications.Description": "Centers the content of notifications.",

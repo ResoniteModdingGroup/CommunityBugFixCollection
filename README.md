@@ -63,6 +63,7 @@ just disable them in the settings in the meantime.
 * April Fools content is active for users in Universes (commercial usage) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4016)
 * Instantly removing an AudioOutput component crashes the session (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4286)
 * Log spam from `TrackedDevicePositioner.UpdateBodyNode()` in certain scenarios (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/5182)
+* List editors in inspectors throw an exception when elements are added and don't rename them when they're moved around (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/5416)
 
 Fixes with no issue (that could be found).
 * Content of notification being off-center.
