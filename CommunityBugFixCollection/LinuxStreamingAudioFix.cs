@@ -11,6 +11,7 @@ namespace CommunityBugFixCollection
     internal sealed class LinuxStreamingAudioFix : ResoniteBugFixMonkey<LinuxStreamingAudioFix>
     {
         private static readonly Version _requiredShowmanToolsVersion = new(0, 2, 0);
+
         public override IEnumerable<string> Authors => Contributors.Banane9;
 
         protected override bool OnEngineReady()
@@ -28,6 +29,9 @@ namespace CommunityBugFixCollection
         [HarmonyPatch(typeof(AudioSystem), nameof(AudioSystem.UpdateDefaultAudioOutput))]
         private static bool UpdateDefaultAudioOutputPrefix(AudioSystem __instance, Action<AudioOutputDriver>? ___DefaultAudioOutputChanged)
         {
+            if (!Enabled)
+                return true;
+
             if (__instance._outputDevice is null)
                 return false;
 
