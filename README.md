@@ -62,6 +62,7 @@ just disable them in the settings in the meantime.
 * DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
 * April Fools content is active for users in Universes (commercial usage) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4016)
 * Instantly removing an AudioOutput component crashes the session (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4286)
+* Separate audio output for streaming camera doesn't work on Linux (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/6211)
 
 Fixes with no issue (that could be found).
 * Content of notification being off-center.

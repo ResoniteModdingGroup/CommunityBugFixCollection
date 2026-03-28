@@ -24,6 +24,7 @@
     <ResoniteReference Include="Elements.Quantity" />
     <ResoniteReference Include="FrooxEngine" />
     <ResoniteReference Include="FrooxEngine.Store" />
+    <ResoniteReference Include="Awwdio" />
     <ResoniteReference Include="ProtoFlux.Core" />
     <ResoniteReference Include="ProtoFlux.Nodes.Core" />
     <ResoniteReference Include="ProtoFluxBindings" />
