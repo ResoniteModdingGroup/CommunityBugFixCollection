@@ -1,9 +1,6 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
 using SkyFrost.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 // Initially done by https://github.com/goaaats
 

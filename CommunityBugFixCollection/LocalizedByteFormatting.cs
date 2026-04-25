@@ -6,11 +6,8 @@ using MonkeyLoader.Meta;
 using MonkeyLoader.Patching;
 using MonkeyLoader.Resonite;
 using MonkeyLoader.Resonite.Locale;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommunityBugFixCollection
 {

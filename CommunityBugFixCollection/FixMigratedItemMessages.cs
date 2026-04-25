@@ -1,9 +1,6 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
 using SkyFrost.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 // Originally released under MIT-0 here:
 // https://github.com/art0007i/FixMigratedItemMessages
@@ -18,7 +15,7 @@ namespace CommunityBugFixCollection
 
         public override IEnumerable<string> Authors => Contributors.Art0007i;
 
-        public static void Prefix(ref Record record)
+        public static void Prefix(Record record)
         {
             if (Enabled && record.AssetURI.StartsWith(OldPrefix))
                 record.AssetURI = $"{Engine.Current.PlatformProfile.DBScheme}{record.AssetURI[OldPrefix.Length..]}";

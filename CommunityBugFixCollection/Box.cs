@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CommunityBugFixCollection
+﻿namespace CommunityBugFixCollection
 {
     internal sealed class Box<T>
         where T : struct

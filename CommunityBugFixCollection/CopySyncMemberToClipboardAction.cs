@@ -1,10 +1,6 @@
 ﻿using FrooxEngine;
 using MonkeyLoader.Resonite;
 using MonkeyLoader.Resonite.UI.Inspectors;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommunityBugFixCollection
 {

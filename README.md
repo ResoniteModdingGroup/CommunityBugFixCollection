@@ -53,12 +53,17 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Locale/issues/186
 * FlipAtUser component does not respect view position (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1335)
 * ColorX From HexCode (ProtoFlux node) defaults to Linear profile (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1404)
+* ChildParentAudioClipPlayer component crashes the game when it's triggered while its *ParentUnder* field is set to the slot it's on (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1457)
 * Resolution scale may get stuck at 0.5 when opening and closing the SteamVR dashboard while the game is hitching (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2337)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
 * Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
 * Grid World floor shaking on AMD and Intel GPUs (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3829)
 * DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
+* April Fools content is active for users in Universes (commercial usage) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4016)
+* Instantly removing an AudioOutput component crashes the session (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4286)
+* Log spam from `TrackedDevicePositioner.UpdateBodyNode()` in certain scenarios (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/5182)
+* List editors in inspectors throw an exception when elements are added and don't rename them when they're moved around (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/5416)
 
 Fixes with no issue (that could be found).
 * Content of notification being off-center.
@@ -76,6 +81,7 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1158 
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2979
 * UIX Rendering issues in UI-Focus mode (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1292)
+* Driven values in inspectors usually appear delayed by a frame (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4431)
 
 
 ## Features
@@ -85,11 +91,13 @@ If any of them have been implemented and not removed from the mod,
 just disable them in the settings in the meantime.
 
 * _Copy to Clipboard_ action on any non-reference member fields in Inspectors (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/810)
+* Force April Fools content to be active
 
 
 ## Closed Issues
 
-The issues that were first closed in this mod but have officially been closed now will be linked in the following list.
+The issues that were first covered by this mod,
+but have officially been implemented now, will be linked in the following list.
 If they appear here, their implementation has been removed from the mod,
 unless it is marked with `(Legacy)`.
 In that case, the original fix is left in but disabled by default.

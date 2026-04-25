@@ -9,11 +9,12 @@
 
     "CommunityBugFixCollection.AnyProtocolHyperlinks.Description": "Erlaubt es Hyperlink-Komponenten URLs mit beliebigen Schemata zu öffnen, statt nur http(s).",
     "CommunityBugFixCollection.BetterGridWorldPreset.Description": "Verbessert das Grid Welt Preset indem das zittern des Bodens verhindert und das Grid zentriert wird.",
+    "CommunityBugFixCollection.BetterListEditor.Description": "Verbessert Listeneditoren in Inspektoren, wodurch eine Exception beim Hinzufügen von Elementen verhindert wird und deren Namen beim Verschieben entsprechend angepasst werden.",
     "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Sorgt dafür, dass Drives beim Kopieren von Komponenten mittels Drag-und-Drop nicht kaputt gehen.",
     "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Macht das Auswählen von eigenen generischen Typparametern unabhängig von Groß- und Kleinschreibung.",
     "CommunityBugFixCollection.CenteredNotifications.Description": "Zentriert den Inhalt von Benachrichtigungen.",
     "CommunityBugFixCollection.CheckSelfForDuplicateSlot.Description": "Verhindert einen Crash wenn der OverrideParent bei der Duplicate Slot ProtoFlux Node gleich dem Template ist.",
-    "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Sorgt dafür, dass ValueDisplay<color> Nodes eine ValueProxySource Komponente haben.",
+    "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Sorgt dafür, dass ValueDisplay<color> Nodes eine ValueProxySource-Komponente haben.",
     "CommunityBugFixCollection.ColorXNodeNamesSpacing.Description": "Korrigiert die Schreibweise der Namen von ProtoFlux Nodes die ColorX enthalten.",
     "CommunityBugFixCollection.ConsistentContextMenuAngularSize.Description": "Sorgt dafür, dass das Kontextmenü im Desktopmodus immer die gleiche Größe auf dem Bildschirm hat, unabhängig vom Sichtfeld (FOV).",
     "CommunityBugFixCollection.ConstantNodeNameAdjustments.Name": "(Alt) Constant Nodenamen Anpassungen",
@@ -30,17 +31,22 @@
     "CommunityBugFixCollection.HighlightHomeWorldInInventory.Description": "Sorgt dafür, dass die ausgewählte Heimatwelt im Inventar korrekt hervorgehoben wird.",
     "CommunityBugFixCollection.ImportMultipleAudioFiles.Description": "Macht es möglich mehrere Audiodateien auf einmal zu importieren.",
     "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Sorgt dafür, dass URLs zu Textdateien oder Resonite Packages nicht importiert werden, statt als Hyperlink aufzutauchen.",
-    "CommunityBugFixCollection.LocalizedByteFormatting.Description": "Lokalisiert die Speichereinheiten (MiB, GiB, etc.), inbsesondere bei der StorageUsageStatus Komponente. Es gibt eine Einstellung dafür, die Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) zu formatieren.",
+    "CommunityBugFixCollection.LocalizedByteFormatting.Description": "Lokalisiert die Speichereinheiten (MiB, GiB, etc.), inbsesondere bei der StorageUsageStatus-Komponente. Es gibt eine Einstellung dafür, die Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) zu formatieren.",
     "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Description": "Lässt den Welt-Ladefortschritts-Indikator frühestens nach 20s verschwinden, falls der Vorgang fehlgeschlagen ist.",
-    "CommunityBugFixCollection.NaNtEqual.Description": "Sorgt dafür, dass NaN float / double Werte sich bei den == und != ProtoFlux Nodes sowie bei der ValueEqualityDriver Komponente niemals gleichen.",
+    "CommunityBugFixCollection.MemberEditorUpdateOrder.Description": "Sets die Update Order von MemberEditor-Komponenten in Inspektoren auf den höchsten Wert, um (meistens) einen Frame Verzögerung beim angezeigten Wert zu verhindern.",
+    "CommunityBugFixCollection.NaNtEqual.Description": "Sorgt dafür, dass NaN float / double Werte sich bei den == und != ProtoFlux Nodes sowie bei der ValueEqualityDriver-Komponente niemals gleichen.",
+    "CommunityBugFixCollection.NoAudioOutputCrash.Description": "Verhindert, dass die AudioOutput-Komponente ihre Listener aktualisiert nachdem sie entfernt wurde und damit die Session crasht.",
     "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Verhindert, dass Farbprofile nicht bei allen Berechnungen erhalten bleiben.",
     "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Verhinder einen Crash wenn (Multi-)Werkzeuge auf null skaliert werden.",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Verbessert die verwirrenden Namen der Remap [-1; 1] zu [0; 1] ProtoFlux Nodes.",
+    "CommunityBugFixCollection.NoFunForCorporate.Description": "Verhindert, dass Aprilscherz-Inhalte ausgelöst werden, wenn der Nutzer in einem Universe ist.<br/>Dies wird durch die <i>Erzwinge Aprilscherze</i> Einstellung überschrieben, welche erzwingt, dass diese Inhalte aktiv sind.",
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Korrigiert, dass die nicht-HDR Varianten der Color(X) Kanal-Additionen die Werte nicht limitieren.",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Zwingt colorX From HexCode das sRGB statt dem Linearen Farbprofil zu nutzen.",
+    "CommunityBugFixCollection.NoParentUnderSelfAudioClipPlayer.Description": "Verhindert, dass die ChildParentAudioClipPlayer-Komponente das Spiel crasht, wenn ihr <i>ParentUnder</i>-Feld auf den Slot, auf dem sie ist, gesetzt ist. Fügt außerdem eine Erklärung des Problems im Header hinzu.",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Verhindert, dass Animatoren jeden Frame in alle assoziierten Felder schreiben, obwohl sie nicht am animieren sind.",
-    "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Sorgt dafür, dass die NoDestroyUndo Komponente tatsächlich verhindert, dass das Zerstören eines Objekts rückgängig gemacht werden kann.",
+    "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Sorgt dafür, dass die NoDestroyUndo-Komponente tatsächlich verhindert, dass das Zerstören eines Objekts rückgängig gemacht werden kann.",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Umgeht, dass Slider und Joints in Headless-Sessions verrutschen.",
+    "CommunityBugFixCollection.StopTrackedDeviceSpam.Description": "Fügt null-Checks in der UpdateBodyNode-Methode der TrackedDevicePositioner-Komponente hinzu, um Logspam zu verhindern.",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Kippt die UI-fokussierte Kamera, um UIX-Renderprobleme zum umgehen.",
     "CommunityBugFixCollection.SteamVRFocusResolutionScale.Description": "Verhindert, dass das SteamVR Unity Plugin die Renderauflösung dauerhaft verringert, wenn ein Fokusevent verpasst wird.",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Verhindert, dass die Welt-Greifen Fortbewegung den Spieler bei jeder Aktivierung bewegt.",
@@ -49,7 +55,11 @@
 
     "CommunityBugFixCollection.Config.Options.Name": "Optionen",
     "CommunityBugFixCollection.Config.Options.Description": "Enthällt die Einstellungen für die wenigen Fixes die diese anbieten.",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Name": "Erzwinge Aprilscherze",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Ob Aprilscherz-Inhalte erzwungenermaßen aktiv sein sollen. Setzt voraus, dass der NoFunForCorporate Monkey aktiviert ist.",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "IEC Byte-Format Benutzen",
-    "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Ob Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) formatiert werden sollen, wenn <i>LocalizedByteFormatting</i> aktiviert ist."
+    "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Ob Bytes nach IEC (Faktor 1024) statt dezimal (Faktor 1000) formatiert werden sollen, wenn <i>LocalizedByteFormatting</i> aktiviert ist.",
+
+    "CommunityBugFixCollection.ChildParentAudioClipPlayer.Header": "Das <i>ParentUnder</i>-Feld dieser AudioClipPlayer-Komponente darf niemals auf den Slot, auf dem sie ist, gesetzt werden. Andernfalls crasht das Spiel wenn ein Clip ausgelöst wird."
   }
 }

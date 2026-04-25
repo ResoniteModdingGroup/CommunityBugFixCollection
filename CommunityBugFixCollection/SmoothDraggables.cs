@@ -1,9 +1,6 @@
 ﻿using FrooxEngine;
 using HarmonyLib;
 using Renderite.Shared;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 // Originally released under MIT by LeCloutPanda here:
 // https://github.com/LeCloutPanda/SoNoHeadCrash
