@@ -13,9 +13,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(ResonitePath)'==''">
-    <ResonitePath Condition="Exists('D:/Files/Games/Resonite/app/')">D:/Files/Games/Resonite/app</ResonitePath>
-    <ResonitePath Condition="Exists('D:/SteamLibrary//steamapps/common/Resonite/')">D:/SteamLibrary//steamapps/common/Resonite</ResonitePath>
-    <ResonitePath Condition="Exists('G:/SteamLibrary/steamapps/common/Resonite')">G:/SteamLibrary\steamapps\common\Resonite</ResonitePath>
+    <ResonitePath Condition="Exists('D:/Files/Games/Resonite/app/')">D:/Files/Games/Resonite/app/</ResonitePath>
+    <ResonitePath Condition="Exists('D:/SteamLibrary/steamapps/common/Resonite/')">D:/SteamLibrary/steamapps/common/Resonite/</ResonitePath>
+    <ResonitePath Condition="Exists('G:/SteamLibrary/steamapps/common/Resonite/')">G:/SteamLibrary\steamapps\common\Resonite\</ResonitePath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(ResoniteCachePath)' == ''">
