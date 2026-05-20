@@ -27,19 +27,18 @@ namespace CommunityBugFixCollection
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> Codes)
         {
             List<CodeInstruction> newcodes = new List<CodeInstruction>();
-            foreach(CodeInstruction code in Codes)
+            foreach (CodeInstruction code in Codes)
             {
-                if (code.Calls(AccessTools.Method(typeof(ContainerWorker<>), "CopyComponent")))
+                if (code.operand != null)
                 {
-
-                    //newcodes.Add(new CodeInstruction(OpCodes.ld));
-                    newcodes.Add(new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(FrooxEngine.Slot), "DuplicateComponent")));
-                    newcodes.Add(new CodeInstruction(OpCodes.Pop));
+                    if(code.operand.ToString().Contains("CopyComponent")){
+                
+                        newcodes.Add(new CodeInstruction(OpCodes.Ldc_I4_0));
+                        newcodes.Add(new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(FrooxEngine.Slot), "DuplicateComponent")));
+                        continue;
+                    }
                 }
-                else
-                {
-                    newcodes.Add(code);
-                }
+                newcodes.Add(code);
             }
             Logger.Info(newcodes);
             return newcodes;
