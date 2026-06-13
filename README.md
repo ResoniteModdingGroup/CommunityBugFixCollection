@@ -24,7 +24,6 @@ just disable them in the settings in the meantime.
 * Grab World Locomotion moving the user forward a little every time it's activated (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/86)
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
 	* Selecting Copy Component when drag and dropping a Component onto an Inspector
-* Worlds crashing when a (multi)tool is scaled to zero (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/98)
 * The `Remap -1 1 to 0 1` ProtoFlux node having a hard to understand name (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/245)
 * ColorX Luminance calculations being incorrect for non-linear color profiles (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/281)
 * Non-HDR variants of Color(X) channel addition not clamping (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/316)
@@ -37,7 +36,9 @@ just disable them in the settings in the meantime.
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/620
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/636
 	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4022
-* Tools derived from `BrushTool` not firing *OnDequipped* events (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/723)
+* Animators updating all associated fields every frame while enabled but not playing
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/633
+	* https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480
 * It not being possible to import multiple audio clips at once (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/737)
 * URLs to text files or Resonite Packages failing to import instead of appearing as a hyperlink (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/785)
 * The NoDestroyUndo component not preventing undoing the destruction of something (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/979)
@@ -57,9 +58,6 @@ just disable them in the settings in the meantime.
 * Resolution scale may get stuck at 0.5 when opening and closing the SteamVR dashboard while the game is hitching (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2337)
 * `ValueMod<Decimal>` node crashes the game when B input is set to zero or disconnected. (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2746)
 * Grid World grid being off-center (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2754)
-* Animators updating all associated fields every frame while enabled but not playing (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3480)
-* Grid World floor shaking on AMD and Intel GPUs (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3829)
-* DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
 * April Fools content is active for users in Universes (commercial usage) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4016)
 * Instantly removing an AudioOutput component crashes the session (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/4286)
 * Log spam from `TrackedDevicePositioner.UpdateBodyNode()` in certain scenarios (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/5182)
@@ -107,8 +105,12 @@ but the exact implementation is inconsequential.
 * Duplicating Components breaking drives (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/92)
 	* Pressing Duplicate on the Component in an Inspector
 	* Using the Component Clone Tool to duplicate them onto a slot
+* Worlds crashing when a (multi)tool is scaled to zero (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/98)
 * (Legacy) Most ProtoFlux nodes in Strings > Constants having invisible names (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/177)
+* Tools derived from `BrushTool` not firing *OnDequipped* events (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/723)
 * UserInspectors not listing existing users in the session for non-host users (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/1964)
 * ProtoFlux value casts from byte to other values converting incorrectly (mono / graphical client only) (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/2257)
 	* Fixed by the Splittening™
 * Direct cursor size becoming very large when snapped to an object much closer than the true cursor (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3654)
+* Grid World floor shaking on AMD and Intel GPUs (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3829)
+* DuplicateSlot ProtoFlux node crashes game when if OverrideParent is identical to Template (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/3950)
