@@ -14,7 +14,12 @@
   
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="" />
+    <None Include="FasterBooleanAnd.cs" />
     <None Include="Locale\*" Pack="true" PackagePath="content/Locale/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="FasterBooleanAnd.cs" />
   </ItemGroup>
 
   <ItemGroup>
