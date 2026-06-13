@@ -1,9 +1,9 @@
-﻿<Project Sdk="Remora.Resonite.Sdk/2.1.0">
+﻿<Project Sdk="Remora.Resonite.Sdk/2.3.0">
   <PropertyGroup>
     <PackageId>CommunityBugFixCollection</PackageId>
     <Title>Community Bug-Fix Collection</Title>
     <Authors>Banane9; Nytra; art0007i; LeCloutPanda; goat; __Choco__; LJ; 989onan</Authors>
-	<Version>0.9.0-beta</Version>
+    <Version>0.10.0-beta</Version>
     <Description>This MonkeyLoader mod for Resonite that fixes various small Resonite-issues that are still open.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
@@ -11,13 +11,15 @@
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageTags>mod; mods; monkeyloader; resonite; component; attacher; selector; protoflux; node; picker; search; favorites</PackageTags>
+
+    <MonkeyLoader_GamePacks_Resonite_Version>0.32.0</MonkeyLoader_GamePacks_Resonite_Version>
   </PropertyGroup>
   
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="" />
     <None Include="Locale\*" Pack="true" PackagePath="content/Locale/" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <ResoniteReference Include="Renderite.Shared" />
     <ResoniteReference Include="Elements.Assets" />

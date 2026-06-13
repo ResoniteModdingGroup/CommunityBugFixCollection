@@ -50,17 +50,6 @@ namespace CommunityBugFixCollection
         }
 
         [HarmonyPrefix]
-        [HarmonyPatch(nameof(ListEditor.GetElementName))]
-        private static bool GetElementNamePrefix(int index, ref string __result)
-        {
-            if (!Enabled)
-                return true;
-
-            __result = index.ToString(CultureInfo.InvariantCulture) + ':';
-            return false;
-        }
-
-        [HarmonyPrefix]
         [HarmonyPatch(nameof(ListEditor.MoveElement))]
         private static bool MoveElementPrefix(ListEditor __instance, IButton button, int offset)
         {
@@ -99,7 +88,7 @@ namespace CommunityBugFixCollection
                 if (__instance.Slot[i].GetComponentInChildren<Text>() is not Text text)
                     continue;
 
-                text.Content.Value = __instance.GetElementName(__instance._targetList.Target, i);
+                text.Content.Value = $"{__instance.GetElementName(__instance._targetList.Target, i)}:";
             }
 
             return false;
