@@ -2,61 +2,46 @@
 using FrooxEngine;
 using FrooxEngine.UIX;
 using HarmonyLib;
+using System.Reflection;
+using System.Reflection.Emit;
 
 namespace CommunityBugFixCollection
 {
     [HarmonyPatchCategory(nameof(BreakDragAndDropCopiedComponentDrives))]
-    [HarmonyPatch(typeof(SlotComponentReceiver), nameof(SlotComponentReceiver.TryReceive))]
     internal sealed class BreakDragAndDropCopiedComponentDrives : ResoniteBugFixMonkey<BreakDragAndDropCopiedComponentDrives>
     {
-        public override IEnumerable<string> Authors => Contributors.Banane9;
+        public override IEnumerable<string> Authors { get; } = [.. Contributors.Banane9, .. Contributors.Onan];
 
-        private static bool Prefix(SlotComponentReceiver __instance, IEnumerable<IGrabbable> items, Canvas.InteractionData eventData, out bool __result)
+        public static MethodBase TargetMethod()
         {
-            __result = false;
+#pragma warning disable CS8603 // Possible null reference return.
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+            Type stateMachineType = typeof(SlotComponentReceiver).InnerTypes().FirstOrDefault(x => x.Name.StartsWith("<>") && x.InnerTypes().Any());
+            MethodInfo stolencodethingy = AccessTools.GetDeclaredMethods(stateMachineType).FirstOrDefault(x => x.Name == "<TryReceive>b__1");
+            return stolencodethingy;
+#pragma warning restore CS8603 // Possible null reference return.
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+        }
 
-            if (__instance.Target.Target is null)
-                return false;
 
-            foreach (var item in items)
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> Codes)
+        {
+            List<CodeInstruction> newcodes = new List<CodeInstruction>();
+            foreach (CodeInstruction code in Codes)
             {
-                foreach (ReferenceProxy componentsInChild in item.Slot.GetComponentsInChildren<ReferenceProxy>())
+                if (code.operand != null)
                 {
-                    if (componentsInChild.Reference.Target is not Component component || __instance.Target.Target == component.Slot)
+                    if(code.operand.ToString().Contains("CopyComponent")){
+                
+                        newcodes.Add(new CodeInstruction(OpCodes.Ldc_I4_0));
+                        newcodes.Add(new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(FrooxEngine.Slot), "DuplicateComponent")));
                         continue;
-
-                    __instance.StartTask(async () =>
-                    {
-                        var contextMenu = await __instance.LocalUser.OpenContextMenu(__instance, eventData.source.Slot);
-
-                        var copyItem = contextMenu.AddItem("Inspector.Actions.CopyComponent".AsLocaleKey(), (Uri)null!, RadiantUI_Constants.Hero.GREEN);
-                        var moveItem = contextMenu.AddItem("Inspector.Actions.MoveComponent".AsLocaleKey(), (Uri)null!, RadiantUI_Constants.Hero.PURPLE);
-                        var cancelItem = contextMenu.AddItem("General.Cancel".AsLocaleKey(), (Uri)null!, colorX.White);
-
-                        copyItem.Button.LocalPressed += delegate
-                        {
-                            __instance.Target.Target.DuplicateComponent(component);
-                            __instance.LocalUser.CloseContextMenu(__instance);
-                        };
-
-                        moveItem.Button.LocalPressed += delegate
-                        {
-                            __instance.Target.Target.MoveComponent(component);
-                            __instance.LocalUser.CloseContextMenu(__instance);
-                        };
-
-                        cancelItem.Button.LocalPressed += delegate
-                        {
-                            __instance.LocalUser.CloseContextMenu(__instance);
-                        };
-                    });
-
-                    __result = true;
-                    return false;
+                    }
                 }
+                newcodes.Add(code);
             }
-
-            return false;
+            Logger.Info(newcodes);
+            return newcodes;
         }
     }
 }

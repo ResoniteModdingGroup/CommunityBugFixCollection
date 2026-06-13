@@ -7,6 +7,7 @@
     <Description>This MonkeyLoader mod for Resonite that fixes various small Resonite-issues that are still open.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+	  <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageTags>mod; mods; monkeyloader; resonite; component; attacher; selector; protoflux; node; picker; search; favorites</PackageTags>
