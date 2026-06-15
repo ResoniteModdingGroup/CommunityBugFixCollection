@@ -1,62 +1,62 @@
 ﻿using Elements.Core;
 using FrooxEngine;
-using FrooxEngine.UIX;
-using HarmonyLib;
+using MonkeyLoader.Resonite;
+using MonkeyLoader.Resonite.UI.ContextMenus;
 
 namespace CommunityBugFixCollection
 {
-    [HarmonyPatchCategory(nameof(BreakDragAndDropCopiedComponentDrives))]
-    [HarmonyPatch(typeof(SlotComponentReceiver), nameof(SlotComponentReceiver.TryReceive))]
-    internal sealed class BreakDragAndDropCopiedComponentDrives : ResoniteBugFixMonkey<BreakDragAndDropCopiedComponentDrives>
+    internal sealed class BreakDragAndDropCopiedComponentDrives
+        : ResoniteAsyncEventHandlerMonkey<BreakDragAndDropCopiedComponentDrives, ContextMenuItemsGenerationEvent<SlotComponentReceiver>>
     {
+        private const string CopyComponentLocaleKey = "Inspector.Actions.CopyComponent";
+
         public override IEnumerable<string> Authors => Contributors.Banane9;
 
-        private static bool Prefix(SlotComponentReceiver __instance, IEnumerable<IGrabbable> items, Canvas.InteractionData eventData, out bool __result)
+        public override bool CanBeDisabled => true;
+
+        public override int Priority => HarmonyLib.Priority.First;
+
+        protected override Task Handle(ContextMenuItemsGenerationEvent<SlotComponentReceiver> eventData)
         {
-            __result = false;
+            var receiver = eventData.Summoner;
+            var receiverTarget = receiver.Target.Target;
 
-            if (__instance.Target.Target is null)
-                return false;
+            if (receiverTarget is null)
+                return Task.CompletedTask;
 
-            foreach (var item in items)
+            var itemsRoot = eventData.ContextMenu._itemsRoot.Target;
+            var componentReference = eventData.LastDroppedGrabbables.UntypedReferences
+                .OfType<Component>()
+                .FirstOrDefault(component => component.Slot != receiver.Target.Target);
+
+            if (componentReference is null)
+                return Task.CompletedTask;
+
+            // Add explicit order offset to be able to replace the vanilla entry and keep its position
+            // Don't have to worry about pagination, as that's only ever added *after* event handlers
+            for (var i = 0; i < itemsRoot.ChildrenCount; ++i)
+                itemsRoot[i].OrderOffset = -10 * (itemsRoot.ChildrenCount - i);
+
+            var copyItemSlot = itemsRoot.Children
+                .FirstOrDefault(static itemSlot => itemSlot
+                    .GetComponentInChildren<LocaleStringDriver>(static driver => driver.Key.Value == CopyComponentLocaleKey) is not null);
+
+            if (copyItemSlot is null)
+                return Task.CompletedTask;
+
+            var copyItemOffset = copyItemSlot.OrderOffset;
+            copyItemSlot.Destroy();
+
+            var copyItem = eventData.ContextMenu.AddItem(CopyComponentLocaleKey.AsLocaleKey(), (Uri)null!, RadiantUI_Constants.Hero.GREEN);
+            copyItem.Slot.OrderOffset = copyItemOffset;
+
+            copyItem.Button.LocalPressed += delegate
             {
-                foreach (ReferenceProxy componentsInChild in item.Slot.GetComponentsInChildren<ReferenceProxy>())
-                {
-                    if (componentsInChild.Reference.Target is not Component component || __instance.Target.Target == component.Slot)
-                        continue;
+                receiver.Target.Target.DuplicateComponent(componentReference);
+                receiver.LocalUser.CloseContextMenu(receiver);
+            };
 
-                    __instance.StartTask(async () =>
-                    {
-                        var contextMenu = await __instance.LocalUser.OpenContextMenu(__instance, eventData.source.Slot);
-
-                        var copyItem = contextMenu.AddItem("Inspector.Actions.CopyComponent".AsLocaleKey(), (Uri)null!, RadiantUI_Constants.Hero.GREEN);
-                        var moveItem = contextMenu.AddItem("Inspector.Actions.MoveComponent".AsLocaleKey(), (Uri)null!, RadiantUI_Constants.Hero.PURPLE);
-                        var cancelItem = contextMenu.AddItem("General.Cancel".AsLocaleKey(), (Uri)null!, colorX.White);
-
-                        copyItem.Button.LocalPressed += delegate
-                        {
-                            __instance.Target.Target.DuplicateComponent(component);
-                            __instance.LocalUser.CloseContextMenu(__instance);
-                        };
-
-                        moveItem.Button.LocalPressed += delegate
-                        {
-                            __instance.Target.Target.MoveComponent(component);
-                            __instance.LocalUser.CloseContextMenu(__instance);
-                        };
-
-                        cancelItem.Button.LocalPressed += delegate
-                        {
-                            __instance.LocalUser.CloseContextMenu(__instance);
-                        };
-                    });
-
-                    __result = true;
-                    return false;
-                }
-            }
-
-            return false;
+            return Task.CompletedTask;
         }
     }
 }
