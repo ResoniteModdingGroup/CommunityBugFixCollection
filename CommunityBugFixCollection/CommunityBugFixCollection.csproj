@@ -10,8 +10,6 @@
     <PackageProjectUrl>https://github.com/ResoniteModdingGroup/CommunityBugFixCollection</PackageProjectUrl>
     <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <PackageTags>mod; mods; monkeyloader; resonite; component; attacher; selector; protoflux; node; picker; search; favorites</PackageTags>
-
-    <MonkeyLoader_GamePacks_Resonite_Version>0.32.0</MonkeyLoader_GamePacks_Resonite_Version>
   </PropertyGroup>
   
   <ItemGroup>
