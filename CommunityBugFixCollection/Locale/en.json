@@ -10,61 +10,140 @@
     "CommunityBugFixCollection.Name": "Community Bug-Fix Collection",
     "CommunityBugFixCollection.Description": "This mod contains fixes for various small Resonite Issues that are still open.",
 
-    "CommunityBugFixCollection.CopyToClipboard": "Copy to Clipboard",
-
+    "CommunityBugFixCollection.AnyProtocolHyperlinks.Name": "Hyperlinks with any Protocol",
     "CommunityBugFixCollection.AnyProtocolHyperlinks.Description": "Allows Hyperlink components to open URLs with any scheme, not just http(s).",
+
+    "CommunityBugFixCollection.BetterGridWorldPreset.Name": "Better Grid World Preset",
     "CommunityBugFixCollection.BetterGridWorldPreset.Description": "Improves the Grid World Preset by preventing the shaking ground and centering the grid.",
+
+    "CommunityBugFixCollection.BetterListEditor.Name": "Better List Editors",
     "CommunityBugFixCollection.BetterListEditor.Description": "Improves the list editors in inspectors, preventing an exception while adding elements and renaming them when they're moved around.",
+
+    "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Name": "Break Drives of Drag'n'Drop Copied Components",
     "CommunityBugFixCollection.BreakDragAndDropCopiedComponentDrives.Description": "Fixes copying components using drag-and-drop breaking drives.",
+
+    "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Name": "Case-Insensitive Custom Generics",
     "CommunityBugFixCollection.CaseInsensitiveCustomGenerics.Description": "Makes picking custom generic type parameters case-insensitive.",
+
+    "CommunityBugFixCollection.CenteredNotifications.Name": "Centered Notifications",
     "CommunityBugFixCollection.CenteredNotifications.Description": "Centers the content of notifications.",
-    "CommunityBugFixCollection.CheckSelfForDuplicateSlot.Description": "Fixes a crash when the OverrideParent of the Duplicate Slot ProtoFlux node is identical to the Template.",
+
+    "CommunityBugFixCollection.ColorDisplayValueProxy.Name": "Grab Value from Color Display",
     "CommunityBugFixCollection.ColorDisplayValueProxy.Description": "Fixes ValueDisplay<color> not having a ValueProxySource component.",
+
+    "CommunityBugFixCollection.ColorXNodeNamesSpacing.Name": "ColorX Node Name Spacing",
     "CommunityBugFixCollection.ColorXNodeNamesSpacing.Description": "Fixes ProtoFlux node names containing ColorX being spaced wrong.",
+
+    "CommunityBugFixCollection.ConsistentContextMenuAngularSize.Name": "Consistent Context Menu Size",
     "CommunityBugFixCollection.ConsistentContextMenuAngularSize.Description": "Makes the context menu stay a fixed on-screen size in desktop mode, regardless of FOV.",
+
     "CommunityBugFixCollection.ConstantNodeNameAdjustments.Name": "(Legacy) Constant Node Name Adjustments",
-    "CommunityBugFixCollection.ConstantNodeNameAdjustments.Description": "(Legacy) Changes the names of the ProtoFlux nodes in Strings > Constants to be how they were with the original fix.",
+    "CommunityBugFixCollection.ConstantNodeNameAdjustments.Description": "(Legacy) Changes the names of the ProtoFlux nodes in Strings > Constants to what they were with the original fix.",
+
+    "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Name": "Copy to Clipboard Action",
     "CommunityBugFixCollection.CopySyncMemberToClipboardAction.Description": "Adds Copy to Clipboard action on any non-reference member fields in inspectors.",
+
+    "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Name": "Correct Material Gizmo Scaling",
     "CommunityBugFixCollection.CorrectMaterialGizmoScaling.Description": "Fixes the MaterialGizmo being scaled twice when using Edit on the Material Tool.",
+
+    "CommunityBugFixCollection.CorrectOverriddenSpelling.Name": "Correct Overridden Spelling",
     "CommunityBugFixCollection.CorrectOverriddenSpelling.Description": "Corrects the spelling of Overridden on ProtoFlux nodes.",
+
+    "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Name": "Duplicate and Move Multiple Grabbed Items",
     "CommunityBugFixCollection.DuplicateAndMoveMultipleGrabbedItems.Description": "Fixes references between multiple duplicated or transferred-between-worlds items breaking.",
+
+    "CommunityBugFixCollection.FadeContextMenuLabelOutlines.Name": "Fade Context Menu Outlines",
     "CommunityBugFixCollection.FadeContextMenuLabelOutlines.Description": "Makes the outlines of the labels of the context menu fade out like the rest of it.",
-    "CommunityBugFixCollection.FireBrushToolDequipEvents.Description": "Fixes tools derived from BrushTool not firing OnDequipped events.",
+
+    "CommunityBugFixCollection.FixMigratedItemMessages.Name": "Fix Migrated Item Messages",
     "CommunityBugFixCollection.FixMigratedItemMessages.Description": "Fixes migrated items sent as messages not spawning because they still point to the old platform.",
+
+    "CommunityBugFixCollection.FlipAtUserView.Name": "Flip at User View",
     "CommunityBugFixCollection.FlipAtUserView.Description": "Fixes FlipAtUser component by using the view position as reference instead of the head slot position.",
+
+    "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Name": "Gamma-Corrected ColorX Luminance",
     "CommunityBugFixCollection.GammaCorrectedColorXLuminance.Description": "Fixes ColorX Luminance calculations being incorrect for non-linear color profiles.",
+
+    "CommunityBugFixCollection.GroupCloudHomeTemplate.Name": "Group Cloud Home Template",
     "CommunityBugFixCollection.GroupCloudHomeTemplate.Description": "Uses the User Cloud Home template instead of the missing Group template.",
+
+    "CommunityBugFixCollection.HighlightHomeWorldInInventory.Name": "Highlight Home World in Inventory",
     "CommunityBugFixCollection.HighlightHomeWorldInInventory.Description": "Fixes the selected Home World in the Inventory not being highlighted as a favorite.",
+
+    "CommunityBugFixCollection.ImportMultipleAudioFiles.Name": "Import Multiple Audio Files",
     "CommunityBugFixCollection.ImportMultipleAudioFiles.Description": "Fixes it not being possible to import multiple audio clips at once.",
+
+    "CommunityBugFixCollection.ImportWebFilesAsUrls.Name": "Import Web Files as URLs",
     "CommunityBugFixCollection.ImportWebFilesAsUrls.Description": "Fixes URLs to text files or Resonite Packages failing to import instead of appearing as a hyperlink.",
+
+    "CommunityBugFixCollection.LocalizedByteFormatting.Name": "Localized Byte Formatting",
     "CommunityBugFixCollection.LocalizedByteFormatting.Description": "Localizes the storage units (MiB, GiB, etc.), in particular for the StorageUsageStatus component. There's an option to use IEC format (factor 1024) over decimal (factor 1000).",
+
+    "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Name": "Longer-Lasting World Loading Fail Indication",
     "CommunityBugFixCollection.LongerWorldLoadingFailIndication.Description": "Only lets the World Load Progress Indicator disappear after 20s or more if the process failed.",
+
+    "CommunityBugFixCollection.MemberEditorUpdateOrder.Name": "Member Editor Update Order",
     "CommunityBugFixCollection.MemberEditorUpdateOrder.Description": "Sets the Update Order of MemberEditor components in inspectors to the highest value to (most of the time) prevent a frame delay in the value they show.",
+
+    "CommunityBugFixCollection.NaNtEqual.Name": "NaN't Equal",
     "CommunityBugFixCollection.NaNtEqual.Description": "Makes NaN floats / doubles never equal to each other for the ProtoFlux == and != nodes, as well as the ValueEqualityDriver component.",
+
+    "CommunityBugFixCollection.NoAudioOutputCrash.Name": "No AudioOutput Crash",
     "CommunityBugFixCollection.NoAudioOutputCrash.Description": "Prevents the AudioOutput component from updating listeners when it's been removed and crashing the sessions.",
+
+    "CommunityBugFixCollection.NoLossOfColorProfile.Name": "No Loss of Color Profile",
     "CommunityBugFixCollection.NoLossOfColorProfile.Description": "Fixes Color Profile not being preserved on all operations.",
-    "CommunityBugFixCollection.NoZeroScaleToolRaycast.Description": "Fixes a crash when a (multi)tool is scaled to zero.",
+
+    "CommunityBugFixCollection.NodeNameAdjustments.Name": "Remap Name Adjustments",
     "CommunityBugFixCollection.NodeNameAdjustments.Description": "Fixes the confusing names of the Remap [-1; 1] to [0; 1] ProtoFlux nodes.",
+
+    "CommunityBugFixCollection.NoFunForCorporate.Name": "No Fun for Corporate",
     "CommunityBugFixCollection.NoFunForCorporate.Description": "Prevents April Fools related content from triggering when the user is in a Universe.<br/>This is overridden by the <i>Force April Fools</i> setting, which forces this content to be active.",
+
+    "CommunityBugFixCollection.NonHDRColorClamping.Name": "Non-HDR Color Clamping",
     "CommunityBugFixCollection.NonHDRColorClamping.Description": "Fixes non-HDR variants of Color(X) channel addition not clamping.",
+
+    "CommunityBugFixCollection.NonLinearColorXFromHexCode.Name": "Non-Linear ColorX from HexCode",
     "CommunityBugFixCollection.NonLinearColorXFromHexCode.Description": "Forces colorX From HexCode to use the sRGB rather than Linear profile.",
+
+    "CommunityBugFixCollection.NoParentUnderSelfAudioClipPlayer.Name": "No ParentUnder Self AudioClipPlayer",
     "CommunityBugFixCollection.NoParentUnderSelfAudioClipPlayer.Description": "Prevents the ChildParentAudioClipPlayer components from crashing the game if their <i>ParentUnder</i> field is set to the slot that it's on. Also adds a header text explaining the problem.",
+
+    "CommunityBugFixCollection.PauseAnimatorUpdates.Name": "Pause Animator Updates",
     "CommunityBugFixCollection.PauseAnimatorUpdates.Description": "Fixes animators updating all associated fields every frame while enabled but not playing.",
+
+    "CommunityBugFixCollection.ReallyNoDestroyUndo.Name": "Really NoDestroyUndo",
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Makes the NoDestroyUndo component actually prevent undoing destroying something.",
+
+    "CommunityBugFixCollection.SmoothDraggables.Name": "Smooth Draggables",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
+
+    "CommunityBugFixCollection.StationaryGrabWorldActivation.Name": "Stationary Grab World Activation",
     "CommunityBugFixCollection.StationaryGrabWorldActivation.Description": "Stops the Grab World Locomotion from moving the player with each activiation.",
+
+    "CommunityBugFixCollection.SteamVRFocusResolutionScale.Name": "Steam VR Focus Resolution Scale",
     "CommunityBugFixCollection.SteamVRFocusResolutionScale.Description": "Prevents the SteamVR Unity plugin from permanently lowering the render resolution when a focus event is missed.",
+
+    "CommunityBugFixCollection.StopTrackedDeviceSpam.Name": "Stop TrackedDevicePositioner Spam",
     "CommunityBugFixCollection.StopTrackedDeviceSpam.Description": "Adds null-checks in the TrackedDevicePositioner component's UpdateBodyNode method to prevent log spam.",
+
+    "CommunityBugFixCollection.TiltedUIAlignment.Name": "Tilted UI-Alignment",
     "CommunityBugFixCollection.TiltedUIAlignment.Description": "Tilts the UI-Focus camera to work around UIX rendering issues.",
+
+    "CommunityBugFixCollection.ValidQuaternionInputs.Name": "Valid Quaternion Inputs",
     "CommunityBugFixCollection.ValidQuaternionInputs.Description": "Makes the ProtoFlux Tool spawn valid float and double quaternion inputs.",
+
+    "CommunityBugFixCollection.ValueModDecimal.Name": "No Decimal Modulo Crash",
     "CommunityBugFixCollection.ValueModDecimal.Description": "Adds a zero check to the Decimal ValueMod ProtoFlux node to prevent DIV/0 crashes.",
 
     "CommunityBugFixCollection.Config.Options.Name": "Options",
     "CommunityBugFixCollection.Config.Options.Description": "Contains the settings for the few fixes that offer them.",
     "CommunityBugFixCollection.Config.Options.ForceAprilFools.Name": "Force April Fools",
-    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Whether to force April Fools content to be active. Requires NoFunForCorporate monkey to be enabled.",
+    "CommunityBugFixCollection.Config.Options.ForceAprilFools.Description": "Whether to force April Fools content to be active. Requires <i>No Fun for Corporate</i> to be enabled.",
     "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Name": "Use IEC Byte Format",
-    "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Whether to format bytes using IEC (factor 1024) as opposed to decimal format (factor 1000) when <i>LocalizedByteFormatting</i> is enabled.",
+    "CommunityBugFixCollection.Config.Options.UseIecByteFormat.Description": "Whether to format bytes using IEC (factor 1024) as opposed to decimal format (factor 1000) when <i>Localized Byte Formatting</i> is enabled.",
+
+    "CommunityBugFixCollection.CopyToClipboard": "Copy to Clipboard",
 
     "CommunityBugFixCollection.StorageUnits.iB": "B",
     "CommunityBugFixCollection.StorageUnits.kiB": "KiB",
