@@ -85,7 +85,12 @@ namespace CommunityBugFixCollection
 
             for (var i = 0; i < __instance.Slot.ChildrenCount; ++i)
             {
-                if (__instance.Slot[i].GetComponentInChildren<Text>() is not Text text)
+                var entry = __instance.Slot[i];
+
+                if (entry.GetComponentInChildren<ReferenceProxySource>() is not { } proxySource)
+                    continue;
+
+                if (proxySource.Slot.GetComponent<Text>() is not { } text)
                     continue;
 
                 text.Content.Value = $"{__instance.GetElementName(__instance._targetList.Target, i)}:";
