@@ -115,6 +115,9 @@
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Name": "Really NoDestroyUndo",
     "CommunityBugFixCollection.ReallyNoDestroyUndo.Description": "Makes the NoDestroyUndo component actually prevent undoing destroying something.",
 
+    "CommunityBugFixCollection.TriggerDashScreenCleanup.Name": "Trigger DashScreen Cleanup",
+    "CommunityBugFixCollection.TriggerDashScreenCleanup.Description": "Re-runs the CleanupOldComponents method of the RadiantDashScreen components in Userspace.",
+
     "CommunityBugFixCollection.SmoothDraggables.Name": "Smooth Draggables",
     "CommunityBugFixCollection.SmoothDraggables.Description": "Workaround for Sliders and Joints snapping in sessions hosted by a headless.",
 
