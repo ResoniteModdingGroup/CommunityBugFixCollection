@@ -90,6 +90,7 @@ just disable them in the settings in the meantime.
 
 * _Copy to Clipboard_ action on any non-reference member fields in Inspectors (https://github.com/Yellow-Dog-Man/Resonite-Issues/issues/810)
 * Force April Fools content to be active
+* Allow re-running the CleanupOldComponents method of the RadiantDashScreen components in Userspace ([requested by ProbablePrime himself](https://discord.com/channels/901126079857692714/1542746876091174962/1542746876091174962))
 
 
 ## Closed Issues
