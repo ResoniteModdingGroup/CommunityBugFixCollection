@@ -29,5 +29,6 @@
     <ResoniteReference Include="ProtoFluxBindings" />
     <ResoniteReference Include="SkyFrost.Base" />
     <ResoniteReference Include="SkyFrost.Base.Models" />
+	<ResoniteReference Include="$(ResonitePath)/AssimpNet.dll" />
   </ItemGroup>
 </Project>
